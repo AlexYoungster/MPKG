@@ -642,16 +642,13 @@ class EDC:
                 if self.sc_cot:
                     result_json["canonicalization_reasoning"] = self.last_cot_trace_by_entry[idx]
                 json_results_list.append(result_json)
-            # result_at_each_stage_file = open(f"{iteration_result_dir}/result_at_each_stage.json", "w")
-            # json.dump(json_results_list, result_at_each_stage_file, indent=4)
-            result_at_each_stage_file = open(f"{iteration_result_dir}/result_at_each_stage.json", "w", encoding="utf-8")
-            json.dump(json_results_list, result_at_each_stage_file, indent=4, ensure_ascii=False)
+            with open(f"{iteration_result_dir}/result_at_each_stage.json", "w", encoding="utf-8") as result_file:
+                json.dump(json_results_list, result_file, indent=4, ensure_ascii=False)
 
-            final_result_file = open(f"{iteration_result_dir}/canon_kg.txt", "w")
-            for idx, canon_triplets in enumerate(non_null_triplets_list):
-                final_result_file.write(str(canon_triplets))
-                if idx != len(canon_triplets_list) - 1:
-                    final_result_file.write("\n")
-                final_result_file.flush()
+            with open(f"{iteration_result_dir}/canon_kg.txt", "w", encoding="utf-8") as final_result_file:
+                for idx, canon_triplets in enumerate(non_null_triplets_list):
+                    final_result_file.write(str(canon_triplets))
+                    if idx != len(canon_triplets_list) - 1:
+                        final_result_file.write("\n")
 
         return canon_triplets_list
