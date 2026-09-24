@@ -171,6 +171,9 @@ python run.py \
 | `--sd_llm` | LLM for Schema Definition | `Qwen/Qwen3-1.7B` |
 | `--sc_llm` | LLM for Schema Canonicalization verification | `Qwen/Qwen3-1.7B` |
 | `--sc_embedder` | Sentence Transformer for schema retrieval | `intfloat/multilingual-e5-small` |
+| `--sc_cot` | Enable CoT for relation verification | `False` |
+| `--sc_cot_max_tokens` | Maximum verifier output tokens in CoT mode | `256` |
+| `--sc_replay_result_path` | Reuse saved OIE and SD results to evaluate SC alone | — |
 | `--sr_embedder` | Embedding model for Schema Retriever (required when `--refinement_iterations > 0`) | — |
 | `--ee_llm` | LLM for Entity Extraction (required when `--refinement_iterations > 0`) | — |
 | `--input_text_file_path` | Input text file (one text per line) | `./datasets/example.txt` |
@@ -188,12 +191,27 @@ python run.py \
 
 ### CoT-Enhanced Canonicalization
 
-`edc/schema_canonicalization_cot.py` implements a Chain-of-Thought variant of Schema Canonicalization. To use it, point `--sc_prompt_template_file_path` to `./prompt_templates/sc_template_cot.txt`:
+Use `--sc_cot` to select the CoT template automatically. Pointing `--sc_prompt_template_file_path` to `sc_template_cot.txt` also enables CoT for compatibility. This mode keeps the standard candidate retriever and relation type checks, allows a longer verifier answer, reads the explicit final option, and saves the verifier's text in `canonicalization_reasoning`:
 
 ```bash
 python run.py \
-    ... \
-    --sc_prompt_template_file_path ./prompt_templates/sc_template_cot.txt
+    --sc_cot \
+    --sc_prompt_template_file_path ./prompt_templates/sc_template_cot.txt \
+    --output_dir ./output/example_cot
+```
+
+For a controlled comparison that holds OIE triples and SD definitions fixed, replay only SC from a previous run:
+
+```bash
+python run.py \
+    --sc_cot \
+    --sc_prompt_template_file_path ./prompt_templates/sc_template_cot.txt \
+    --sc_replay_result_path ./output/codex_validated_20260923/iter0/result_at_each_stage.json \
+    --output_dir ./output/example_cot_replay
+python -m evaluate.compare_cot \
+    --baseline ./output/codex_validated_20260923/iter0/result_at_each_stage.json \
+    --cot ./output/example_cot_replay/iter0/result_at_each_stage.json \
+    --output ./evaluate/reports/example_cot_comparison.json
 ```
 
 ### Supported Models

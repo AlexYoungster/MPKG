@@ -1,387 +1,116 @@
-from typing import List, Tuple, Dict, Optional
-import os
-from pathlib import Path
-import edc.utils.llm_utils as llm_utils
-import re
-from edc.utils.e5_mistral_utils import MistralForSequenceEmbedding
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import numpy as np
+"""CoT verifier that shares retrieval and type checks with the standard path."""
+
 import copy
-from tqdm import tqdm
-from sentence_transformers import SentenceTransformer
-import logging
+import re
 
-logger = logging.getLogger(__name__)
+from edc.schema_canonicalization import SchemaCanonicalizer
+from edc.utils import llm_utils
 
 
-class SchemaCanonicalizer_CoT:
-
-    def __init__(
-        self,
-        target_schema_dict: dict,
-        embedder: SentenceTransformer,
-        verify_model: AutoTokenizer = None,
-        verify_tokenizer: AutoTokenizer = None,
-        verify_openai_model: str = None,
-        language: str = 'zh',
-        max_tokens: int = 400,
-    ) -> None:
-        """
-
-        Args:
-            target_schema_dict: Dictionary of target schema relations and definitions
-            embedder: Sentence transformer for relation embedding
-            verify_model: Local LLM model for verification (optional)
-            verify_tokenizer: Tokenizer for local model (optional)
-            verify_openai_model: OpenAI model name (optional, e.g., "gpt-4")
-            language: Language for CoT prompts ('zh' or 'en')
-            max_tokens: Maximum tokens for LLM output (CoT requires more, default 400)
-        """
-        assert verify_openai_model is not None or (verify_model is not None and verify_tokenizer is not None), \
-            "Must provide either OpenAI model or local model with tokenizer"
-
-        self.verifier_model = verify_model
-        self.verifier_tokenizer = verify_tokenizer
-        self.verifier_openai_model = verify_openai_model
-        self.schema_dict = target_schema_dict
-        self.embedder = embedder
-
-        # CoT-specific configuration
-        self.language = language
+class SchemaCanonicalizerCoT(SchemaCanonicalizer):
+    def __init__(self, *args, max_tokens=256, **kwargs):
+        super().__init__(*args, **kwargs)
+        if max_tokens < 32:
+            raise ValueError("CoT verification needs at least 32 output tokens")
         self.max_tokens = max_tokens
+        self.verification_trace = []
 
-        # Load CoT template
-        print(f"[CoT] Loading CoT template for language: {language}")
-        self.prompt_template = self._load_cot_template(language)
-
-        # Embed the target schema
-        self.schema_embedding_dict = {}
-        print("Embedding target schema...")
-        for relation, relation_definition in tqdm(target_schema_dict.items()):
-            embedding = self.embedder.encode(relation_definition)
-            self.schema_embedding_dict[relation] = embedding
-
-        print(f"[CoT] Initialized with max_tokens={max_tokens}, language={language}")
-
-    def _load_cot_template(self, language: str) -> str:
-       
-        template_file = f"sc_template_cot_{language}.txt"
-        # Get path relative to this file
-        current_dir = Path(__file__).parent
-        template_path = current_dir.parent / "prompt_templates" / template_file
-
-        if not template_path.exists():
-            raise FileNotFoundError(
-                f"CoT template file not found: {template_path}\n"
-                f"Expected one of: sc_template_cot_zh.txt or sc_template_cot_en.txt"
-            )
-
-        with open(template_path, 'r', encoding='utf-8') as f:
-            template_content = f.read()
-
-        print(f"[CoT] Loaded template from: {template_path}")
-        print(f"[CoT] Template length: {len(template_content)} characters")
-
-        return template_content
-
-    def retrieve_similar_relations(self, query_relation_definition: str, top_k=5):
-       
-        target_relation_list = list(self.schema_embedding_dict.keys())
-        target_relation_embedding_list = list(self.schema_embedding_dict.values())
-
-        if "sts_query" in self.embedder.prompts:
-            query_embedding = self.embedder.encode(query_relation_definition, prompt_name="sts_query")
-        else:
-            query_embedding = self.embedder.encode(query_relation_definition)
-
-        scores = np.array([query_embedding]) @ np.array(target_relation_embedding_list).T
-        scores = scores[0]
-        highest_score_indices = np.argsort(-scores)
-
-        return {
-            target_relation_list[idx]: self.schema_dict[target_relation_list[idx]]
-            for idx in highest_score_indices[:top_k]
-        }, [scores[idx] for idx in highest_score_indices[:top_k]]
-
-    def extract_option_letter(self, text: str) -> Optional[str]:
-       
-        # Try multiple patterns
-        patterns = [
-            (r'^([A-Z])$', "Single letter"),
-            (r'选项\s*([A-Z])', "'Option X' pattern"),
-            (r'([A-Z])\s*选项', "'X Option' pattern"),
-            (r'选择\s*([A-Z])', "'Choose X' pattern"),
-            (r'[Aa]nswer\s*[:：]\s*([A-Z])', "'Answer: X' pattern"),
-            (r'答案\s*[:：]\s*([A-Z])', "'答案: X' pattern"),
-            (r'^([A-Z])[.,。，\s]', "Starting letter pattern"),
-            (r'([A-Z])\s*更合适', "'X more suitable' pattern"),
-        ]
-
-        text = text.strip()
-
-        # Single letter check
-        if len(text) == 1 and text.isalpha():
-            return text.upper()
-
-        # Pattern matching
-        for pattern, desc in patterns:
-            match = re.search(pattern, text, re.IGNORECASE)
-            if match:
-                return match.group(1).upper()
-
-        # Extract any isolated letter
-        match = re.search(r'[^A-Z]([A-Z])[^A-Z]', ' ' + text + ' ')
-        if match:
-            return match.group(1).upper()
-
-        # Last resort: find any A-F letter
-        letters = [c.upper() for c in text if c.isalpha()]
-        for letter in letters:
-            if 'A' <= letter <= 'F':
-                return letter
-
-        return None
-
-    def extract_cot_answer(self, cot_text: str) -> Tuple[str, Optional[str], float]:
-       
-        # Strategy 1: Match explicit final answer formats (highest confidence)
-        patterns = [
-            (r'最终答案\s*[:：]\s*([A-Z])', 1.0, "Chinese final answer"),
-            (r'Final Answer\s*[:：]\s*([A-Z])', 1.0, "English final answer"),
-            (r'答案\s*[:：]\s*([A-Z])', 0.9, "Chinese answer"),
-            (r'Answer\s*[:：]\s*([A-Z])', 0.9, "English answer"),
-        ]
-
-        for pattern, confidence, desc in patterns:
-            match = re.search(pattern, cot_text, re.IGNORECASE)
+    @staticmethod
+    def extract_final_option(output, valid_letters):
+        """Read the final decision, never an option mentioned in the analysis."""
+        final = re.findall(
+            r"(?:最终答案|Final\s+Answer|最后选择)\s*[:：]\s*(?:选项\s*)?([A-Z])\b",
+            output,
+            flags=re.IGNORECASE,
+        )
+        if final:
+            option = final[-1].upper()
+            return option if option in valid_letters else None
+        lines = [line.strip().strip("*` ") for line in output.splitlines() if line.strip()]
+        if lines:
+            match = re.fullmatch(r"(?:选项\s*)?([A-Z])[.。]?", lines[-1], re.IGNORECASE)
             if match:
                 option = match.group(1).upper()
-                reasoning = cot_text[:match.start()].strip()
-                print(f"[CoT] ✓ Matched '{desc}' pattern, answer: {option}, confidence: {confidence}")
-                return reasoning, option, confidence
-
-        # Strategy 2: Extract from last line (medium confidence)
-        lines = [l.strip() for l in cot_text.strip().split('\n') if l.strip()]
-        if lines:
-            last_line = lines[-1]
-            option = self.extract_option_letter(last_line)
-            if option:
-                reasoning = '\n'.join(lines[:-1]).strip()
-                print(f"[CoT] ✓ Extracted from last line: {option}, confidence: 0.7")
-                return reasoning, option, 0.7
-
-        # Strategy 3: Scan full text (low confidence)
-        option = self.extract_option_letter(cot_text)
-        if option:
-            print(f"[CoT] ⚠ Extracted from full text: {option}, confidence: 0.5")
-            return cot_text, option, 0.5
-
-        # Strategy 4: Failed
-        print(f"[CoT] ✗ Failed to extract answer. Output preview: {cot_text[:200]}...")
-        return cot_text, None, 0.0
+                return option if option in valid_letters else None
+        return None
 
     def llm_verify(
         self,
-        input_text_str: str,
-        query_triplet: List[str],
-        query_relation_definition: str,
-        candidate_relation_definition_dict: dict,
-        relation_example_dict: dict = None,
-    ) -> Optional[Dict]:
-        """
-        Returns:
-            Dictionary containing:
-            - 'triplet': Canonicalized triplet with selected relation
-            - 'reasoning': Full reasoning text from LLM
-            - 'confidence': Confidence score of answer extraction
-            - 'raw_output': Raw LLM output
-            - 'selected_option': Option letter (A, B, C, etc.)
+        input_text_str,
+        query_triplet,
+        query_relation_definition,
+        prompt_template_str,
+        candidate_relation_definition_dict,
+        relation_example_dict=None,
+    ):
+        candidates = list(candidate_relation_definition_dict)
+        letters = [chr(ord("A") + index) for index in range(len(candidates))]
+        none_letter = chr(ord("A") + len(candidates))
+        query_family = self._relation_family(
+            query_triplet[1], query_relation_definition, query_triplet[2]
+        )
+        query_definition = query_relation_definition
+        if query_family:
+            query_definition += f"；语义类别={self._family_label(query_family)}"
 
-            Returns None if no valid answer could be extracted
-        """
-        canonicalized_triplet = copy.deepcopy(query_triplet)
-        choice_letters_list = []
-        choices = ""
-        candidate_relations = list(candidate_relation_definition_dict.keys())
-        candidate_relation_descriptions = list(candidate_relation_definition_dict.values())
-
-        print(f"[CoT] ===== LLM Verification (CoT Mode) =====")
-        print(f"[CoT] Language: {self.language}, Max tokens: {self.max_tokens}")
-        print(f"[CoT] Verifying triplet: {query_triplet}")
-        print(f"[CoT] Query relation: '{query_triplet[1]}' = {query_relation_definition}")
-
-      
-        for idx, rel in enumerate(candidate_relations):
-            choice_letter = chr(ord("@") + idx + 1)  # A, B, C, ...
-            choice_letters_list.append(choice_letter)
-            choices += f"{choice_letter}. '{rel}': {candidate_relation_descriptions[idx]}\n"
-
-     
-        none_option_letter = chr(ord('@') + len(candidate_relations) + 1)
-        choices += f"{none_option_letter}. None of the above.\n"
-
-        print(f"[CoT] Candidate options: {len(choice_letters_list)} relations + None")
-
-    
-        verification_prompt = self.prompt_template.format_map({
+        choices = []
+        for letter, relation in zip(letters, candidates):
+            description = candidate_relation_definition_dict[relation]
+            family = self._relation_family(relation, description)
+            if family:
+                description += f"【语义类别={self._family_label(family)}】"
+            choices.append(f"{letter}. '{relation}': {description}")
+        choices.append(f"{none_letter}. None of the above.")
+        prompt = prompt_template_str.format_map({
             "input_text": input_text_str,
             "query_triplet": query_triplet,
             "query_relation": query_triplet[1],
-            "query_relation_definition": query_relation_definition,
-            "choices": choices,
+            "query_relation_definition": query_definition,
+            "choices": "\n".join(choices),
         })
-
-        print(f"[CoT] Prompt length: {len(verification_prompt)} characters")
-
-       
-        messages = [{"role": "user", "content": verification_prompt}]
-
+        messages = [{"role": "user", "content": prompt}]
         if self.verifier_openai_model is None:
-            # Local model
-            verification_result = llm_utils.generate_completion_transformers(
-                messages,
-                self.verifier_model,
-                self.verifier_tokenizer,
-                answer_prepend="",  # No prepend for CoT
-                max_new_token=self.max_tokens
+            raw = llm_utils.generate_completion_transformers(
+                messages, self.verifier_model, self.verifier_tokenizer,
+                answer_prepend="", max_new_token=self.max_tokens,
             )
         else:
-           
-            verification_result = llm_utils.openai_chat_completion(
-                self.verifier_openai_model,
-                None,
-                messages,
-                max_tokens=self.max_tokens
+            raw = llm_utils.openai_chat_completion(
+                self.verifier_openai_model, None, messages, max_tokens=self.max_tokens
             )
 
-        print(f" LLM output length: {len(verification_result)} characters")
-        print(f" Output preview (first 200 chars):\n{verification_result[:200]}\n...")
+        selected_option = self.extract_final_option(raw, set(letters + [none_letter]))
+        selected_relation = (
+            candidates[letters.index(selected_option)] if selected_option in letters else None
+        )
+        family_override = False
+        if query_family:
+            compatible = [
+                relation for relation in candidates
+                if self._relation_family(relation, self.schema_dict[relation]) == query_family
+            ]
+            selected_family = (
+                self._relation_family(selected_relation, self.schema_dict[selected_relation])
+                if selected_relation in self.schema_dict else None
+            )
+            if len(compatible) == 1 and selected_family != query_family:
+                selected_relation = compatible[0]
+                family_override = True
 
-      
-        reasoning, extracted_letter, confidence = self.extract_cot_answer(verification_result)
-
-        print(f"Extracted answer: '{extracted_letter}'")
-        print(f" Confidence: {confidence}")
-        print(f" Reasoning length: {len(reasoning)} characters")
-
-        if extracted_letter and extracted_letter in choice_letters_list:
-            selected_index = choice_letters_list.index(extracted_letter)
-            selected_relation = candidate_relations[selected_index]
-            canonicalized_triplet[1] = selected_relation
-
-            print(f" Selected option {extracted_letter} → '{selected_relation}'")
-            print(f" ===== Verification Complete =====\n")
-
-            return {
-                'triplet': canonicalized_triplet,
-                'reasoning': reasoning,
-                'confidence': confidence,
-                'raw_output': verification_result,
-                'selected_option': extracted_letter
-            }
-        else:
-            print(f" Failed to map option '{extracted_letter}' to a valid relation")
-            print(f" Valid options were: {choice_letters_list}")
-            print(f" ===== Verification Failed =====\n")
+        self.verification_trace.append({
+            "query_triplet": query_triplet,
+            "candidate_relations": candidates,
+            "raw_output": raw,
+            "selected_option": selected_option,
+            "selected_relation": selected_relation,
+            "family_override": family_override,
+        })
+        if selected_relation is None:
             return None
+        canonical = copy.deepcopy(query_triplet)
+        canonical[1] = selected_relation
+        return canonical
 
-    def canonicalize(
-        self,
-        input_text_str: str,
-        open_triplet: List[str],
-        open_relation_definition_dict: dict,
-        enrich: bool = False,
-    ) -> Tuple[Optional[List[str]], Dict]:
-        print(f"\n ======= Starting Canonicalization =======")
-        print(f" Open triplet: {open_triplet}")
 
-        open_relation = open_triplet[1]
-
-        # Check if already canonical
-        if open_relation in self.schema_dict:
-            print(f" Relation '{open_relation}' already in standard schema, skipping")
-            print(f" ======= Canonicalization Complete (No Change) =======\n")
-            return open_triplet, {
-                'candidates': {},
-                'reasoning': '',
-                'confidence': 1.0
-            }
-
-        candidate_relations = {}
-        candidate_scores = []
-
-       
-        if len(self.schema_dict) != 0:
-            if open_relation not in open_relation_definition_dict:
-                print(f"Relation '{open_relation}' not found in definition dict")
-                verify_result = None
-            else:
-                print(f"Relation definition: {open_relation_definition_dict[open_relation]}")
-
-               
-                candidate_relations, candidate_scores = self.retrieve_similar_relations(
-                    open_relation_definition_dict[open_relation]
-                )
-
-                print(f"Retrieved {len(candidate_relations)} candidates:")
-                for rel, score in zip(candidate_relations.keys(), candidate_scores):
-                    print(f" - {rel}: {score:.4f}")
-
-               
-                verify_result = self.llm_verify(
-                    input_text_str,
-                    open_triplet,
-                    open_relation_definition_dict[open_relation],
-                    candidate_relations,
-                    None,
-                )
-        else:
-            print(f"Target schema is empty, cannot canonicalize")
-            verify_result = None
-
-       
-        if verify_result is not None:
-            canonicalized_triplet = verify_result['triplet']
-            reasoning = verify_result['reasoning']
-            confidence = verify_result['confidence']
-
-            print(f"Canonicalization successful")
-            print(f"Original: {open_triplet[1]} → Canonical: {canonicalized_triplet[1]}")
-        else:
-            canonicalized_triplet = None
-            reasoning = ""
-            confidence = 0.0
-
-            if enrich:
-                print(f"Failed to canonicalize, but enrich=True")
-                print(f"Adding '{open_relation}' to target schema")
-
-                self.schema_dict[open_relation] = open_relation_definition_dict[open_relation]
-
-                # Update embeddings
-                if "sts_query" in self.embedder.prompts:
-                    embedding = self.embedder.encode(
-                        open_relation_definition_dict[open_relation],
-                        prompt_name="sts_query"
-                    )
-                else:
-                    embedding = self.embedder.encode(
-                        open_relation_definition_dict[open_relation]
-                    )
-                self.schema_embedding_dict[open_relation] = embedding
-
-                canonicalized_triplet = open_triplet
-                print(f"Schema enriched, using original triplet")
-            else:
-                print(f" Canonicalization failed, returning None")
-
-        result_info = {
-            'candidates': dict(zip(candidate_relations.keys() if candidate_relations else [],
-                                  candidate_scores if candidate_scores else [])),
-            'reasoning': reasoning,
-            'confidence': confidence
-        }
-
-        print(f"======= Canonicalization Complete =======\n")
-
-        return canonicalized_triplet, result_info
+# Keep the original exported class name for callers that import it directly.
+SchemaCanonicalizer_CoT = SchemaCanonicalizerCoT

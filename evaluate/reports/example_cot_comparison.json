@@ -1,0 +1,182 @@
+{
+  "cases": 3,
+  "same_extraction_and_definitions": true,
+  "baseline": {
+    "canonical_triple_exact": {
+      "correct": 18,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    },
+    "canonical_triple_process_suffix_normalized": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "canonical_relation_exact": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "cot": {
+    "canonical_triple_exact": {
+      "correct": 18,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    },
+    "canonical_triple_process_suffix_normalized": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "canonical_relation_exact": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "cot_decisions": [
+    {
+      "case": 1,
+      "triple_index": 3,
+      "source_relation": "使用",
+      "baseline_relation": "使用刀具",
+      "cot_relation": "使用刀具",
+      "expected_relation": "使用刀具",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 1,
+      "triple_index": 5,
+      "source_relation": "进给率",
+      "baseline_relation": "进给量",
+      "cot_relation": "进给量",
+      "expected_relation": "进给量",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 1,
+      "triple_index": 7,
+      "source_relation": "背吃刀量",
+      "baseline_relation": "切削深度",
+      "cot_relation": "切削深度",
+      "expected_relation": "切削深度",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 2,
+      "triple_index": 1,
+      "source_relation": "内孔表面粗糙度要求",
+      "baseline_relation": "表面粗糙度要求",
+      "cot_relation": "表面粗糙度要求",
+      "expected_relation": "表面粗糙度要求",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 2,
+      "triple_index": 3,
+      "source_relation": "使用砂轮",
+      "baseline_relation": "使用刀具",
+      "cot_relation": "使用刀具",
+      "expected_relation": "使用刀具",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 2,
+      "triple_index": 5,
+      "source_relation": "进给率",
+      "baseline_relation": "进给量",
+      "cot_relation": "进给量",
+      "expected_relation": "进给量",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 2,
+      "triple_index": 7,
+      "source_relation": "进给深度",
+      "baseline_relation": "切削深度",
+      "cot_relation": "切削深度",
+      "expected_relation": "切削深度",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 3,
+      "triple_index": 1,
+      "source_relation": "导轨面平行度要求",
+      "baseline_relation": "几何公差要求",
+      "cot_relation": "几何公差要求",
+      "expected_relation": "几何公差要求",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 3,
+      "triple_index": 3,
+      "source_relation": "使用砂轮",
+      "baseline_relation": "使用刀具",
+      "cot_relation": "使用刀具",
+      "expected_relation": "使用刀具",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 3,
+      "triple_index": 5,
+      "source_relation": "工作台速度",
+      "baseline_relation": "进给速度",
+      "cot_relation": "进给速度",
+      "expected_relation": "进给速度",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    },
+    {
+      "case": 3,
+      "triple_index": 7,
+      "source_relation": "进给深度",
+      "baseline_relation": "切削深度",
+      "cot_relation": "切削深度",
+      "expected_relation": "切削深度",
+      "selected_option": "A",
+      "selected_candidate_rank": 1,
+      "family_override": false
+    }
+  ],
+  "changed_triples": [],
+  "baseline_result": "output\\codex_validated_20260923\\iter0\\result_at_each_stage.json",
+  "cot_result": "output\\example_cot_replay_20260924\\iter0\\result_at_each_stage.json"
+}

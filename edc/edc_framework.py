@@ -1,6 +1,7 @@
 from edc.extract import Extractor
 from edc.schema_definition import SchemaDefiner
 from edc.schema_canonicalization import SchemaCanonicalizer
+from edc.schema_canonicalization_cot import SchemaCanonicalizerCoT
 from edc.entity_extraction import EntityExtractor
 import edc.utils.llm_utils as llm_utils
 from typing import List
@@ -39,6 +40,9 @@ class EDC:
         self.sc_llm_name = edc_configuration["sc_llm"]
         self.sc_embedder_name = edc_configuration["sc_embedder"]
         self.sc_template_file_path = edc_configuration["sc_prompt_template_file_path"]
+        self.sc_cot = bool(edc_configuration.get("sc_cot", False))
+        self.sc_cot_max_tokens = int(edc_configuration.get("sc_cot_max_tokens", 256))
+        self.last_cot_trace_by_entry = []
 
         # Refinement settings
         self.sr_adapter_path = edc_configuration["sr_adapter_path"]
@@ -331,14 +335,17 @@ class EDC:
 
         sc_embedder, _ = self.load_model(self.sc_embedder_name, "sts")
         print(f"......................[DEBUG] 使用的嵌入模型-Embedding model in use: {self.sc_embedder_name}")
+        canonicalizer_type = SchemaCanonicalizerCoT if self.sc_cot else SchemaCanonicalizer
+        canonicalizer_options = {"max_tokens": self.sc_cot_max_tokens} if self.sc_cot else {}
         if not llm_utils.is_model_openai(self.sc_llm_name):
              # 同样修改这里：正确解包元组
                sc_verify_model, sc_verify_tokenizer = self.load_model(self.sc_llm_name, "hf")
-               schema_canonicalizer = SchemaCanonicalizer(
+               schema_canonicalizer = canonicalizer_type(
                     self.schema, 
                     sc_embedder,  # 现在传入的是模型对象而不是元组
                     sc_verify_model, 
-                    sc_verify_tokenizer
+                    sc_verify_tokenizer,
+                    **canonicalizer_options,
                 )
             # sc_verify_model, sc_verify_tokenizer = self.load_model(self.sc_llm_name, "sts")
             # if self.sc_llm_name not in self.loaded_model_dict:
@@ -354,10 +361,11 @@ class EDC:
             # schema_canonicalizer = SchemaCanonicalizer(self.schema, sc_embedder, sc_verify_model, sc_verify_tokenizer)
         else:
             # schema_canonicalizer = SchemaCanonicalizer(self.schema, sc_embedder, verify_openai_model=self.sc_llm_name)
-            schema_canonicalizer = SchemaCanonicalizer(
+            schema_canonicalizer = canonicalizer_type(
             self.schema, 
             sc_embedder,  # 现在传入的是模型对象而不是元组
-            verify_openai_model=self.sc_llm_name
+            verify_openai_model=self.sc_llm_name,
+            **canonicalizer_options,
         )
 
 
@@ -373,8 +381,10 @@ class EDC:
 
         canonicalized_triplets_list = []
         canon_candidate_dict_per_entry_list = []
+        cot_trace_per_entry_list = []
 
         for idx, input_text in enumerate(tqdm(input_text_list)):
+            trace_start = len(schema_canonicalizer.verification_trace) if self.sc_cot else 0
             oie_triplets = oie_triplets_list[idx]
             canonicalized_triplets = []
             sd_dict = schema_definition_dict_list[idx]
@@ -391,10 +401,15 @@ class EDC:
                 print(f"[DEBUG] 候选关系集合: {canon_candidate_dict}")
             canonicalized_triplets_list.append(canonicalized_triplets)
             canon_candidate_dict_per_entry_list.append(canon_candidate_dict_list)
+            if self.sc_cot:
+                cot_trace_per_entry_list.append(
+                    schema_canonicalizer.verification_trace[trace_start:]
+                )
             print(f"[DEBUG] 文本 {idx+1} 的所有标准化三元组: {canonicalized_triplets}")
             logger.debug(f"{input_text}\n, {oie_triplets} ->\n {canonicalized_triplets}")
             logger.debug(f"Retrieved candidate relations {canon_candidate_dict}")
         logger.info("Schema Canonicalization finished.")
+        self.last_cot_trace_by_entry = cot_trace_per_entry_list
 
         if free_model:
             logger.info(f"Freeing model {self.sc_embedder_name, self.sc_llm_name} as it is no longer needed")
@@ -624,6 +639,8 @@ class EDC:
                     "canonicalization_candidates": str(canon_candidate_dict_list[idx]),
                     "schema_canonicalizaiton": canon_triplets_list[idx],
                 }
+                if self.sc_cot:
+                    result_json["canonicalization_reasoning"] = self.last_cot_trace_by_entry[idx]
                 json_results_list.append(result_json)
             # result_at_each_stage_file = open(f"{iteration_result_dir}/result_at_each_stage.json", "w")
             # json.dump(json_results_list, result_at_each_stage_file, indent=4)
