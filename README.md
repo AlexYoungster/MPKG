@@ -69,9 +69,9 @@ MPKG/
 
 ### Prerequisites
 
-- Python 3.9+
-- CUDA-compatible GPU (recommended)
-- Conda (for environment management)
+- Python 3.12
+- NVIDIA GPU with CUDA support (recommended; `run.sh` loads Qwen3-1.7B in 8-bit)
+- Git Bash on Windows when running `run.sh` from Windows
 
 ### Setup
 
@@ -80,9 +80,16 @@ MPKG/
 git clone https://github.com/NKU-IIPLab/MPKG.git
 cd MPKG
 
-# Create conda environment
+# Option A: use a Python virtual environment
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements.txt
+
+# Option B: use Conda
 conda env create -f environment.yml
 conda activate edc
+
+# Run from Git Bash (the script also detects the local .venv)
+bash run.sh
 ```
 
 ### Key Dependencies
@@ -100,6 +107,46 @@ conda activate edc
 ```bash
 # Run with default settings on the example dataset
 bash run.sh
+```
+
+### Batch extraction and compliance report
+
+`batch_extract.py` processes every nonblank line of `datasets/TestProcess.txt` (400 English texts by default). It uses a relation schema rather than the mechanical concept taxonomy. Each batch writes its stage result under `chunks/`; completed batches are reused on resume. A failed batch is split to isolate the failing source line.
+
+From PowerShell in the project directory:
+
+```powershell
+.venv\Scripts\python.exe -X utf8 batch_extract.py --input datasets\TestProcess.txt --schema schemas\process_relations_en.csv --sd-mode schema --output-dir output\testprocess_full
+```
+
+If interrupted, rerun the same command with `--resume` appended. The script checks the source, schema, prompts, models, limit and batch size against `manifest.json` before resuming. Use `--chunk-size 10` to set the batch size (10 is the default), or `--max-records 1` for a model smoke test in a **separate** output directory.
+
+The default `--sd-mode model` asks Qwen to generalize relation definitions from the extracted instances. The full-dataset command uses `--sd-mode schema`: it uses the target schema's general definitions for matching labels and abstracts unmatched labels from their extracted instances, avoiding the extra SD generation pass. Add `--offline` when both models are already cached locally and Hugging Face is unreachable. Use the same `--sd-mode` value when resuming.
+
+For the three Chinese example texts, supply the corresponding schema and OIE prompts:
+
+```powershell
+.venv\Scripts\python.exe -X utf8 batch_extract.py --input datasets\example.txt --schema schemas\example_schema.csv --oie-prompt prompt_templates\oie_template.txt --oie-examples few_shot_examples\example\oie_few_shot_examples.txt --output-dir output\example_batch
+```
+
+Batch output files:
+
+| File | Contents |
+|------|----------|
+| `manifest.json` | Source and configuration fingerprints for safe resume |
+| `chunks/*/iter0/result_at_each_stage.json` | Raw extraction, definitions, candidates and canonicalization for each batch |
+| `records.jsonl` | One entry per original source line, including line number, counts and quality flags |
+| `triples.jsonl` | Canonical triples with source line and literal source-match indicators |
+| `review.jsonl` | Rows needing review, including blank input, pipeline errors and abstentions |
+| `summary.json` | Totals, rates, issue counts and relation frequencies |
+| `batch.log` | Model and pipeline output |
+
+The reported **structural and schema compliance rate** checks triple shape, nonempty fields, relation membership in the selected schema, consistency between extraction and canonicalization, and duplicate triples. Literal subject/object matching is a separate review signal because valid paraphrases and implicit subjects may not appear verbatim. These checks cannot establish semantic correctness or extraction recall. Use manually labeled reference triples and `evaluate/benchmark_metrics.py` when accuracy metrics are required.
+
+To inspect an existing stage result without rerunning a model:
+
+```powershell
+.venv\Scripts\python.exe -X utf8 evaluate\compliance_report.py --result output\codex_validated_20260923\iter0\result_at_each_stage.json --schema schemas\example_schema.csv --output-dir output\example_compliance_report
 ```
 
 ### Custom Run
@@ -120,10 +167,10 @@ python run.py \
 
 | Argument | Description | Default |
 |----------|-------------|---------|
-| `--oie_llm` | LLM for Open Information Extraction | — |
-| `--sd_llm` | LLM for Schema Definition | — |
-| `--sc_llm` | LLM for Schema Canonicalization verification | — |
-| `--sc_embedder` | Sentence Transformer for schema retrieval | — |
+| `--oie_llm` | LLM for Open Information Extraction | `Qwen/Qwen3-1.7B` |
+| `--sd_llm` | LLM for Schema Definition | `Qwen/Qwen3-1.7B` |
+| `--sc_llm` | LLM for Schema Canonicalization verification | `Qwen/Qwen3-1.7B` |
+| `--sc_embedder` | Sentence Transformer for schema retrieval | `intfloat/multilingual-e5-small` |
 | `--sr_embedder` | Embedding model for Schema Retriever (required when `--refinement_iterations > 0`) | — |
 | `--ee_llm` | LLM for Entity Extraction (required when `--refinement_iterations > 0`) | — |
 | `--input_text_file_path` | Input text file (one text per line) | `./datasets/example.txt` |
@@ -136,6 +183,8 @@ python run.py \
 | `--sr_adapter_path` | Path to optional adapter for Schema Retriever | `None` |
 
 > **Note:** Prompt templates and few-shot examples for each stage can be overridden via `--<stage>_prompt_template_file_path` and `--<stage>_few_shot_example_file_path` arguments (e.g. `--oie_prompt_template_file_path`, `--sd_few_shot_example_file_path`). Defaults point to files under `prompt_templates/` and `few_shot_examples/example/`.
+
+`run.sh` uses the same defaults. Override `OIE_LLM`, `SD_LLM`, `SC_LLM`, `SC_EMBEDDER`, `DATASET`, or `OUTPUT_DIR` in the shell environment to customize a run. It defaults `HF_ENDPOINT` to `https://hf-mirror.com` for networks that cannot reach Hugging Face directly; set `HF_ENDPOINT=https://huggingface.co` to override it. The script allows longer Hugging Face metadata and download timeouts. Model files are cached under `.cache/models`; set `MPKG_MODEL_CACHE` to use another location.
 
 ### CoT-Enhanced Canonicalization
 
@@ -215,6 +264,12 @@ python evaluate/evaluation_script.py \
 ```
 
 The script reports **Precision**, **Recall**, and **F1** for triplet-level evaluation using [nervaluate](https://github.com/MantisAI/nervaluate). The evaluation script is adapted from the [WebNLG evaluation script](https://github.com/WebNLG/WebNLG-Text-to-triples).
+
+For the checked-in three-text example benchmark, `evaluate/benchmark_metrics.py` reports exact extraction and canonical relation/triple scores, candidate Recall@5, and a separately labeled score normalized for the documented `内圆磨`/`内圆磨加工` entity variant. The manually reviewed references are in `evaluate/references/example_gold.json`; the baseline-to-improved run comparison is in `evaluate/reports/example_benchmark_comparison.json`:
+
+```bash
+python evaluate/benchmark_metrics.py --result ./output/<run-directory>/iter0/result_at_each_stage.json
+```
 
 ## License
 

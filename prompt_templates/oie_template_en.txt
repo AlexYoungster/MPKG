@@ -1,0 +1,8 @@
+Extract every fact explicitly stated in the machining text as [subject, relation, object] triples.
+Use concise, reusable English relation names. Preserve the subject to object direction, entity boundaries, qualifiers, values, and units. Separate distinct process parameters and quality requirements. Do not infer unstated facts. Output only a Python-style list of triples.
+
+Examples:
+{few_shot_examples}
+
+Text: {input_text}
+Triplets:

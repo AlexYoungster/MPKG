@@ -9,15 +9,13 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 if __name__ == "__main__":
     parser = ArgumentParser()
-    # MistralMODEL_BASE_PATH = "/root/autodl-tmp/models"
-    MistralMODEL_BASE_PATH = "/root/autodl-tmp/qw"
-    # e5MODEL_BASE_PATH = "/root/autodl-tmp/models/e5"
-    e5MODEL_BASE_PATH = "/root/autodl-tmp/bge"
+    DEFAULT_LLM = "Qwen/Qwen3-1.7B"
+    DEFAULT_EMBEDDER = "intfloat/multilingual-e5-small"
     current_time = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
     # OIE module setting
     parser.add_argument(
-        "--oie_llm",   default= MistralMODEL_BASE_PATH, help="LLM used for open information extraction."
+        "--oie_llm", default=DEFAULT_LLM, help="LLM used for open information extraction."
     )
     parser.add_argument(
         "--oie_prompt_template_file_path",
@@ -32,7 +30,7 @@ if __name__ == "__main__":
 
     # Schema Definition setting
     parser.add_argument(
-        "--sd_llm", default=MistralMODEL_BASE_PATH, help="LLM used for schema definition."
+        "--sd_llm", default=DEFAULT_LLM, help="LLM used for schema definition."
     )
     parser.add_argument(
         "--sd_prompt_template_file_path",
@@ -48,11 +46,11 @@ if __name__ == "__main__":
     # Schema Canonicalization setting
     parser.add_argument(
         "--sc_llm",
-        default=MistralMODEL_BASE_PATH,
+        default=DEFAULT_LLM,
         help="LLM used for schema canonicaliztion verification.",
     )
     parser.add_argument(
-        "--sc_embedder", default=e5MODEL_BASE_PATH, help="Embedder used for schema canonicalization. Has to be a sentence transformer. Please refer to https://sbert.net/"
+        "--sc_embedder", default=DEFAULT_EMBEDDER, help="Embedder used for schema canonicalization. Has to be a sentence transformer. Please refer to https://sbert.net/"
     )
     parser.add_argument(
         "--sc_prompt_template_file_path",
@@ -63,7 +61,7 @@ if __name__ == "__main__":
     # Refinement setting
     parser.add_argument("--sr_adapter_path", default=None, help="Path to adapter of schema retriever.")
     parser.add_argument(
-        "--sr_embedder", default=e5MODEL_BASE_PATH, help="Embedding model used for schema retriever. Has to be a sentence transformer. Please refer to https://sbert.net/"
+        "--sr_embedder", default=DEFAULT_EMBEDDER, help="Embedding model used for schema retriever. Has to be a sentence transformer. Please refer to https://sbert.net/"
     )
     parser.add_argument(
         "--oie_refine_prompt_template_file_path",
@@ -76,7 +74,7 @@ if __name__ == "__main__":
         help="Few shot examples used for refined open information extraction.",
     )
     parser.add_argument(
-        "--ee_llm", default=MistralMODEL_BASE_PATH, help="LLM used for entity extraction."
+        "--ee_llm", default=DEFAULT_LLM, help="LLM used for entity extraction."
     )
     parser.add_argument(
         "--ee_prompt_template_file_path",

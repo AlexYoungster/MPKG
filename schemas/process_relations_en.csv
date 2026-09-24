@@ -1,0 +1,49 @@
+Material,The subject workpiece or part is made from the object material.
+Operation,The subject workpiece or part undergoes the object manufacturing operation.
+Process Sequence,The subject workpiece or process follows the object ordered set of operations.
+Equipment,The subject operation uses the object machine or equipment.
+Tool,The subject operation uses the object cutting or forming tool.
+Grinding Wheel,The subject grinding operation uses the object grinding wheel.
+Abrasive,The subject process uses the object abrasive material or medium.
+Tool Material,The subject tool is made from the object material.
+Tool Coating,The subject tool has the object coating.
+Tool Diameter,The subject tool has the object diameter.
+Tool Geometry,The subject tool has the object geometric feature.
+Cutting Speed,The subject operation has the object relative cutting velocity at the workpiece surface.
+Spindle Speed,The subject operation has the object rotational speed of its spindle.
+Workpiece Speed,The subject operation has the object rotational or linear speed of the workpiece.
+Wheel Speed,The subject grinding operation has the object rotational or peripheral speed of the wheel.
+Table Speed,The subject operation has the object translational speed of its work table.
+Feed Rate,The subject operation has the object feed distance per revolution or stroke.
+Feed Speed,The subject operation has the object feed distance per unit time.
+Feed per Tooth,The subject milling operation has the object feed distance per tool tooth.
+Infeed Rate,The subject grinding operation has the object infeed distance per revolution or unit time.
+Depth of Cut,The subject operation has the object depth of material removed per cutting pass.
+Step Over,The subject operation has the object lateral displacement between adjacent passes.
+Coolant,The subject operation uses the object cooling medium or method.
+Coolant Pressure,The subject operation supplies coolant at the object pressure.
+Coolant Flow Rate,The subject operation supplies coolant at the object volume flow rate.
+Pressure,The subject process applies or maintains the object pressure.
+Temperature,The subject process applies or maintains the object temperature.
+Voltage,The subject process applies or maintains the object electrical potential.
+Current,The subject process applies or maintains the object electrical current.
+Power,The subject process applies or maintains the object power.
+Frequency,The subject process applies or maintains the object oscillation or pulse frequency.
+Amplitude,The subject process applies or maintains the object vibration amplitude.
+Surface Roughness,The subject workpiece or processed surface has the object roughness value or requirement.
+Dimensional Tolerance,The subject workpiece or feature has the object allowable dimensional deviation.
+Geometric Tolerance,The subject workpiece or feature has the object shape orientation or position tolerance.
+Position Accuracy,The subject workpiece or process has the object position accuracy requirement or result.
+Hardness,The subject workpiece or layer has the object hardness requirement or result.
+Coating Thickness,The subject coated workpiece has the object coating thickness.
+Hold Time,The subject process holds a condition for the object duration.
+Cycle Time,The subject operation takes the object duration per cycle.
+Pitch,The subject thread or operation has the object pitch.
+Diameter,The subject workpiece or feature has the object diameter.
+Width,The subject workpiece or feature has the object width.
+Angle,The subject workpiece or process has the object angular parameter.
+Quality Grade,The subject workpiece or process has the object quality classification.
+Dressing Method,The subject grinding operation uses the object wheel dressing method.
+Control Method,The subject operation uses the object control strategy or procedure.
+Material Removal Rate,The subject operation removes material at the object rate.
+Purpose,The subject operation or condition serves the object stated purpose.

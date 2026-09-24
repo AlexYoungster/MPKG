@@ -1,0 +1,11 @@
+Example 1:
+Text: A copper housing is bored with a carbide insert at a spindle speed of 900 rpm and a feed rate of 0.08 mm/rev.
+Triplets: [['copper housing', 'Operation', 'boring'], ['boring', 'Tool', 'carbide insert'], ['boring', 'Spindle Speed', '900 rpm'], ['boring', 'Feed Rate', '0.08 mm/rev']]
+
+Example 2:
+Text: Fine grinding uses a ceramic wheel and flood coolant; the finished face has a surface roughness of 0.6 μm Ra.
+Triplets: [['fine grinding', 'Grinding Wheel', 'ceramic wheel'], ['fine grinding', 'Coolant', 'flood coolant'], ['finished face', 'Surface Roughness', '0.6 μm Ra']]
+
+Example 3:
+Text: Laser processing of a nickel sheet runs at 2 kW with a table speed of 12 m/min and achieves a width tolerance of 0.03 mm.
+Triplets: [['nickel sheet', 'Operation', 'laser processing'], ['laser processing', 'Power', '2 kW'], ['laser processing', 'Table Speed', '12 m/min'], ['nickel sheet', 'Dimensional Tolerance', '0.03 mm']]

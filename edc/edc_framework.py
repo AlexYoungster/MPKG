@@ -149,20 +149,20 @@ class EDC:
     def load_model(self, model_name, model_type):
         logger.info(f" [Start]-load_model....................................................")  
         import torch
-        assert model_type in ["sts", "hf"]  # Either a sentence transformer or a huggingface LLM
-        # 根据模型名称决定使用哪个缓存目录
-        if "bge" in model_name.lower():
-            cache_dir = '/root/autodl-tmp/bge'
-            logger.info(f" Bge_Model loading.....................................................")  
+        from pathlib import Path
 
-        # 为E5模型设置特定的环境变量
-            os.environ['SENTENCE_TRANSFORMERS_HOME'] = cache_dir
-        else:
-            cache_dir = '/root/autodl-tmp/qw'
-        # 设置模型缓存路径
-        os.environ['TRANSFORMERS_CACHE'] = cache_dir
-        os.environ['HF_HOME'] = cache_dir
-        os.environ['SENTENCE_TRANSFORMERS_HOME'] = cache_dir      
+        assert model_type in ["sts", "hf"]  # Either a sentence transformer or a huggingface LLM
+        cache_root = Path(
+            os.environ.get(
+                "MPKG_MODEL_CACHE",
+                Path(__file__).resolve().parents[1] / ".cache" / "models",
+            )
+        ).expanduser()
+        cache_dir = cache_root / ("sentence-transformers" if model_type == "sts" else "transformers")
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        os.environ["HF_HOME"] = str(cache_root)
+        os.environ["TRANSFORMERS_CACHE"] = str(cache_dir)
+        os.environ["SENTENCE_TRANSFORMERS_HOME"] = str(cache_root / "sentence-transformers")
         # 使用模型名称作为键，不再将缓存路径添加到键名中
         model_key = model_name
         if model_key in self.loaded_model_dict:
@@ -183,7 +183,7 @@ class EDC:
                 model = AutoModelForCausalLM.from_pretrained(
                     model_name, 
                     device_map="auto", 
-                    cache_dir=cache_dir,
+                    cache_dir=str(cache_dir),
                     quantization_config=quantization_config,  # <-- 新增: 使用量化配置/可以选择不用量化
                     torch_dtype=torch.float16
                 )
@@ -204,14 +204,7 @@ class EDC:
                 from sentence_transformers import SentenceTransformer
                 import torch
                 
-                # 为E5模型指定使用第二张GPU
-                if "e5" in model_name.lower():
-                     device = "cuda:1"  # 使用第二张GPU
-                     logger.info(f"出现现存不足情况.....正为BGE模型指定使用第二张GPU: {device}--Insufficient memory detected..... Assigning the second GPU for BGE model: {device}")
-                else:
-                    device = "cuda:0"  # 默认使用第一张GPU
-
-                model = SentenceTransformer(model_name, cache_folder=cache_dir)
+                model = SentenceTransformer(model_name, cache_folder=str(cache_dir))
                 self.loaded_model_dict[model_key] = (model,None)
 
         return self.loaded_model_dict[model_key]

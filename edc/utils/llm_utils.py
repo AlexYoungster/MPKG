@@ -141,7 +141,10 @@ def generate_completion_transformers(
     device = model.device
     tokenizer.pad_token = tokenizer.eos_token
 
-    messages = tokenizer.apply_chat_template(input, add_generation_prompt=True, tokenize=False) + answer_prepend
+    chat_template_options = {"add_generation_prompt": True, "tokenize": False}
+    if getattr(getattr(model, "config", None), "model_type", None) == "qwen3":
+        chat_template_options["enable_thinking"] = False
+    messages = tokenizer.apply_chat_template(input, **chat_template_options) + answer_prepend
 
     model_inputs = tokenizer(messages, return_tensors="pt", padding=True, add_special_tokens=False).to(device)
 

@@ -1,0 +1,167 @@
+{
+  "benchmark": "datasets/example.txt",
+  "case_count": 3,
+  "gold": "evaluate/references/example_gold.json",
+  "baseline_run": "output/example_target_alignment_20260923_200627/iter0/result_at_each_stage.json",
+  "improved_run": "output/codex_validated_20260923/iter0/result_at_each_stage.json",
+  "normalization_policy": {
+    "entity_aliases": {
+      "内圆磨": "内圆磨加工"
+    },
+    "relation_aliases": {
+      "制造材料": "材料"
+    },
+    "note": "Exact scores remain reported; aliases are used only in separately labeled normalized scores."
+  },
+  "baseline": {
+    "cases": 3,
+    "extraction_entity_pair_exact": {
+      "correct": 23,
+      "predicted": 23,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 0.9583333333333334,
+      "f1": 0.9787234042553191
+    },
+    "extraction_entity_pair_process_suffix_normalized": {
+      "correct": 23,
+      "predicted": 23,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 0.9583333333333334,
+      "f1": 0.9787234042553191
+    },
+    "extraction_relation_exact": {
+      "correct": 23,
+      "predicted": 23,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 0.9583333333333334,
+      "f1": 0.9787234042553191
+    },
+    "extraction_triple_exact": {
+      "correct": 23,
+      "predicted": 23,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 0.9583333333333334,
+      "f1": 0.9787234042553191
+    },
+    "extraction_triple_entity_and_relation_alias_normalized": {
+      "correct": 23,
+      "predicted": 23,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 0.9583333333333334,
+      "f1": 0.9787234042553191
+    },
+    "canonical_triple_exact": {
+      "correct": 18,
+      "predicted": 21,
+      "gold": 24,
+      "precision": 0.8571428571428571,
+      "recall": 0.75,
+      "f1": 0.7999999999999999
+    },
+    "canonical_triple_process_suffix_normalized": {
+      "correct": 18,
+      "predicted": 21,
+      "gold": 24,
+      "precision": 0.8571428571428571,
+      "recall": 0.75,
+      "f1": 0.7999999999999999
+    },
+    "canonical_relation_exact": {
+      "correct": 19,
+      "predicted": 21,
+      "gold": 24,
+      "precision": 0.9047619047619048,
+      "recall": 0.7916666666666666,
+      "f1": 0.8444444444444444
+    },
+    "candidate_recall": {
+      "mapped_relations": 11,
+      "recall_at_5": 0.7272727272727273,
+      "recall_at_8": 0.7272727272727273
+    }
+  },
+  "improved": {
+    "cases": 3,
+    "extraction_entity_pair_exact": {
+      "correct": 18,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    },
+    "extraction_entity_pair_process_suffix_normalized": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "extraction_relation_exact": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "extraction_triple_exact": {
+      "correct": 18,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    },
+    "extraction_triple_entity_and_relation_alias_normalized": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "canonical_triple_exact": {
+      "correct": 18,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    },
+    "canonical_triple_process_suffix_normalized": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "canonical_relation_exact": {
+      "correct": 24,
+      "predicted": 24,
+      "gold": 24,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "candidate_recall": {
+      "mapped_relations": 11,
+      "recall_at_5": 1.0,
+      "recall_at_8": 1.0
+    }
+  },
+  "change_percentage_points": {
+    "candidate_recall_at_5": 27.27,
+    "canonical_relation_exact_f1": 15.56,
+    "canonical_triple_exact_f1": -5.0,
+    "canonical_triple_normalized_f1": 20.0,
+    "extraction_triple_normalized_f1": 2.13
+  }
+}
