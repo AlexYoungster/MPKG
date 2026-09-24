@@ -1,0 +1,4 @@
+{"source_index": 0, "source_line": 1, "triple_index": 0, "subject": "face milling operation", "relation": "Cutting Speed", "object": "180 m/min", "relation_in_schema": true, "subject_verbatim": true, "object_verbatim": true}
+{"source_index": 0, "source_line": 1, "triple_index": 1, "subject": "face milling operation", "relation": "Feed Rate", "object": "0.2 mm/rev", "relation_in_schema": true, "subject_verbatim": true, "object_verbatim": true}
+{"source_index": 0, "source_line": 1, "triple_index": 2, "subject": "face milling operation", "relation": "Depth of Cut", "object": "2.5 mm", "relation_in_schema": true, "subject_verbatim": true, "object_verbatim": true}
+{"source_index": 0, "source_line": 1, "triple_index": 3, "subject": "face milling operation", "relation": "Tool", "object": "carbide tool", "relation_in_schema": true, "subject_verbatim": true, "object_verbatim": true}

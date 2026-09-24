@@ -1,0 +1,484 @@
+[
+    {
+        "index": 0,
+        "input_text": "The ultrasonic assisted grinding of PCD tools used resin-bonded diamond wheels at 30 m/s, with 35kHz vibration reducing grinding forces.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ultrasonic assisted grinding",
+                "Tool",
+                "PCD tools"
+            ],
+            [
+                "ultrasonic assisted grinding",
+                "Grinding Wheel",
+                "resin-bonded diamond wheels"
+            ],
+            [
+                "ultrasonic assisted grinding",
+                "Grinding Power",
+                "30 m/s"
+            ],
+            [
+                "ultrasonic assisted grinding",
+                "Vibration Frequency",
+                "35kHz"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Grinding Wheel": "The subject grinding operation uses the object grinding wheel.",
+            "Grinding Power": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Grinding Power”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Vibration Frequency": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration Frequency”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Power': 0.9691863264323545, 'Grinding Wheel': 0.9506172839506172, 'Cutting Speed': 0.8740794297791581, 'Spindle Speed': 0.842247606448844, 'Wheel Speed': 0.8244561614187783}, {'Process Sequence': 1.0805258445258445, 'Position Accuracy': 1.0268858564649261, 'Amplitude': 1.0104211981137836, 'Feed Rate': 1.0075430218918497, 'Infeed Rate': 1.0046445309121748}]",
+        "schema_canonicalizaiton": [
+            [
+                "ultrasonic assisted grinding",
+                "Tool",
+                "PCD tools"
+            ],
+            [
+                "ultrasonic assisted grinding",
+                "Grinding Wheel",
+                "resin-bonded diamond wheels"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Precision boring of engine blocks used CBN tools with 0.1 mm/rev feed, implementing active damping for 0.005 mm cylindricity.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision boring",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "precision boring",
+                "Feed Rate",
+                "0.1 mm/rev"
+            ],
+            [
+                "precision boring",
+                "Active Damping",
+                "0.005 mm cylindricity"
+            ],
+            [
+                "precision boring",
+                "Process",
+                "engine blocks"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Active Damping": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Active Damping”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Amplitude': 0.9413762901878352, 'Diameter': 0.9082296466973886, 'Abrasive': 0.8840981127730237, 'Position Accuracy': 0.8608467850084699, 'Tool Diameter': 0.8590692876049891}, {'Process Sequence': 0.9824291300097752, 'Pressure': 0.921815258193959, 'Surface Roughness': 0.8578902377815423, 'Angle': 0.8503803186061252, 'Power': 0.8341668384609562}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision boring",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "precision boring",
+                "Feed Rate",
+                "0.1 mm/rev"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The electron beam welding of transmission gears maintained 90kV acceleration voltage in 10^-5 mbar vacuum, with beam focusing for full penetration.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "electron beam welding",
+                "Acceleration Voltage",
+                "90kV"
+            ],
+            [
+                "electron beam welding",
+                "Vacuum",
+                "10^-5 mbar"
+            ],
+            [
+                "electron beam welding",
+                "Beam Focusing",
+                "full penetration"
+            ]
+        ],
+        "schema_definition": {
+            "Acceleration Voltage": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Acceleration Voltage”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Vacuum": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vacuum”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Beam Focusing": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Beam Focusing”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Position Accuracy': 1.1357928746353794, 'Geometric Tolerance': 1.0267622823911484, 'Cycle Time': 1.0005017873000468, 'Table Speed': 1.000133925172445, 'Voltage': 0.9936507936507936}, {'Voltage': 0.9141101020632133, 'Angle': 0.864347437693026, 'Material': 0.858636517123712, 'Power': 0.841382627176745, 'Current': 0.8379940124974559}, {'Position Accuracy': 1.063173534501406, 'Cutting Speed': 1.0402631527813175, 'Grinding Wheel': 1.0252948008145601, 'Angle': 0.9976227294377451, 'Dressing Method': 0.9931312710060338}]",
+        "schema_canonicalizaiton": [
+            [
+                "electron beam welding",
+                "Voltage",
+                "90kV"
+            ],
+            [
+                "electron beam welding",
+                "Current",
+                "10^-5 mbar"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Micro-turning of ceramic components used PCD tools with 0.05 mm nose radius, maintaining 0.02 mm depth of cut at 3000 rpm.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-turning",
+                "Tool",
+                "PCD tools"
+            ],
+            [
+                "micro-turning",
+                "Nose Radius",
+                "0.05 mm"
+            ],
+            [
+                "micro-turning",
+                "Depth Of Cut",
+                "0.02 mm"
+            ],
+            [
+                "micro-turning",
+                "Spindle Speed",
+                "3000 rpm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Nose Radius": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Nose Radius”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle."
+        },
+        "canonicalization_candidates": "[{}, {'Quality Grade': 1.1041196997446998, 'Feed Rate': 1.0412684988921441, 'Purpose': 1.0158748180936212, 'Infeed Rate': 1.0089528287434215, 'Position Accuracy': 1.007583315377433}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1501771867245658, 'Step Over': 1.0364647757582541, 'Dressing Method': 1.011357701228379, 'Angle': 0.9719853228962818}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-turning",
+                "Tool",
+                "PCD tools"
+            ],
+            null,
+            null,
+            [
+                "micro-turning",
+                "Spindle Speed",
+                "3000 rpm"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The laser heat treatment of crankshafts used 3kW diode laser with pyrometer control, maintaining 1200°C surface temperature for 1 mm case depth.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser heat treatment",
+                "Power",
+                "3kW"
+            ],
+            [
+                "laser heat treatment",
+                "Control",
+                "pyrometer"
+            ],
+            [
+                "laser heat treatment",
+                "Surface Temperature",
+                "1200°C"
+            ],
+            [
+                "laser heat treatment",
+                "Case Depth",
+                "1 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Power": "The subject process applies or maintains the object power.",
+            "Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Temperature": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Temperature”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Case Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Case Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Control Method': 0.9584415584415584, 'Coolant': 0.8719508967492838, 'Diameter': 0.8712981382240065, 'Geometric Tolerance': 0.8465352595581784, 'Angle': 0.827234207126343}, {'Temperature': 1.18, 'Coolant Pressure': 1.0515613099771517, 'Geometric Tolerance': 1.0093042908459444, 'Cycle Time': 1.0069482983409574, 'Cutting Speed': 0.9883448575259468}, {'Depth of Cut': 0.9257731958762887, 'Width': 0.9118036389887916, 'Diameter': 0.8701044105242742, 'Step Over': 0.8681438383614124, 'Tool Diameter': 0.8543172659658405}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser heat treatment",
+                "Power",
+                "3kW"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Precision grinding of silicon nitride balls employed V-groove lapping with 600-grit diamond paste, achieving 0.05 μm sphericity.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "silicon nitride balls",
+                "Operation",
+                "precision grinding"
+            ],
+            [
+                "precision grinding",
+                "Lapping Method",
+                "V-groove lapping"
+            ],
+            [
+                "V-groove lapping",
+                "Lapping Material",
+                "600-grit diamond paste"
+            ],
+            [
+                "silicon nitride balls",
+                "Surface Sphericity",
+                "0.05 μm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Lapping Method": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Lapping Method”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Lapping Material": "主体类别=workpiece or part；方向=主体→客体；客体类别=material type；谓词语义=states the material from which the subject is made；范围边界=workpiece material property。",
+            "Surface Sphericity": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Sphericity”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Dressing Method': 0.9082010582010581, 'Control Method': 0.884820621830834, 'Tool Coating': 0.8585295348251455, 'Tool Geometry': 0.857327261371379, 'Cutting Speed': 0.8333070290864009}, {'Material': 1.18, 'Tool Material': 1.1365412186379928, 'Diameter': 0.9335104505511884, 'Coating Thickness': 0.8711798491828722, 'Tool Diameter': 0.8126853856020523}, {'Surface Roughness': 0.9824291300097752, 'Geometric Tolerance': 0.9044162311444518, 'Table Speed': 0.8713652302401776, 'Position Accuracy': 0.8707879924489514, 'Quality Grade': 0.8668358286339795}]",
+        "schema_canonicalizaiton": [
+            [
+                "silicon nitride balls",
+                "Operation",
+                "precision grinding"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The electrochemical machining of turbine disks used copper electrodes at 30V DC, achieving 0.03 mm profile accuracy through shaped tools.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "turbine disk",
+                "Operation",
+                "electrochemical machining"
+            ],
+            [
+                "electrochemical machining",
+                "Electrode Material",
+                "copper"
+            ],
+            [
+                "electrochemical machining",
+                "Voltage",
+                "30V DC"
+            ],
+            [
+                "electrochemical machining",
+                "Profile Accuracy",
+                "0.03 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Electrode Material": "主体类别=workpiece or part；方向=主体→客体；客体类别=material type；谓词语义=states the material from which the subject is made；范围边界=workpiece material property。",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Profile Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Profile Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Material': 1.18, 'Tool Material': 1.1365412186379928, 'Diameter': 0.8951612231854167, 'Tool Diameter': 0.8141665789165791, 'Coating Thickness': 0.8036636537192399}, {}, {'Position Accuracy': 1.18, 'Quality Grade': 1.0642688917165326, 'Process Sequence': 1.0370288426433005, 'Angle': 1.0074264127848587, 'Geometric Tolerance': 0.9976405285780285}]",
+        "schema_canonicalizaiton": [
+            [
+                "turbine disk",
+                "Operation",
+                "electrochemical machining"
+            ],
+            [
+                "electrochemical machining",
+                "Material",
+                "copper"
+            ],
+            [
+                "electrochemical machining",
+                "Voltage",
+                "30V DC"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Ultrasonic assisted drilling of composite stacks used carbide tools at 15,000 rpm with 20kHz vibration, reducing delamination.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ultrasonic assisted drilling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "ultrasonic assisted drilling",
+                "Vibration Frequency",
+                "20kHz"
+            ],
+            [
+                "ultrasonic assisted drilling",
+                "Spindle Speed",
+                "15,000 rpm"
+            ],
+            [
+                "composite stacks",
+                "Delamination Reduction",
+                "reducing delamination"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Vibration Frequency": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration Frequency”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Delamination Reduction": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Delamination Reduction”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Process Sequence': 1.0846152598103629, 'Position Accuracy': 1.039308974689705, 'Amplitude': 1.01462326470391, 'Feed Rate': 1.0097261520609133, 'Geometric Tolerance': 0.9972151946598939}, {}, {'Dimensional Tolerance': 0.9466645216645216, 'Material Removal Rate': 0.8990710297766751, 'Diameter': 0.8634871794454431, 'Position Accuracy': 0.8564886820188343, 'Tool Coating': 0.8475684277563873}]",
+        "schema_canonicalizaiton": [
+            [
+                "ultrasonic assisted drilling",
+                "Tool",
+                "carbide tools"
+            ],
+            null,
+            [
+                "ultrasonic assisted drilling",
+                "Spindle Speed",
+                "15,000 rpm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The selective laser melting of titanium implants used 400W fiber laser with 40 μm layers, maintaining build chamber at 150°C.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "selective laser melting",
+                "Tool",
+                "400W fiber laser"
+            ],
+            [
+                "selective laser melting",
+                "Layer Thickness",
+                "40 μm"
+            ],
+            [
+                "selective laser melting",
+                "Build Chamber Temperature",
+                "150°C"
+            ],
+            [
+                "selective laser melting",
+                "Process",
+                "400W fiber laser"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Layer Thickness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Layer Thickness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Build Chamber Temperature": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Build Chamber Temperature”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Coating Thickness': 0.9694444444444444, 'Hardness': 0.9601226170782623, 'Surface Roughness': 0.9316690345794071, 'Geometric Tolerance': 0.8749067814550484, 'Diameter': 0.8555355872057241}, {'Temperature': 1.170625, 'Coolant Pressure': 1.0246370781322238, 'Hold Time': 0.9998234437097784, 'Geometric Tolerance': 0.9967416158536586, 'Material Removal Rate': 0.9772414586573004}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.9029820090303962, 'Angle': 0.8441699113663061, 'Surface Roughness': 0.8412538741451785, 'Temperature': 0.8404101264372432}]",
+        "schema_canonicalizaiton": [
+            [
+                "selective laser melting",
+                "Tool",
+                "400W fiber laser"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Precision honing of valve guides used diamond stones with 45° crosshatch, achieving 0.4 μm Ra finish through three-stage process.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision honing",
+                "Tool",
+                "diamond stones"
+            ],
+            [
+                "precision honing",
+                "Crosshatch Angle",
+                "45°"
+            ],
+            [
+                "precision honing",
+                "Finish",
+                "0.4 μm Ra"
+            ],
+            [
+                "precision honing",
+                "Process",
+                "three-stage process"
+            ],
+            [
+                "precision honing",
+                "Method",
+                "diamond stones"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Crosshatch Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Crosshatch Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Method": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Method”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Angle': 1.0, 'Pitch': 0.9020343196195807, 'Position Accuracy': 0.9001823154490108, 'Geometric Tolerance': 0.8740241610111014, 'Coating Thickness': 0.8577782074413673}, {'Pitch': 1.0089124288100462, 'Quality Grade': 0.9954041528988373, 'Angle': 0.9891368906794753, 'Grinding Wheel': 0.9842080077042459, 'Cutting Speed': 0.9699510762024686}, {'Process Sequence': 0.9824291300097752, 'Pressure': 0.9271870781548202, 'Angle': 0.8482474514732579, 'Surface Roughness': 0.8463862460018897, 'Temperature': 0.8328987861436378}, {'Diameter': 0.9351765422077922, 'Control Method': 0.9200268038249783, 'Dressing Method': 0.8881164156152799, 'Tool Diameter': 0.8716865056773566, 'Tool Geometry': 0.8621453774063551}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision honing",
+                "Tool",
+                "diamond stones"
+            ],
+            null,
+            null,
+            null,
+            [
+                "precision honing",
+                "Dressing Method",
+                "diamond stones"
+            ]
+        ]
+    }
+]

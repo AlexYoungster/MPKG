@@ -1,0 +1,510 @@
+[
+    {
+        "index": 0,
+        "input_text": "The deep hole drilling of gun barrels used carbide tools with 120 bar coolant pressure, maintaining 0.02 mm/rev feed for straightness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "deep hole drilling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant Pressure",
+                "120 bar"
+            ],
+            [
+                "deep hole drilling",
+                "Feed Rate",
+                "0.02 mm/rev"
+            ],
+            [
+                "deep hole drilling",
+                "Straightness",
+                "maintaining 0.02 mm/rev"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Straightness": "主体类别=加工过程；方向=主体→客体；客体类别=每转进给参数；谓词语义=表示刀具相对于工件的每转进给距离；范围边界=进给运动参数。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Geometric Tolerance': 1.0181095944404932, 'Angle': 1.0049842013604287, 'Dressing Method': 0.9795482892430567, 'Position Accuracy': 0.9757630070896042, 'Temperature': 0.9748456231585167}]",
+        "schema_canonicalizaiton": [
+            [
+                "deep hole drilling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant Pressure",
+                "120 bar"
+            ],
+            [
+                "deep hole drilling",
+                "Feed Rate",
+                "0.02 mm/rev"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Laser texturing of piston rings used 50W fiber laser with 100 ns pulses, creating 80 μm dimples with 25% area density.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser texturing",
+                "Tool",
+                "50W fiber laser"
+            ],
+            [
+                "laser texturing",
+                "Pulse Duration",
+                "100 ns"
+            ],
+            [
+                "laser texturing",
+                "Dimple Depth",
+                "80 μm"
+            ],
+            [
+                "laser texturing",
+                "Area Density",
+                "25%"
+            ],
+            [
+                "laser texturing",
+                "Process",
+                "piston rings"
+            ],
+            [
+                "laser texturing",
+                "Dimple Diameter",
+                "80 μm"
+            ],
+            [
+                "laser texturing",
+                "Dimple Density",
+                "25%"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Pulse Duration": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Pulse Duration”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dimple Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Dimple Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Area Density": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Area Density”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dimple Diameter": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Dimple Diameter”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dimple Density": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Dimple Density”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Cycle Time': 1.1034925595238096, 'Purpose': 1.0985152922957802, 'Hold Time': 1.0789291731764852, 'Position Accuracy': 1.038366549023339, 'Temperature': 1.0044054052804223}, {'Dimensional Tolerance': 0.9638860887096775, 'Diameter': 0.951525705099081, 'Depth of Cut': 0.9293040293040292, 'Tool Diameter': 0.9241045623717747, 'Width': 0.8907984385119762}, {'Quality Grade': 0.9331711775008146, 'Position Accuracy': 0.9148899711399711, 'Dimensional Tolerance': 0.8851499655933369, 'Diameter': 0.8828083114966416, 'Angle': 0.8465191892224024}, {'Process Sequence': 0.9824291300097752, 'Pressure': 0.9184727924405344, 'Surface Roughness': 0.8612881878706687, 'Angle': 0.8503803186061252, 'Operation': 0.831244627970797}, {'Diameter': 1.0, 'Tool Diameter': 0.9838709677419355, 'Dimensional Tolerance': 0.9608058608058608, 'Tool Geometry': 0.8803293180271172, 'Temperature': 0.8695541937262834}, {'Dimensional Tolerance': 0.9826360887096774, 'Diameter': 0.9525747863247865, 'Tool Diameter': 0.9078010591501599, 'Quality Grade': 0.8666127007514486, 'Position Accuracy': 0.8647796226867782}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser texturing",
+                "Tool",
+                "50W fiber laser"
+            ],
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The plasma electrolytic oxidation of titanium implants maintained 450V bipolar pulses at 60 Hz, achieving 30 μm coating with 1100HV hardness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "plasma electrolytic oxidation",
+                "Voltage",
+                "450V"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Frequency",
+                "60 Hz"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Coating Thickness",
+                "30 μm"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Hardness",
+                "1100HV"
+            ]
+        ],
+        "schema_definition": {
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Frequency": "The subject process applies or maintains the object oscillation or pulse frequency.",
+            "Coating Thickness": "The subject coated workpiece has the object coating thickness.",
+            "Hardness": "The subject workpiece or layer has the object hardness requirement or result."
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "plasma electrolytic oxidation",
+                "Voltage",
+                "450V"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Frequency",
+                "60 Hz"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Coating Thickness",
+                "30 μm"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Hardness",
+                "1100HV"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Precision form milling of die cavities used ball nose tools with 5-axis motion, maintaining 0.02 mm scallop height.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision form milling",
+                "Tool",
+                "ball nose tool"
+            ],
+            [
+                "precision form milling",
+                "Motion",
+                "5-axis"
+            ],
+            [
+                "precision form milling",
+                "Scallop Height",
+                "0.02 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Scallop Height": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Scallop Height”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Operation': 0.9245155253366406, 'Position Accuracy': 0.8546428569617049, 'Material': 0.8428127410626886, 'Hold Time': 0.8077053504910532, 'Diameter': 0.8047614379084969}, {'Diameter': 0.8747516808395999, 'Width': 0.861903669151899, 'Dimensional Tolerance': 0.8435991880968027, 'Quality Grade': 0.8373084504457053, 'Position Accuracy': 0.823035008469791}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision form milling",
+                "Tool",
+                "ball nose tool"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The vacuum brazing of aluminum heat exchangers maintained 600°C temperature with 10^-5 mbar pressure, using Al-Si filler.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "aluminum heat exchanger",
+                "Operation",
+                "vacuum brazing"
+            ],
+            [
+                "vacuum brazing",
+                "Temperature",
+                "600°C"
+            ],
+            [
+                "vacuum brazing",
+                "Pressure",
+                "10^-5 mbar"
+            ],
+            [
+                "aluminum heat exchanger",
+                "Filler",
+                "Al-Si"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Temperature": "The subject process applies or maintains the object temperature.",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Filler": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Filler”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Angle': 0.9643555369361821, 'Diameter': 0.9057677384998125, 'Material': 0.8915349053755298, 'Pitch': 0.8434999143088123, 'Geometric Tolerance': 0.824276611239228}]",
+        "schema_canonicalizaiton": [
+            [
+                "aluminum heat exchanger",
+                "Operation",
+                "vacuum brazing"
+            ],
+            [
+                "vacuum brazing",
+                "Temperature",
+                "600°C"
+            ],
+            [
+                "vacuum brazing",
+                "Pressure",
+                "10^-5 mbar"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Micro-EDM drilling of spinneret holes used tungsten electrodes at 80V, achieving 0.08 mm diameter with 0.2° taper control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-edm drilling",
+                "Tool",
+                "tungsten electrode"
+            ],
+            [
+                "micro-edm drilling",
+                "Voltage",
+                "80V"
+            ],
+            [
+                "micro-edm drilling",
+                "Diameter",
+                "0.08 mm"
+            ],
+            [
+                "micro-edm drilling",
+                "Taper Control",
+                "0.2°"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Diameter": "The subject workpiece or feature has the object diameter.",
+            "Taper Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Taper Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Control Method': 0.9392536475869809, 'Table Speed': 0.8606747323265771, 'Tool Coating': 0.854317186644773, 'Geometric Tolerance': 0.8508526276494381, 'Tool Diameter': 0.8351918418094889}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-edm drilling",
+                "Tool",
+                "tungsten electrode"
+            ],
+            [
+                "micro-edm drilling",
+                "Voltage",
+                "80V"
+            ],
+            [
+                "micro-edm drilling",
+                "Diameter",
+                "0.08 mm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The ion implantation of cutting tools maintained 180keV energy with nitrogen ions, achieving 0.25 μm case depth with 1800HV hardness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ion implantation",
+                "Energy",
+                "180keV"
+            ],
+            [
+                "ion implantation",
+                "Ion",
+                "nitrogen ions"
+            ],
+            [
+                "ion implantation",
+                "Case Depth",
+                "0.25 μm"
+            ],
+            [
+                "ion implantation",
+                "Hardness",
+                "1800HV"
+            ]
+        ],
+        "schema_definition": {
+            "Energy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Energy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Ion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Ion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Case Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Case Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Hardness": "The subject workpiece or layer has the object hardness requirement or result."
+        },
+        "canonicalization_candidates": "[{'Power': 0.8872596664579587, 'Equipment': 0.8696099184833918, 'Current': 0.8661902517859791, 'Hardness': 0.8629366727698378, 'Angle': 0.8486806801078466}, {'Operation': 0.9230255176617489, 'Material': 0.886062322486144, 'Power': 0.8617985909284663, 'Voltage': 0.8475889820987861, 'Temperature': 0.8388270954415532}, {'Depth of Cut': 0.9257731958762887, 'Step Over': 0.891541709147343, 'Width': 0.8734516827258761, 'Diameter': 0.8392729882814639, 'Tool Diameter': 0.8296576914977555}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            [
+                "ion implantation",
+                "Hardness",
+                "1800HV"
+            ]
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Precision grinding of ceramic bearings employed vitrified diamond wheels at 30 m/s, with continuous dressing for size control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision grinding",
+                "Grinding Wheel",
+                "vitrified diamond wheels"
+            ],
+            [
+                "precision grinding",
+                "Operation Speed",
+                "30 m/s"
+            ],
+            [
+                "precision grinding",
+                "Continuous Dressing",
+                "size control"
+            ]
+        ],
+        "schema_definition": {
+            "Grinding Wheel": "The subject grinding operation uses the object grinding wheel.",
+            "Operation Speed": "主体类别=workpiece or process；方向=主体→客体；客体类别=manufacturing operation or step；谓词语义=states the operation or sequence performed on the subject；范围边界=manufacturing process。",
+            "Continuous Dressing": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Continuous Dressing”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Operation': 1.1666195436507936, 'Cutting Speed': 1.097182723774589, 'Workpiece Speed': 1.0812858880250185, 'Wheel Speed': 1.0666397973990591, 'Feed Speed': 1.0606669806053108}, {'Dressing Method': 0.9270833333333334, 'Coating Thickness': 0.8939854729966932, 'Surface Roughness': 0.8690578933261862, 'Control Method': 0.849852300329888, 'Process Sequence': 0.8326253196227436}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision grinding",
+                "Grinding Wheel",
+                "vitrified diamond wheels"
+            ],
+            [
+                "precision grinding",
+                "Wheel Speed",
+                "30 m/s"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The laser welding of copper busbars used 3kW fiber laser with dual-beam optics, maintaining 8 mm/s travel speed under argon shielding.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser welding",
+                "Power",
+                "3kW"
+            ],
+            [
+                "laser welding",
+                "Tool",
+                "fiber laser"
+            ],
+            [
+                "laser welding",
+                "Optics",
+                "dual-beam optics"
+            ],
+            [
+                "laser welding",
+                "Travel Speed",
+                "8 mm/s"
+            ],
+            [
+                "laser welding",
+                "Shielding",
+                "argon"
+            ]
+        ],
+        "schema_definition": {
+            "Power": "The subject process applies or maintains the object power.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Optics": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Optics”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Travel Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Travel Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Shielding": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Shielding”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Operation': 0.9334318842189033, 'Diameter': 0.8829667656992919, 'Tool Coating': 0.8499841417404763, 'Angle': 0.8460319898309565, 'Position Accuracy': 0.8440220679779328}, {'Table Speed': 1.1485422820906692, 'Wheel Speed': 1.1424131944444444, 'Workpiece Speed': 1.1182855682575177, 'Cutting Speed': 1.0909800070356472, 'Spindle Speed': 1.0896265713453213}, {'Tool Coating': 0.9054405943518847, 'Angle': 0.8868954000407805, 'Coating Thickness': 0.87059110334804, 'Cutting Speed': 0.8347697273329922, 'Material': 0.8277641533828918}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser welding",
+                "Power",
+                "3kW"
+            ],
+            [
+                "laser welding",
+                "Tool",
+                "fiber laser"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Electrochemical honing of transmission shafts used graphite cathodes with 20V DC, combining rotary motion with 30 μm axial oscillation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "electrochemical honing",
+                "Cathode",
+                "graphite cathodes"
+            ],
+            [
+                "electrochemical honing",
+                "Voltage",
+                "20V DC"
+            ],
+            [
+                "electrochemical honing",
+                "Motion",
+                "rotary motion"
+            ],
+            [
+                "electrochemical honing",
+                "Axial Oscillation",
+                "30 μm"
+            ]
+        ],
+        "schema_definition": {
+            "Cathode": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cathode”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Axial Oscillation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Axial Oscillation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Quality Grade': 1.0523994143111792, 'Angle': 1.0450209454200419, 'Amplitude': 1.0161427451043255, 'Hold Time': 1.003945143158578, 'Temperature': 1.0010107889526494}, {}, {'Operation': 0.9104200147732605, 'Position Accuracy': 0.8387597483386995, 'Material': 0.8157183545813923, 'Power': 0.8143090085963883, 'Hold Time': 0.8089828303985123}, {'Position Accuracy': 0.9129752567693745, 'Frequency': 0.8511436174742627, 'Dimensional Tolerance': 0.838255888762249, 'Diameter': 0.8162314691723569, 'Cycle Time': 0.7970790119583671}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "electrochemical honing",
+                "Voltage",
+                "20V DC"
+            ],
+            null,
+            null
+        ]
+    }
+]

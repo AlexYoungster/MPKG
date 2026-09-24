@@ -1,0 +1,474 @@
+[
+    {
+        "index": 0,
+        "input_text": "The drilling of deep holes in stainless steel used pecking cycles with 2mm peck depth, implementing 30% reduced speed and feed after 5D depth for better chip control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "drilling",
+                "Cycle",
+                "pecking"
+            ],
+            [
+                "drilling",
+                "Peck Depth",
+                "2 mm"
+            ],
+            [
+                "drilling",
+                "Speed",
+                "30% reduced"
+            ],
+            [
+                "drilling",
+                "Feed",
+                "reduced after 5D depth"
+            ],
+            [
+                "drilling",
+                "Depth",
+                "5D"
+            ]
+        ],
+        "schema_definition": {
+            "Cycle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cycle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Peck Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Peck Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Feed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Feed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Cycle Time': 0.9794117647058823, 'Angle': 0.9159420856382374, 'Pitch': 0.8495271303715922, 'Frequency': 0.8293089051818714, 'Diameter': 0.8275908750323776}, {'Depth of Cut': 0.9284210526315789, 'Width': 0.9258080785945004, 'Pitch': 0.8616410712774637, 'Diameter': 0.854308466790318, 'Feed per Tooth': 0.8333014178360626}, {'Table Speed': 0.9625885225885227, 'Wheel Speed': 0.9541279150956571, 'Workpiece Speed': 0.9347601595213084, 'Spindle Speed': 0.9307891530558483, 'Feed Speed': 0.9234760470453242}, {'Feed Speed': 0.9600261551874455, 'Feed Rate': 0.9450783410138248, 'Feed per Tooth': 0.9144106761294262, 'Infeed Rate': 0.8633650383112197, 'Diameter': 0.851345941879033}, {'Width': 0.9614091604203806, 'Depth of Cut': 0.932608695652174, 'Diameter': 0.8926932422185119, 'Material': 0.8641598041598042, 'Angle': 0.8474676156652194}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null,
+            [
+                "drilling",
+                "Depth of Cut",
+                "5D"
+            ]
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Internal grinding of tapered bores required continuous dressing with 0.002 mm/rev dressing feed, maintaining constant surface speed through CNC speed control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "internal grinding",
+                "Operation",
+                "tapered bores"
+            ],
+            [
+                "internal grinding",
+                "Dressing",
+                "continuous dressing"
+            ],
+            [
+                "dressing",
+                "Feed Rate",
+                "0.002 mm/rev"
+            ],
+            [
+                "internal grinding",
+                "Surface Speed",
+                "constant"
+            ],
+            [
+                "internal grinding",
+                "Control",
+                "CNC speed control"
+            ],
+            [
+                "internal grinding",
+                "Process",
+                "tapered bores"
+            ],
+            [
+                "dressing",
+                "Method",
+                "continuous dressing"
+            ],
+            [
+                "internal grinding",
+                "Feed Rate",
+                "0.002 mm/rev"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Dressing": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Dressing”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Surface Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Method": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Method”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Dressing Method': 0.9370786516853932, 'Coating Thickness': 0.855371500893389, 'Pressure': 0.846345091379289, 'Hardness': 0.845629611045124, 'Abrasive': 0.8309591187521708}, {}, {'Table Speed': 0.9554884144996346, 'Workpiece Speed': 0.9502130030487488, 'Surface Roughness': 0.9434303921580894, 'Wheel Speed': 0.9323561526193105, 'Cutting Speed': 0.9186987015465591}, {'Control Method': 0.9584415584415584, 'Coolant': 0.8502581440584146, 'Operation': 0.827500585028372, 'Hold Time': 0.8256160937744722, 'Geometric Tolerance': 0.8081313233568322}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.921815258193959, 'Surface Roughness': 0.8600231049144094, 'Angle': 0.8384843272735141, 'Temperature': 0.8338988295149874}, {'Control Method': 0.9353911753800519, 'Dressing Method': 0.9092431761786601, 'Diameter': 0.8958710801393729, 'Tool Geometry': 0.8575096822191893, 'Hold Time': 0.8373163605363094}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "internal grinding",
+                "Operation",
+                "tapered bores"
+            ],
+            null,
+            [
+                "dressing",
+                "Feed Rate",
+                "0.002 mm/rev"
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+                "internal grinding",
+                "Feed Rate",
+                "0.002 mm/rev"
+            ]
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The slot milling operation used a roughing strategy with full slot width cut, followed by side wall finishing with 0.1 mm stock and reduced feed rate.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "slot milling operation",
+                "Strategy",
+                "roughing"
+            ],
+            [
+                "slot milling operation",
+                "Cut Type",
+                "full slot width cut"
+            ],
+            [
+                "slot milling operation",
+                "Side Wall Finishing",
+                "0.1 mm stock"
+            ],
+            [
+                "slot milling operation",
+                "Feed Rate",
+                "reduced feed rate"
+            ]
+        ],
+        "schema_definition": {
+            "Strategy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Strategy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Cut Type": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cut Type”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Side Wall Finishing": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Side Wall Finishing”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke."
+        },
+        "canonicalization_candidates": "[{'Operation': 1.0790387152995529, 'Control Method': 1.068095937975647, 'Step Over': 1.0387328250144539, 'Feed Rate': 0.9978885538741609, 'Position Accuracy': 0.9958969997164824}, {'Cutting Speed': 0.9433668716823193, 'Depth of Cut': 0.9165242067472679, 'Quality Grade': 0.893302251681551, 'Width': 0.8364985615099998, 'Coating Thickness': 0.8260523674139236}, {'Tool Coating': 0.9454305496604414, 'Grinding Wheel': 0.8999678589384472, 'Coating Thickness': 0.8845726820122085, 'Tool Material': 0.8786790600175104, 'Material': 0.8565526695526696}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            [
+                "slot milling operation",
+                "Feed Rate",
+                "reduced feed rate"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Precision turning of shoulders specified tool approach at 45° angle, with 0.2 mm corner radius and finish pass feed rate of 0.05 mm/rev for squareness control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision turning",
+                "Tool Approach",
+                "45° angle"
+            ],
+            [
+                "precision turning",
+                "Corner Radius",
+                "0.2 mm"
+            ],
+            [
+                "precision turning",
+                "Feed Rate",
+                "0.05 mm/rev"
+            ],
+            [
+                "precision turning",
+                "Purpose",
+                "squareness control"
+            ]
+        ],
+        "schema_definition": {
+            "Tool Approach": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tool Approach”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Corner Radius": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Corner Radius”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Purpose": "The subject operation or condition serves the object stated purpose."
+        },
+        "canonicalization_candidates": "[{'Tool Geometry': 0.9597992081447965, 'Tool Diameter': 0.9393814202102247, 'Tool Coating': 0.9386900875016325, 'Tool Material': 0.9324320130429453, 'Tool': 0.9080677349036992}, {'Quality Grade': 1.0843495544554014, 'Feed Rate': 1.057199562154646, 'Infeed Rate': 0.9826277786576667, 'Temperature': 0.9722541095634154, 'Angle': 0.9698308100414079}, {}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "precision turning",
+                "Angle",
+                "0.2 mm"
+            ],
+            [
+                "precision turning",
+                "Feed Rate",
+                "0.05 mm/rev"
+            ],
+            [
+                "precision turning",
+                "Purpose",
+                "squareness control"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The surface grinding of parallel surfaces required alternate table direction every pass, with 2/3 wheel width overlap and 0.005 mm depth for final passes.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "surface grinding",
+                "Table Direction",
+                "alternate"
+            ],
+            [
+                "surface grinding",
+                "Wheel Width Overlap",
+                "2/3"
+            ],
+            [
+                "surface grinding",
+                "Depth",
+                "0.005 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Table Direction": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Table Direction”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Wheel Width Overlap": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Wheel Width Overlap”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Table Speed': 0.9516483516483517, 'Tool Diameter': 0.9133854653654356, 'Dimensional Tolerance': 0.897682511910713, 'Diameter': 0.8616660061009377, 'Position Accuracy': 0.8466639250642191}, {'Width': 0.9935483870967743, 'Wheel Speed': 0.9513087972765392, 'Grinding Wheel': 0.9249133390320113, 'Step Over': 0.8660649406067056, 'Tool Geometry': 0.8319108653076616}, {'Width': 0.9534716376147002, 'Depth of Cut': 0.932608695652174, 'Diameter': 0.8830848848895663, 'Material': 0.8675944888444889, 'Surface Roughness': 0.8590024123342311}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "surface grinding",
+                "Step Over",
+                "2/3"
+            ],
+            [
+                "surface grinding",
+                "Depth of Cut",
+                "0.005 mm"
+            ]
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Form turning of curved profiles used CNC interpolation with 0.01 mm resolution, maintaining constant tool nose radius compensation throughout the contour.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "form turning",
+                "Interpolation",
+                "CNC interpolation"
+            ],
+            [
+                "form turning",
+                "Resolution",
+                "0.01 mm"
+            ],
+            [
+                "form turning",
+                "Tool Nose Radius Compensation",
+                "constant"
+            ]
+        ],
+        "schema_definition": {
+            "Interpolation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Interpolation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Resolution": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Resolution”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Tool Nose Radius Compensation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tool Nose Radius Compensation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Position Accuracy': 0.8848600264368899, 'Diameter': 0.8684970579627191, 'Purpose': 0.867545879049112, 'Geometric Tolerance': 0.8587594248270967, 'Operation': 0.8511204238435798}, {'Operation': 0.8898556701427341, 'Position Accuracy': 0.8797793518380833, 'Diameter': 0.8548421968577398, 'Tool Coating': 0.8373193267999607, 'Dimensional Tolerance': 0.834138178961567}, {'Tool': 1.0792848511208155, 'Dimensional Tolerance': 1.0209152225818894, 'Position Accuracy': 0.9924965685625369, 'Geometric Tolerance': 0.9916445744174751, 'Quality Grade': 0.98559967878656}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The end milling of thin walls specified climb cutting with maximum 0.3 mm depth of cut, using harmonics analysis to avoid chatter frequencies.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "end milling",
+                "Cutting Direction",
+                "climb cutting"
+            ],
+            [
+                "end milling",
+                "Depth Of Cut",
+                "0.3 mm"
+            ],
+            [
+                "end milling",
+                "Analysis",
+                "harmonics analysis"
+            ],
+            [
+                "end milling",
+                "Purpose",
+                "avoid chatter frequencies"
+            ]
+        ],
+        "schema_definition": {
+            "Cutting Direction": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cutting Direction”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。",
+            "Analysis": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Analysis”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Purpose": "The subject operation or condition serves the object stated purpose."
+        },
+        "canonicalization_candidates": "[{'Cutting Speed': 0.9560222036028488, 'Tool Coating': 0.912531341285297, 'Depth of Cut': 0.8867101258455696, 'Tool Diameter': 0.8647854512618445, 'Position Accuracy': 0.8615611612749754}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1501771867245658, 'Step Over': 1.0308923629642808, 'Dressing Method': 1.004846404306123, 'Feed per Tooth': 0.9860804063301161}, {'Angle': 0.961405529953917, 'Material': 0.8974922084511125, 'Dimensional Tolerance': 0.8715762560112241, 'Quality Grade': 0.8605572416713722, 'Diameter': 0.8168032292638927}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            [
+                "end milling",
+                "Purpose",
+                "avoid chatter frequencies"
+            ]
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Deep hole boring operations required internal coolant supply at 40 bar pressure, with boring bar length-to-diameter ratio not exceeding 6:1 for stability.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "deep hole boring operations",
+                "Internal Coolant Supply",
+                "40 bar pressure"
+            ],
+            [
+                "deep hole boring operations",
+                "Boring Bar Length-to-Diameter Ratio",
+                "6:1"
+            ]
+        ],
+        "schema_definition": {
+            "Internal Coolant Supply": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Internal Coolant Supply”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Boring Bar Length-to-Diameter Ratio": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Boring Bar Length-to-Diameter Ratio”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Coolant': 0.9632555266145729, 'Coolant Flow Rate': 0.9613778266883707, 'Coolant Pressure': 0.9586344086021505, 'Tool Coating': 0.8933342042920849, 'Temperature': 0.8694370380661511}, {'Dimensional Tolerance': 1.0591127731917207, 'Infeed Rate': 1.051040398713686, 'Geometric Tolerance': 1.038353330165022, 'Feed Rate': 1.0213141254437412, 'Material Removal Rate': 0.9977820109497129}]",
+        "schema_canonicalizaiton": [
+            null,
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The cylindrical grinding of hardened pins used continuous dressing technique with 0.001 mm/rev dressing feed and 2 sparkout passes for size accuracy.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "hardened pins",
+                "Operation",
+                "cylindrical grinding"
+            ],
+            [
+                "cylindrical grinding",
+                "Dressing Technique",
+                "continuous dressing technique"
+            ],
+            [
+                "cylindrical grinding",
+                "Dressing Feed",
+                "0.001 mm/rev"
+            ],
+            [
+                "cylindrical grinding",
+                "Sparkout Passes",
+                "2"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Dressing Technique": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Dressing Technique”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dressing Feed": "主体类别=加工过程；方向=主体→客体；客体类别=每转进给参数；谓词语义=表示刀具相对于工件的每转进给距离；范围边界=进给运动参数。",
+            "Sparkout Passes": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Sparkout Passes”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Dressing Method': 0.946987951807229, 'Coating Thickness': 0.9164776084130922, 'Surface Roughness': 0.8921486212184421, 'Process Sequence': 0.8533206539256428, 'Tool Coating': 0.8469043947473879}, {'Coating Thickness': 0.8245686100925527, 'Dressing Method': 0.8032323232323233, 'Surface Roughness': 0.7965741534741198, 'Diameter': 0.7868189957526026, 'Infeed Rate': 0.7861136964301522}, {'Process Sequence': 0.8609376736219142, 'Spindle Speed': 0.8594676752607302, 'Surface Roughness': 0.8570343849453439, 'Step Over': 0.853459621891054, 'Wheel Speed': 0.8451203458634862}]",
+        "schema_canonicalizaiton": [
+            [
+                "hardened pins",
+                "Operation",
+                "cylindrical grinding"
+            ],
+            null,
+            [
+                "cylindrical grinding",
+                "Infeed Rate",
+                "0.001 mm/rev"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Face turning of large flanges implemented variable speed control, maintaining constant surface speed from OD to ID with maximum 0.2 mm depth for finishing.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "face turning",
+                "Process",
+                "large flanges"
+            ],
+            [
+                "face turning",
+                "Variable Speed Control",
+                "maintaining constant surface speed"
+            ],
+            [
+                "face turning",
+                "Surface Speed",
+                "constant"
+            ],
+            [
+                "face turning",
+                "Depth of Cut",
+                "0.2 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Variable Speed Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Variable Speed Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth of Cut": "The subject operation has the object depth of material removed per cutting pass."
+        },
+        "canonicalization_candidates": "[{'Process Sequence': 0.9778172348484848, 'Pressure': 0.9029820090303962, 'Surface Roughness': 0.8781778668191713, 'Angle': 0.8596110878368943, 'Operation': 0.843011243708001}, {'Table Speed': 0.9588778409090909, 'Workpiece Speed': 0.9529219456518446, 'Spindle Speed': 0.9351211828076748, 'Cutting Speed': 0.9215286069651742, 'Wheel Speed': 0.9201586118550592}, {'Table Speed': 0.9615160824838245, 'Workpiece Speed': 0.9523458701816159, 'Surface Roughness': 0.9480422873193799, 'Cutting Speed': 0.9211180563852688, 'Wheel Speed': 0.9167904496655479}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            [
+                "face turning",
+                "Depth of Cut",
+                "0.2 mm"
+            ]
+        ]
+    }
+]

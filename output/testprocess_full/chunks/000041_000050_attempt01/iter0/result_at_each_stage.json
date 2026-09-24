@@ -1,0 +1,593 @@
+[
+    {
+        "index": 0,
+        "input_text": "The ultrasonic machining process of ceramic components used a 20 kHz frequency vibration with 0.05 mm amplitude, utilizing boron carbide abrasive slurry at 2 bar pressure.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ultrasonic machining process",
+                "Vibration Frequency",
+                "20 kHz"
+            ],
+            [
+                "ultrasonic machining process",
+                "Vibration Amplitude",
+                "0.05 mm"
+            ],
+            [
+                "ultrasonic machining process",
+                "Abrasive Slurry",
+                "boron carbide abrasive slurry"
+            ],
+            [
+                "ultrasonic machining process",
+                "Pressure",
+                "2 bar"
+            ]
+        ],
+        "schema_definition": {
+            "Vibration Frequency": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration Frequency”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Vibration Amplitude": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration Amplitude”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Abrasive Slurry": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Abrasive Slurry”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Pressure": "The subject process applies or maintains the object pressure."
+        },
+        "canonicalization_candidates": "[{'Process Sequence': 1.1173430459549412, 'Position Accuracy': 1.0574141233787353, 'Amplitude': 1.01462326470391, 'Cutting Speed': 0.9918276112370426, 'Geometric Tolerance': 0.9813102403926788}, {'Amplitude': 1.18, 'Position Accuracy': 1.0573696107327248, 'Abrasive': 1.0489050017801, 'Quality Grade': 1.0078024676960395, 'Temperature': 0.996506958797712}, {'Abrasive': 1.1542857142857144, 'Position Accuracy': 1.0325923567838036, 'Quality Grade': 1.0025202729369396, 'Cutting Speed': 0.9990331505316614, 'Dressing Method': 0.9947458900748376}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            [
+                "ultrasonic machining process",
+                "Pressure",
+                "2 bar"
+            ]
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "A precision boring bar with active vibration damping system was used for machining a 500 mm deep hole, operating at 160 m/min with 0.12 mm/rev feed rate and internal coolant supply.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision boring bar",
+                "Operation",
+                "boring"
+            ],
+            [
+                "boring",
+                "Vibration Damping",
+                "active vibration damping system"
+            ],
+            [
+                "boring",
+                "Feed Rate",
+                "0.12 mm/rev"
+            ],
+            [
+                "boring",
+                "Spindle Speed",
+                "160 m/min"
+            ],
+            [
+                "boring",
+                "Coolant",
+                "internal coolant supply"
+            ],
+            [
+                "boring",
+                "Depth",
+                "500 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Vibration Damping": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration Damping”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Amplitude': 1.1370341637529138, 'Dimensional Tolerance': 1.0278442499512244, 'Cutting Speed': 1.0260869033958095, 'Abrasive': 1.0057213971668388, 'Position Accuracy': 0.9982081978828041}, {}, {}, {}, {'Width': 0.9674368284045705, 'Depth of Cut': 0.932608695652174, 'Diameter': 0.8952119788101384, 'Material': 0.8848456200662084, 'Angle': 0.8543618290467746}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision boring bar",
+                "Operation",
+                "boring"
+            ],
+            null,
+            [
+                "boring",
+                "Feed Rate",
+                "0.12 mm/rev"
+            ],
+            [
+                "boring",
+                "Spindle Speed",
+                "160 m/min"
+            ],
+            [
+                "boring",
+                "Coolant",
+                "internal coolant supply"
+            ],
+            [
+                "boring",
+                "Depth of Cut",
+                "500 mm"
+            ]
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The electrochemical grinding of tungsten carbide dies employed a copper-bonded wheel rotating at 25 m/s, with electrolyte concentration of 20% NaNO3 and current density of 40 A/cm².",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "electrochemical grinding",
+                "Tool",
+                "copper-bonded wheel"
+            ],
+            [
+                "electrochemical grinding",
+                "Rotating Speed",
+                "25 m/s"
+            ],
+            [
+                "electrochemical grinding",
+                "Electrolyte Concentration",
+                "20% NaNO3"
+            ],
+            [
+                "electrochemical grinding",
+                "Current Density",
+                "40 A/cm²"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Rotating Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Rotating Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Electrolyte Concentration": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Electrolyte Concentration”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Current Density": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Current Density”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Wheel Speed': 0.970370802238806, 'Spindle Speed': 0.9551561815793317, 'Workpiece Speed': 0.9384683841485313, 'Cutting Speed': 0.9365123765123765, 'Table Speed': 0.9277647847074154}, {'Infeed Rate': 1.0411310259693685, 'Geometric Tolerance': 1.0254621850113146, 'Control Method': 1.008701544062835, 'Feed Rate': 1.0048636319073783, 'Coolant Flow Rate': 0.9978673089773373}, {'Current': 0.9331362007168459, 'Quality Grade': 0.8991209311521812, 'Position Accuracy': 0.8870765451152183, 'Dimensional Tolerance': 0.8503868926803589, 'Depth of Cut': 0.8178061316617655}]",
+        "schema_canonicalizaiton": [
+            [
+                "electrochemical grinding",
+                "Tool",
+                "copper-bonded wheel"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "During the micro-turning of brass pins, a single crystal diamond tool was used with 0.8 m/min cutting speed and 0.001 mm/rev feed rate to achieve a surface finish of Ra 0.05.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "brass pin",
+                "Operation",
+                "micro-turning"
+            ],
+            [
+                "micro-turning",
+                "Tool",
+                "single crystal diamond tool"
+            ],
+            [
+                "micro-turning",
+                "Cutting Speed",
+                "0.8 m/min"
+            ],
+            [
+                "micro-turning",
+                "Feed Rate",
+                "0.001 mm/rev"
+            ],
+            [
+                "brass pin",
+                "Surface Finish",
+                "Ra 0.05"
+            ],
+            [
+                "brass pin",
+                "Tool",
+                "single crystal diamond tool"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Surface Finish": "主体类别=零件或加工对象；方向=主体→客体；客体类别=表面质量指标；谓词语义=表示主体表面需要满足的粗糙程度要求；范围边界=表面质量要求。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {'Workpiece Speed': 1.0271434895853502, 'Cutting Speed': 1.0246910948836805, 'Position Accuracy': 1.0146889716609275, 'Quality Grade': 1.0056761915908685, 'Surface Roughness': 1.0}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "brass pin",
+                "Operation",
+                "micro-turning"
+            ],
+            [
+                "micro-turning",
+                "Tool",
+                "single crystal diamond tool"
+            ],
+            [
+                "micro-turning",
+                "Cutting Speed",
+                "0.8 m/min"
+            ],
+            [
+                "micro-turning",
+                "Feed Rate",
+                "0.001 mm/rev"
+            ],
+            [
+                "brass pin",
+                "Surface Roughness",
+                "Ra 0.05"
+            ],
+            [
+                "brass pin",
+                "Tool",
+                "single crystal diamond tool"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The powder metallurgy gear finishing process utilized a carbide honing tool operating at 150 rpm with reciprocating motion of 2 mm/s and radial force of 200 N.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "powder metallurgy gear finishing process",
+                "Operation",
+                "carbide honing tool"
+            ],
+            [
+                "carbide honing tool",
+                "Spindle Speed",
+                "150 rpm"
+            ],
+            [
+                "carbide honing tool",
+                "Reciprocating Motion",
+                "2 mm/s"
+            ],
+            [
+                "carbide honing tool",
+                "Radial Force",
+                "200 N"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Reciprocating Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Reciprocating Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Radial Force": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Radial Force”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Cutting Speed': 0.898005278303786, 'Position Accuracy': 0.8850908691834944, 'Coating Thickness': 0.8597906669388187, 'Process Sequence': 0.8556607634438562, 'Operation': 0.8400335822929729}, {'Quality Grade': 1.0390224804229382, 'Process Sequence': 1.00240336417968, 'Angle': 0.9942416968333239, 'Feed Rate': 0.9831661111767536, 'Dimensional Tolerance': 0.9710044665479449}]",
+        "schema_canonicalizaiton": [
+            [
+                "powder metallurgy gear finishing process",
+                "Operation",
+                "carbide honing tool"
+            ],
+            [
+                "carbide honing tool",
+                "Spindle Speed",
+                "150 rpm"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "A laser-assisted turning operation on Inconel 718 employed a 1 kW fiber laser for preheating, with main cutting speed of 200 m/min and laser spot diameter of 2 mm.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser-assisted turning operation",
+                "Operation",
+                "turning"
+            ],
+            [
+                "laser-assisted turning operation",
+                "Tool",
+                "1 kW fiber laser"
+            ],
+            [
+                "laser-assisted turning operation",
+                "Cutting Speed",
+                "200 m/min"
+            ],
+            [
+                "laser-assisted turning operation",
+                "Laser Spot Diameter",
+                "2 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Laser Spot Diameter": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Laser Spot Diameter”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Diameter': 0.9975806451612904, 'Tool Diameter': 0.9772084367245658, 'Tool Geometry': 0.8506845395500858, 'Table Speed': 0.8442904885435115, 'Dimensional Tolerance': 0.8428267426207824}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser-assisted turning operation",
+                "Operation",
+                "turning"
+            ],
+            [
+                "laser-assisted turning operation",
+                "Tool",
+                "1 kW fiber laser"
+            ],
+            [
+                "laser-assisted turning operation",
+                "Cutting Speed",
+                "200 m/min"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The precision grinding of ceramic ball bearings used a diamond cup wheel at 40 m/s, with work speed of 200 rpm and in-process size control with accuracy of ±0.5 µm.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ceramic ball bearings",
+                "Operation",
+                "precision grinding"
+            ],
+            [
+                "precision grinding",
+                "Tool",
+                "diamond cup wheel"
+            ],
+            [
+                "precision grinding",
+                "Work Speed",
+                "200 rpm"
+            ],
+            [
+                "precision grinding",
+                "In-process Size Control",
+                "±0.5 µm"
+            ],
+            [
+                "ceramic ball bearings",
+                "Material",
+                "ceramic"
+            ],
+            [
+                "precision grinding",
+                "Process",
+                "grinding"
+            ],
+            [
+                "precision grinding",
+                "Work Speed",
+                "40 m/s"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Work Speed": "主体类别=加工过程；方向=主体→客体；客体类别=旋转速度参数；谓词语义=表示加工过程中主轴的旋转速率；范围边界=主轴运动参数。",
+            "In-process Size Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“In-process Size Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Material": "The subject workpiece or part is made from the object material.",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Workpiece Speed': 0.8688888888888888, 'Wheel Speed': 0.8486922916912837, 'Table Speed': 0.8185049152236652, 'Diameter': 0.8069564301965808, 'Cutting Speed': 0.8026769256923536}, {'Process Sequence': 0.9569846202777299, 'Control Method': 0.9131458023488385, 'Dimensional Tolerance': 0.8462213993158635, 'Surface Roughness': 0.8428563076257463, 'Position Accuracy': 0.8293671865472604}, {}, {'Process Sequence': 0.9734848484848485, 'Pressure': 0.9137108876786296, 'Surface Roughness': 0.8561493702016335, 'Angle': 0.8422197834890682, 'Quality Grade': 0.8354454979696626}, {'Workpiece Speed': 0.9888888888888888, 'Wheel Speed': 0.9686922916912837, 'Table Speed': 0.9406377823565323, 'Cutting Speed': 0.9226769256923536, 'Spindle Speed': 0.9056079008710588}]",
+        "schema_canonicalizaiton": [
+            [
+                "ceramic ball bearings",
+                "Operation",
+                "precision grinding"
+            ],
+            [
+                "precision grinding",
+                "Tool",
+                "diamond cup wheel"
+            ],
+            null,
+            null,
+            [
+                "ceramic ball bearings",
+                "Material",
+                "ceramic"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "During the helical broaching of splines, a multi-step carbide broach was used at 4 m/min cutting speed with high-pressure coolant at 50 bar and pull force of 15 kN.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "helical broaching",
+                "Tool",
+                "multi-step carbide broach"
+            ],
+            [
+                "helical broaching",
+                "Cutting Speed",
+                "4 m/min"
+            ],
+            [
+                "helical broaching",
+                "Coolant",
+                "high-pressure coolant"
+            ],
+            [
+                "helical broaching",
+                "Coolant Pressure",
+                "50 bar"
+            ],
+            [
+                "helical broaching",
+                "Pull Force",
+                "15 kN"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure.",
+            "Pull Force": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Pull Force”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {'Purpose': 0.9702304147465439, 'Process Sequence': 0.9032296626984128, 'Position Accuracy': 0.8562870549047575, 'Power': 0.8505881794716065, 'Pitch': 0.8344884102129272}]",
+        "schema_canonicalizaiton": [
+            [
+                "helical broaching",
+                "Tool",
+                "multi-step carbide broach"
+            ],
+            [
+                "helical broaching",
+                "Cutting Speed",
+                "4 m/min"
+            ],
+            [
+                "helical broaching",
+                "Coolant",
+                "high-pressure coolant"
+            ],
+            [
+                "helical broaching",
+                "Coolant Pressure",
+                "50 bar"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The orbital drilling of CFRP-titanium stacks employed a PCD tool at 12000 rpm spindle speed, with orbital diameter of 0.3 mm and axial feed of 0.05 mm/rev.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "CFRP-titanium stacks",
+                "Operation",
+                "orbital drilling"
+            ],
+            [
+                "orbital drilling",
+                "Tool",
+                "PCD tool"
+            ],
+            [
+                "orbital drilling",
+                "Spindle Speed",
+                "12000 rpm"
+            ],
+            [
+                "orbital drilling",
+                "Orbital Diameter",
+                "0.3 mm"
+            ],
+            [
+                "orbital drilling",
+                "Axial Feed",
+                "0.05 mm/rev"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Orbital Diameter": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Orbital Diameter”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Axial Feed": "主体类别=加工过程；方向=主体→客体；客体类别=每转进给参数；谓词语义=表示刀具相对于工件的每转进给距离；范围边界=进给运动参数。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Diameter': 0.9911290322580646, 'Tool Diameter': 0.9780572941742898, 'Dimensional Tolerance': 0.9375084971516875, 'Tool Geometry': 0.898183843594923, 'Geometric Tolerance': 0.8491085363911451}, {'Diameter': 0.8640866962091219, 'Feed Rate': 0.8177169797403621, 'Tool Diameter': 0.8113084002421341, 'Feed Speed': 0.8013951779870434, 'Feed per Tooth': 0.7928958854765307}]",
+        "schema_canonicalizaiton": [
+            [
+                "CFRP-titanium stacks",
+                "Operation",
+                "orbital drilling"
+            ],
+            [
+                "orbital drilling",
+                "Tool",
+                "PCD tool"
+            ],
+            [
+                "orbital drilling",
+                "Spindle Speed",
+                "12000 rpm"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "A magnetic abrasive finishing process was performed on stainless steel tubes using iron particles mixed with diamond powder, operating at 1000 rpm with magnetic field strength of 0.8 Tesla.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "stainless steel tubes",
+                "Operation",
+                "magnetic abrasive finishing"
+            ],
+            [
+                "magnetic abrasive finishing",
+                "Material",
+                "iron particles mixed with diamond powder"
+            ],
+            [
+                "magnetic abrasive finishing",
+                "Speed",
+                "1000 rpm"
+            ],
+            [
+                "magnetic abrasive finishing",
+                "Magnetic Field Strength",
+                "0.8 Tesla"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Material": "The subject workpiece or part is made from the object material.",
+            "Speed": "主体类别=加工过程；方向=主体→客体；客体类别=旋转速度参数；谓词语义=表示加工过程中主轴的旋转速率；范围边界=主轴运动参数。",
+            "Magnetic Field Strength": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Magnetic Field Strength”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Wheel Speed': 0.843065644033386, 'Cutting Speed': 0.8302134611531526, 'Workpiece Speed': 0.8265412365412366, 'Table Speed': 0.8179486125918028, 'Diameter': 0.8148836730039913}, {'Geometric Tolerance': 0.9176939324116743, 'Coating Thickness': 0.8886138828991377, 'Tool Geometry': 0.8675133798400709, 'Feed Speed': 0.8472389441305596, 'Cutting Speed': 0.844422463058375}]",
+        "schema_canonicalizaiton": [
+            [
+                "stainless steel tubes",
+                "Operation",
+                "magnetic abrasive finishing"
+            ],
+            [
+                "magnetic abrasive finishing",
+                "Material",
+                "iron particles mixed with diamond powder"
+            ],
+            null,
+            null
+        ]
+    }
+]

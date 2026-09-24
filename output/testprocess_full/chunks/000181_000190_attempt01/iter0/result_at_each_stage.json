@@ -1,0 +1,473 @@
+[
+    {
+        "index": 0,
+        "input_text": "The abrasive flow machining of internal passages used silicon carbide media at 100 bar pressure, with reciprocating flow achieving 0.4 μm Ra surface finish.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "abrasive flow machining",
+                "Media",
+                "silicon carbide media"
+            ],
+            [
+                "abrasive flow machining",
+                "Pressure",
+                "100 bar"
+            ],
+            [
+                "abrasive flow machining",
+                "Surface Finish",
+                "0.4 μm Ra"
+            ]
+        ],
+        "schema_definition": {
+            "Media": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Media”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Surface Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Material': 0.9556422393641889, 'Diameter': 0.9308567214617104, 'Equipment': 0.8699291060979086, 'Tool Material': 0.8594246309910867, 'Abrasive': 0.8270150296438956}, {}, {'Cutting Speed': 1.0333620259426712, 'Workpiece Speed': 1.0259986045700333, 'Process Sequence': 1.0064901960784314, 'Position Accuracy': 0.9957537298382368, 'Surface Roughness': 0.9824291300097752}]",
+        "schema_canonicalizaiton": [
+            [
+                "abrasive flow machining",
+                "Abrasive",
+                "silicon carbide media"
+            ],
+            [
+                "abrasive flow machining",
+                "Pressure",
+                "100 bar"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Precision gear shaping of internal splines employed HSS tools with TiAlN coating, maintaining 0.02 mm tooth thickness tolerance through CNC backlash compensation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision gear shaping",
+                "Tool",
+                "HSS tools"
+            ],
+            [
+                "precision gear shaping",
+                "Coating",
+                "TiAlN"
+            ],
+            [
+                "precision gear shaping",
+                "Tolerance",
+                "0.02 mm"
+            ],
+            [
+                "precision gear shaping",
+                "Method",
+                "CNC backlash compensation"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Coating": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Coating”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Tolerance": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tolerance”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Method": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Method”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Tool Coating': 1.0, 'Coating Thickness': 0.9665085388994308, 'Cutting Speed': 0.8750346866243442, 'Coolant': 0.8744338575831029, 'Material': 0.8597196023362399}, {'Geometric Tolerance': 1.18, 'Dimensional Tolerance': 1.1439083683964468, 'Angle': 1.0689465005290293, 'Temperature': 1.0068567522816563, 'Feed per Tooth': 0.9703256483449665}, {'Control Method': 0.9284367302955664, 'Dressing Method': 0.9068238213399504, 'Tool Geometry': 0.8905056445901517, 'Diameter': 0.8779434381408067, 'Material': 0.8341311945972709}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision gear shaping",
+                "Tool",
+                "HSS tools"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The vacuum sintering of tungsten carbide inserts maintained 1400°C temperature with 10^-2 mbar pressure, achieving 14.5 g/cm³ density through 60-minute soak time.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "vacuum sintering",
+                "Temperature",
+                "1400°C"
+            ],
+            [
+                "vacuum sintering",
+                "Pressure",
+                "10^-2 mbar"
+            ],
+            [
+                "vacuum sintering",
+                "Soak Time",
+                "60-minute"
+            ],
+            [
+                "tungsten carbide inserts",
+                "Density",
+                "14.5 g/cm³"
+            ]
+        ],
+        "schema_definition": {
+            "Temperature": "The subject process applies or maintains the object temperature.",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Soak Time": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Soak Time”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Density": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Density”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Hold Time': 0.9628189202102246, 'Cycle Time': 0.942552767821585, 'Tool Coating': 0.9226221536070814, 'Coating Thickness': 0.8887039653250298, 'Feed Speed': 0.8328535110722611}, {'Diameter': 0.8952234344707464, 'Quality Grade': 0.8855005580601392, 'Dimensional Tolerance': 0.8796912230538503, 'Position Accuracy': 0.873406221865729, 'Material': 0.8687301601836253}]",
+        "schema_canonicalizaiton": [
+            [
+                "vacuum sintering",
+                "Temperature",
+                "1400°C"
+            ],
+            [
+                "vacuum sintering",
+                "Pressure",
+                "10^-2 mbar"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Micro-EDM milling of mold cavities used tungsten carbide electrodes at 100V, with 3-axis simultaneous motion achieving 0.01 mm corner radius.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-edm milling",
+                "Tool",
+                "tungsten carbide electrode"
+            ],
+            [
+                "micro-edm milling",
+                "Voltage",
+                "100V"
+            ],
+            [
+                "micro-edm milling",
+                "Motion",
+                "3-axis simultaneous motion"
+            ],
+            [
+                "micro-edm milling",
+                "Corner Radius",
+                "0.01 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Corner Radius": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Corner Radius”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Operation': 0.911956701807229, 'Position Accuracy': 0.8474749909977316, 'Material': 0.8377219691585363, 'Dimensional Tolerance': 0.7953500948693122, 'Diameter': 0.7936005625879045}, {'Quality Grade': 1.0870294293115597, 'Feed Rate': 1.051282912875655, 'Feed per Tooth': 0.9942141950100949, 'Infeed Rate': 0.9814010111323366, 'Angle': 0.9770163383871755}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-edm milling",
+                "Tool",
+                "tungsten carbide electrode"
+            ],
+            [
+                "micro-edm milling",
+                "Voltage",
+                "100V"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The ultrasonic assisted diamond turning of silicon wafers employed 40kHz vibration with 2 μm amplitude, maintaining 0.05 mm depth of cut for subsurface damage control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "silicon wafers",
+                "Operation",
+                "ultrasonic assisted diamond turning"
+            ],
+            [
+                "ultrasonic assisted diamond turning",
+                "Vibration Frequency",
+                "40kHz"
+            ],
+            [
+                "ultrasonic assisted diamond turning",
+                "Vibration Amplitude",
+                "2 μm"
+            ],
+            [
+                "ultrasonic assisted diamond turning",
+                "Depth Of Cut",
+                "0.05 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Vibration Frequency": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration Frequency”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Vibration Amplitude": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration Amplitude”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。"
+        },
+        "canonicalization_candidates": "[{}, {'Process Sequence': 1.0855851856037775, 'Position Accuracy': 1.0400879566019638, 'Amplitude': 1.0190921291727744, 'Dimensional Tolerance': 1.0156674635931981, 'Feed Rate': 1.008228066812828}, {'Amplitude': 1.18, 'Abrasive': 1.0444361373112356, 'Dimensional Tolerance': 1.0338873825406218, 'Position Accuracy': 1.0167814675326412, 'Infeed Rate': 0.9897202410560217}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1501771867245658, 'Step Over': 1.0309394134394134, 'Dressing Method': 1.008418312966752, 'Angle': 0.9623452862926549}]",
+        "schema_canonicalizaiton": [
+            [
+                "silicon wafers",
+                "Operation",
+                "ultrasonic assisted diamond turning"
+            ],
+            [
+                "ultrasonic assisted diamond turning",
+                "Amplitude",
+                "40kHz"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Precision thread grinding of ball screws used single-rib wheels at 45 m/s, with synchronized work-wheel motion achieving 0.003 mm lead accuracy.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision thread grinding",
+                "Tool",
+                "single-rib wheels"
+            ],
+            [
+                "precision thread grinding",
+                "Speed",
+                "45 m/s"
+            ],
+            [
+                "precision thread grinding",
+                "Work-Wheel Motion",
+                "synchronized"
+            ],
+            [
+                "precision thread grinding",
+                "Lead Accuracy",
+                "0.003 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Work-Wheel Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Work-Wheel Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Lead Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Lead Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Wheel Speed': 0.9702534562211982, 'Table Speed': 0.9520086326327563, 'Spindle Speed': 0.9238943811610765, 'Feed Speed': 0.9234760470453242, 'Workpiece Speed': 0.9215471593083534}, {'Wheel Speed': 0.974392239364189, 'Grinding Wheel': 0.9381118791602663, 'Workpiece Speed': 0.9345648757957756, 'Cutting Speed': 0.8756147090246357, 'Position Accuracy': 0.8536508421088664}, {'Position Accuracy': 1.18, 'Quality Grade': 1.0996615083591492, 'Cycle Time': 1.0108793822048738, 'Infeed Rate': 0.9819895962876883, 'Geometric Tolerance': 0.9786734975506755}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision thread grinding",
+                "Tool",
+                "single-rib wheels"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The laser hardening of crankshaft journals used 3kW diode laser with pyrometer control, maintaining 1100°C surface temperature for 0.8 mm case depth.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser hardening",
+                "Power",
+                "3kW diode laser"
+            ],
+            [
+                "laser hardening",
+                "Temperature Control",
+                "pyrometer"
+            ],
+            [
+                "laser hardening",
+                "Surface Temperature",
+                "1100°C"
+            ],
+            [
+                "laser hardening",
+                "Case Depth",
+                "0.8 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Power": "The subject process applies or maintains the object power.",
+            "Temperature Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Temperature Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Temperature": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Temperature”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Case Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Case Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Temperature': 1.18, 'Control Method': 1.1038147715661948, 'Coolant': 1.0877223059922896, 'Coolant Pressure': 1.0522391007685126, 'Geometric Tolerance': 0.9980380229487371}, {'Temperature': 1.18, 'Coolant Pressure': 1.0475504219681018, 'Cycle Time': 1.0085969469896061, 'Geometric Tolerance': 1.0054597530308185, 'Cutting Speed': 0.9863365168762541}, {'Depth of Cut': 0.9257731958762887, 'Width': 0.9111323460818602, 'Step Over': 0.8708278054040276, 'Diameter': 0.8580811221119191, 'Process Sequence': 0.8536119745557086}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser hardening",
+                "Power",
+                "3kW diode laser"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Chemical mechanical polishing of silicon wafers employed colloidal silica slurry with 3 psi down force, achieving 0.3 nm Ra surface finish through dual-axis rotation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "chemical mechanical polishing",
+                "Slurry",
+                "colloidal silica slurry"
+            ],
+            [
+                "chemical mechanical polishing",
+                "Down Force",
+                "3 psi"
+            ],
+            [
+                "chemical mechanical polishing",
+                "Surface Finish",
+                "0.3 nm Ra"
+            ]
+        ],
+        "schema_definition": {
+            "Slurry": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Slurry”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Down Force": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Down Force”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Surface Roughness': 0.9058277720857679, 'Tool Geometry': 0.856027120829182, 'Coolant': 0.8392491775379713, 'Temperature': 0.8313112350600946, 'Angle': 0.8253951288790413}, {'Power': 0.9177349089041389, 'Position Accuracy': 0.8827994121035512, 'Process Sequence': 0.8806603737038519, 'Geometric Tolerance': 0.8533058035466099, 'Hardness': 0.8434433772178529}, {'Cutting Speed': 1.0226827542339876, 'Workpiece Speed': 1.0090205524796316, 'Position Accuracy': 0.9957537298382368, 'Process Sequence': 0.9913018985371929, 'Surface Roughness': 0.9848484848484848}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "chemical mechanical polishing",
+                "Surface Roughness",
+                "0.3 nm Ra"
+            ]
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The precision boring of bearing housings used CBN tipped tools with 0.01 mm size control, implementing active vibration damping for 0.005 mm cylindricity.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "bearing housing",
+                "Operation",
+                "precision boring"
+            ],
+            [
+                "precision boring",
+                "Tool",
+                "CBN tipped tools"
+            ],
+            [
+                "bearing housing",
+                "Size Control",
+                "0.01 mm"
+            ],
+            [
+                "precision boring",
+                "Vibration Damping",
+                "active"
+            ],
+            [
+                "precision boring",
+                "Cylindricity",
+                "0.005 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Size Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Size Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Vibration Damping": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration Damping”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Cylindricity": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cylindricity”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Control Method': 0.9370588235294117, 'Dimensional Tolerance': 0.894142514397615, 'Diameter': 0.8544928315412187, 'Geometric Tolerance': 0.8425453387822791, 'Width': 0.8356031525608325}, {'Amplitude': 1.1370341637529138, 'Dimensional Tolerance': 1.0490704305643146, 'Cutting Speed': 1.0251447943307759, 'Abrasive': 1.0080639470900339, 'Position Accuracy': 1.000370551658061}, {'Geometric Tolerance': 0.9037328217015718, 'Quality Grade': 0.8972616792929293, 'Cycle Time': 0.8777412307923063, 'Position Accuracy': 0.8644781427998018, 'Diameter': 0.851275222247708}]",
+        "schema_canonicalizaiton": [
+            [
+                "bearing housing",
+                "Operation",
+                "precision boring"
+            ],
+            [
+                "precision boring",
+                "Tool",
+                "CBN tipped tools"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Plasma electrolytic oxidation of magnesium alloys maintained 450V bipolar pulses at 50 Hz, achieving 25 μm coating thickness with 400HV surface hardness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "plasma electrolytic oxidation",
+                "Voltage",
+                "450V"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Frequency",
+                "50 Hz"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Coating Thickness",
+                "25 μm"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Surface Hardness",
+                "400HV"
+            ]
+        ],
+        "schema_definition": {
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Frequency": "The subject process applies or maintains the object oscillation or pulse frequency.",
+            "Coating Thickness": "The subject coated workpiece has the object coating thickness.",
+            "Surface Hardness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Hardness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Hardness': 0.9959677419354839, 'Surface Roughness': 0.9732185844968706, 'Coating Thickness': 0.9045466678024817, 'Geometric Tolerance': 0.8624075784813077, 'Position Accuracy': 0.8586488589017351}]",
+        "schema_canonicalizaiton": [
+            [
+                "plasma electrolytic oxidation",
+                "Voltage",
+                "450V"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Frequency",
+                "50 Hz"
+            ],
+            [
+                "plasma electrolytic oxidation",
+                "Coating Thickness",
+                "25 μm"
+            ],
+            null
+        ]
+    }
+]

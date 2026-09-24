@@ -1,0 +1,567 @@
+[
+    {
+        "index": 0,
+        "input_text": "The deep hole drilling of Inconel components used carbide tools with internal cooling at 100 bar, maintaining 0.05 mm/rev feed rate for hole straightness control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "deep hole drilling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant",
+                "internal cooling"
+            ],
+            [
+                "deep hole drilling",
+                "Pressure",
+                "100 bar"
+            ],
+            [
+                "deep hole drilling",
+                "Feed Rate",
+                "0.05 mm/rev"
+            ],
+            [
+                "deep hole drilling",
+                "Goal",
+                "hole straightness control"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Goal": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Goal”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {'Angle': 1.0581103193182115, 'Quality Grade': 1.012164175573906, 'Hold Time': 1.0033667216718838, 'Geometric Tolerance': 0.9899103457172342, 'Dimensional Tolerance': 0.9818593141738667}]",
+        "schema_canonicalizaiton": [
+            [
+                "deep hole drilling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant",
+                "internal cooling"
+            ],
+            [
+                "deep hole drilling",
+                "Pressure",
+                "100 bar"
+            ],
+            [
+                "deep hole drilling",
+                "Feed Rate",
+                "0.05 mm/rev"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Precision profile grinding of cam lobes employed formed wheels at 35 m/s, with continuous dressing achieving 0.005 mm profile accuracy through CNC control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision profile grinding",
+                "Tool",
+                "formed wheels"
+            ],
+            [
+                "precision profile grinding",
+                "Speed",
+                "35 m/s"
+            ],
+            [
+                "precision profile grinding",
+                "Operation",
+                "profile grinding"
+            ],
+            [
+                "precision profile grinding",
+                "Process",
+                "continuous dressing"
+            ],
+            [
+                "precision profile grinding",
+                "Accuracy",
+                "0.005 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Wheel Speed': 0.9678341013824885, 'Table Speed': 0.9559671011596866, 'Spindle Speed': 0.9286562859229812, 'Workpiece Speed': 0.9257492258984796, 'Feed Speed': 0.9212067018072289}, {}, {'Process Sequence': 0.9778172348484848, 'Pressure': 0.9177020862504733, 'Surface Roughness': 0.8544555530968576, 'Quality Grade': 0.8354454979696626, 'Angle': 0.8300058246789996}, {'Position Accuracy': 1.18, 'Quality Grade': 1.0704437711193406, 'Purpose': 1.0229402014535254, 'Temperature': 1.0192436823989997, 'Cutting Speed': 0.9876481382886872}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision profile grinding",
+                "Tool",
+                "formed wheels"
+            ],
+            null,
+            [
+                "precision profile grinding",
+                "Operation",
+                "profile grinding"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The laser welding of dissimilar metals used 1.5kW fiber laser with beam oscillation, maintaining 3 mm/s travel speed under helium shielding at 20 L/min.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser welding",
+                "Power",
+                "1.5kW"
+            ],
+            [
+                "laser welding",
+                "Beam Oscillation",
+                "beam oscillation"
+            ],
+            [
+                "laser welding",
+                "Travel Speed",
+                "3 mm/s"
+            ],
+            [
+                "laser welding",
+                "Coolant",
+                "helium shielding"
+            ],
+            [
+                "laser welding",
+                "Gas Flow",
+                "20 L/min"
+            ]
+        ],
+        "schema_definition": {
+            "Power": "The subject process applies or maintains the object power.",
+            "Beam Oscillation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Beam Oscillation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Travel Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Travel Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Gas Flow": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Gas Flow”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Position Accuracy': 0.8924766406014847, 'Operation': 0.8627110157663622, 'Diameter': 0.8469515945242978, 'Frequency': 0.8408198930121393, 'Dimensional Tolerance': 0.8333262986595066}, {'Table Speed': 1.1508848320138643, 'Wheel Speed': 1.1424131944444444, 'Workpiece Speed': 1.1159430183343229, 'Cutting Speed': 1.0909800070356472, 'Spindle Speed': 1.0896265713453213}, {}, {'Coolant Flow Rate': 0.9605263157894737, 'Process Sequence': 0.8679734421921922, 'Voltage': 0.8442802197802197, 'Diameter': 0.840276862026862, 'Power': 0.8179687718757115}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser welding",
+                "Power",
+                "1.5kW"
+            ],
+            null,
+            null,
+            [
+                "laser welding",
+                "Coolant",
+                "helium shielding"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Electrochemical drilling of cooling holes used platinum electrodes with 20V DC, achieving 0.5 mm diameter with 25:1 aspect ratio in nickel alloy.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "electrochemical drilling",
+                "Tool",
+                "platinum electrode"
+            ],
+            [
+                "electrochemical drilling",
+                "Voltage",
+                "20V DC"
+            ],
+            [
+                "electrochemical drilling",
+                "Diameter",
+                "0.5 mm"
+            ],
+            [
+                "electrochemical drilling",
+                "Aspect Ratio",
+                "25:1"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Diameter": "The subject workpiece or feature has the object diameter.",
+            "Aspect Ratio": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Aspect Ratio”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Feed Rate': 1.062314369899602, 'Material Removal Rate': 1.038479020979021, 'Position Accuracy': 1.0329613456239108, 'Quality Grade': 1.0305090782450566, 'Infeed Rate': 1.0152609516143951}]",
+        "schema_canonicalizaiton": [
+            [
+                "electrochemical drilling",
+                "Tool",
+                "platinum electrode"
+            ],
+            [
+                "electrochemical drilling",
+                "Voltage",
+                "20V DC"
+            ],
+            [
+                "electrochemical drilling",
+                "Diameter",
+                "0.5 mm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The precision honing of cylinder liners employed diamond stones with 45° crosshatch, maintaining 2 MPa pressure with 0.002 mm diameter control through in-process gauging.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "cylinder liners",
+                "Operation",
+                "precision honing"
+            ],
+            [
+                "precision honing",
+                "Tool",
+                "diamond stones"
+            ],
+            [
+                "precision honing",
+                "Crosshatch Angle",
+                "45°"
+            ],
+            [
+                "precision honing",
+                "Pressure",
+                "2 MPa"
+            ],
+            [
+                "precision honing",
+                "Diameter Control",
+                "0.002 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Crosshatch Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Crosshatch Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Diameter Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Diameter Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Angle': 1.0, 'Pitch': 0.9020343196195807, 'Position Accuracy': 0.9001823154490108, 'Geometric Tolerance': 0.8740241610111014, 'Coating Thickness': 0.8577782074413673}, {}, {'Diameter': 1.0, 'Tool Diameter': 0.9646380322186775, 'Control Method': 0.9246922365122872, 'Dimensional Tolerance': 0.9125817262811101, 'Tool Geometry': 0.8912940249204176}]",
+        "schema_canonicalizaiton": [
+            [
+                "cylinder liners",
+                "Operation",
+                "precision honing"
+            ],
+            [
+                "precision honing",
+                "Tool",
+                "diamond stones"
+            ],
+            null,
+            [
+                "precision honing",
+                "Pressure",
+                "2 MPa"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Micro-milling of ceramic substrates used 0.2 mm diamond-coated tools at 50,000 rpm, implementing minimum quantity lubrication at 0.1 mL/min flow rate.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-milling",
+                "Tool",
+                "0.2 mm diamond-coated tools"
+            ],
+            [
+                "micro-milling",
+                "Spindle Speed",
+                "50,000 rpm"
+            ],
+            [
+                "micro-milling",
+                "Coolant",
+                "minimum quantity lubrication"
+            ],
+            [
+                "micro-milling",
+                "Flow Rate",
+                "0.1 mL/min"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Flow Rate": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Flow Rate”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Coolant Flow Rate': 1.151830985915493, 'Feed Rate': 1.1187269182430473, 'Infeed Rate': 1.0866378066378068, 'Material Removal Rate': 1.0695245324850589, 'Temperature': 1.0086254871789158}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-milling",
+                "Tool",
+                "0.2 mm diamond-coated tools"
+            ],
+            [
+                "micro-milling",
+                "Spindle Speed",
+                "50,000 rpm"
+            ],
+            [
+                "micro-milling",
+                "Coolant",
+                "minimum quantity lubrication"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The ion implantation of cutting tools maintained 200keV energy with nitrogen ions, achieving 0.2 μm case depth with 2000HV surface hardness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ion implantation",
+                "Energy",
+                "200keV"
+            ],
+            [
+                "ion implantation",
+                "Ion",
+                "nitrogen ions"
+            ],
+            [
+                "ion implantation",
+                "Case Depth",
+                "0.2 μm"
+            ],
+            [
+                "ion implantation",
+                "Surface Hardness",
+                "2000HV"
+            ]
+        ],
+        "schema_definition": {
+            "Energy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Energy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Ion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Ion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Case Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Case Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Hardness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Hardness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Power': 0.8896790212966684, 'Equipment': 0.8696099184833918, 'Current': 0.8661902517859791, 'Hardness': 0.8565957164288814, 'Angle': 0.8486806801078466}, {'Operation': 0.9230255176617489, 'Material': 0.886062322486144, 'Power': 0.8617985909284663, 'Voltage': 0.8475889820987861, 'Temperature': 0.8388270954415532}, {'Depth of Cut': 0.9257731958762887, 'Step Over': 0.891541709147343, 'Width': 0.8704432987048341, 'Diameter': 0.8370734690506948, 'Tool Diameter': 0.8296576914977555}, {'Hardness': 0.9959677419354839, 'Surface Roughness': 0.9732185844968706, 'Coating Thickness': 0.9003446012123555, 'Geometric Tolerance': 0.8644159191310005, 'Position Accuracy': 0.8539991309512851}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Precision grinding of sapphire windows employed resin-bonded diamond wheels at 20 m/s, with 0.001 mm infeed per pass for optical grade finish.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision grinding",
+                "Tool",
+                "resin-bonded diamond wheels"
+            ],
+            [
+                "precision grinding",
+                "Feed Rate",
+                "0.001 mm"
+            ],
+            [
+                "precision grinding",
+                "Speed",
+                "20 m/s"
+            ],
+            [
+                "sapphire windows",
+                "Dimensional Tolerance",
+                "optical grade finish"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dimensional Tolerance": "The subject workpiece or feature has the object allowable dimensional deviation."
+        },
+        "canonicalization_candidates": "[{}, {}, {'Wheel Speed': 0.9610226869904289, 'Table Speed': 0.9516162105867989, 'Spindle Speed': 0.9328386626860031, 'Feed Speed': 0.9212067018072289, 'Workpiece Speed': 0.9194142921754863}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision grinding",
+                "Tool",
+                "resin-bonded diamond wheels"
+            ],
+            [
+                "precision grinding",
+                "Feed Rate",
+                "0.001 mm"
+            ],
+            null,
+            [
+                "sapphire windows",
+                "Dimensional Tolerance",
+                "optical grade finish"
+            ]
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The laser cladding of valve seats used Co-based powder with 2.5kW diode laser, maintaining 900°C preheat temperature for crack-free deposition.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser cladding",
+                "Material",
+                "Co-based powder"
+            ],
+            [
+                "laser cladding",
+                "Laser",
+                "diode laser"
+            ],
+            [
+                "laser cladding",
+                "Power",
+                "2.5kW"
+            ],
+            [
+                "laser cladding",
+                "Preheat Temperature",
+                "900°C"
+            ],
+            [
+                "laser cladding",
+                "Process",
+                "crack-free deposition"
+            ]
+        ],
+        "schema_definition": {
+            "Material": "The subject workpiece or part is made from the object material.",
+            "Laser": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Laser”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Power": "The subject process applies or maintains the object power.",
+            "Preheat Temperature": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Preheat Temperature”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Diameter': 0.9196776840224483, 'Material': 0.8844011205142337, 'Purpose': 0.8464893405953394, 'Abrasive': 0.8430629153455242, 'Coolant': 0.8412462565157798}, {}, {'Temperature': 1.18, 'Coolant Pressure': 1.0845856211393274, 'Coolant Flow Rate': 1.0484142301139552, 'Coolant': 1.0052829996305457, 'Infeed Rate': 0.988733716691599}, {'Process Sequence': 1.162429130009775, 'Quality Grade': 1.031810353771138, 'Angle': 1.02032537355118, 'Position Accuracy': 1.016331992316844, 'Temperature': 0.9853178259184516}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser cladding",
+                "Material",
+                "Co-based powder"
+            ],
+            null,
+            [
+                "laser cladding",
+                "Power",
+                "2.5kW"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Wire electrical discharge grinding of micro-gears used 0.07 mm brass wire at 90V, achieving 0.008 mm tooth profile accuracy through multi-pass cutting.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "wire electrical discharge grinding",
+                "Tool",
+                "0.07 mm brass wire"
+            ],
+            [
+                "wire electrical discharge grinding",
+                "Voltage",
+                "90V"
+            ],
+            [
+                "wire electrical discharge grinding",
+                "Operation",
+                "multi-pass cutting"
+            ],
+            [
+                "wire electrical discharge grinding",
+                "Result",
+                "0.008 mm tooth profile accuracy"
+            ],
+            [
+                "wire electrical discharge grinding",
+                "Process",
+                "micro-gears"
+            ],
+            [
+                "wire electrical discharge grinding",
+                "Parameter",
+                "0.07 mm brass wire"
+            ],
+            [
+                "wire electrical discharge grinding",
+                "Parameter",
+                "90V"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Result": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Result”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Parameter": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Parameter”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Quality Grade': 1.0191015770294152, 'Angle': 1.0148397435897438, 'Position Accuracy': 1.0145174718768706, 'Dressing Method': 0.9764480564594946, 'Temperature': 0.9714640220957806}, {'Process Sequence': 0.9674571805006588, 'Pressure': 0.9092420232097651, 'Surface Roughness': 0.8465334751747796, 'Angle': 0.8438357020928038, 'Quality Grade': 0.8331761527315674}, {'Angle': 1.063322282177916, 'Temperature': 1.0283128653072937, 'Diameter': 0.9842001888120839, 'Position Accuracy': 0.9753174287314166, 'Geometric Tolerance': 0.9721114607320376}, {'Angle': 1.0609029273392063, 'Temperature': 1.026326972740826, 'Diameter': 0.9757902623414958, 'Position Accuracy': 0.97121743350147, 'Geometric Tolerance': 0.9712072104817739}]",
+        "schema_canonicalizaiton": [
+            [
+                "wire electrical discharge grinding",
+                "Tool",
+                "0.07 mm brass wire"
+            ],
+            [
+                "wire electrical discharge grinding",
+                "Voltage",
+                "90V"
+            ],
+            [
+                "wire electrical discharge grinding",
+                "Operation",
+                "multi-pass cutting"
+            ],
+            null,
+            null,
+            null,
+            null
+        ]
+    }
+]

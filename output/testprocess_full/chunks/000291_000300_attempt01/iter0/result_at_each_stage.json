@@ -1,0 +1,543 @@
+[
+    {
+        "index": 0,
+        "input_text": "The precision cylindrical grinding of spindle shafts used vitrified Al2O3 wheels at 40 m/s, implementing continuous dressing for form accuracy.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "spindle shafts",
+                "Operation",
+                "precision cylindrical grinding"
+            ],
+            [
+                "precision cylindrical grinding",
+                "Wheel",
+                "vitrified Al2O3 wheels"
+            ],
+            [
+                "precision cylindrical grinding",
+                "Speed",
+                "40 m/s"
+            ],
+            [
+                "precision cylindrical grinding",
+                "Dressing",
+                "continuous dressing"
+            ],
+            [
+                "precision cylindrical grinding",
+                "Purpose",
+                "form accuracy"
+            ],
+            [
+                "spindle shafts",
+                "Wheel",
+                "vitrified Al2O3 wheels"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Wheel": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Wheel”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dressing": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Dressing”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Purpose": "The subject operation or condition serves the object stated purpose."
+        },
+        "canonicalization_candidates": "[{}, {'Wheel Speed': 0.9600261551874455, 'Grinding Wheel': 0.9503770423125262, 'Material': 0.8429144406134056, 'Width': 0.8409659061849691, 'Angle': 0.820729532615722}, {'Wheel Speed': 0.9678341013824885, 'Table Speed': 0.9471473461179345, 'Spindle Speed': 0.9304961127628081, 'Workpiece Speed': 0.9279487451292489, 'Cutting Speed': 0.9119723100079206}, {'Dressing Method': 0.9370786516853932, 'Pressure': 0.8518726188087561, 'Coating Thickness': 0.850374616232735, 'Hardness': 0.8359565765062695, 'Tool Coating': 0.8285577326286246}, {}, {'Wheel Speed': 0.9624455100261552, 'Grinding Wheel': 0.9479576874738166, 'Width': 0.8707688764106198, 'Material': 0.8549626235379774, 'Angle': 0.8434641333489717}]",
+        "schema_canonicalizaiton": [
+            [
+                "spindle shafts",
+                "Operation",
+                "precision cylindrical grinding"
+            ],
+            [
+                "precision cylindrical grinding",
+                "Grinding Wheel",
+                "vitrified Al2O3 wheels"
+            ],
+            null,
+            null,
+            [
+                "precision cylindrical grinding",
+                "Purpose",
+                "form accuracy"
+            ],
+            [
+                "spindle shafts",
+                "Material",
+                "vitrified Al2O3 wheels"
+            ]
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Laser welding of battery tabs used 200W fiber laser with beam oscillation, maintaining 0.3 mm penetration depth through gap control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser welding",
+                "Tool",
+                "fiber laser"
+            ],
+            [
+                "laser welding",
+                "Power",
+                "200W"
+            ],
+            [
+                "laser welding",
+                "Penetration Depth",
+                "0.3 mm"
+            ],
+            [
+                "laser welding",
+                "Gap Control",
+                "gap control"
+            ],
+            [
+                "laser welding",
+                "Process",
+                "battery tabs"
+            ],
+            [
+                "laser welding",
+                "Beam Oscillation",
+                "beam oscillation"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Power": "The subject process applies or maintains the object power.",
+            "Penetration Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Penetration Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Gap Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Gap Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Beam Oscillation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Beam Oscillation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Depth of Cut': 1.1043887945670627, 'Dimensional Tolerance': 1.070655777394908, 'Geometric Tolerance': 1.0552266662193133, 'Position Accuracy': 1.0152211079965945, 'Feed Rate': 0.9853464417770168}, {'Control Method': 0.9471794871794873, 'Geometric Tolerance': 0.9144734879400569, 'Tool Geometry': 0.8581639496204602, 'Tool Coating': 0.8549025537634408, 'Hold Time': 0.8297325081739638}, {'Process Sequence': 0.9824291300097752, 'Pressure': 0.9153039612717033, 'Angle': 0.8525798378368944, 'Quality Grade': 0.8473414893022737, 'Surface Roughness': 0.8432795633682362}, {'Position Accuracy': 0.8924766406014847, 'Operation': 0.8627110157663622, 'Diameter': 0.8469515945242978, 'Frequency': 0.8408198930121393, 'Dimensional Tolerance': 0.8333262986595066}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser welding",
+                "Tool",
+                "fiber laser"
+            ],
+            [
+                "laser welding",
+                "Power",
+                "200W"
+            ],
+            null,
+            null,
+            null,
+            [
+                "laser welding",
+                "Frequency",
+                "beam oscillation"
+            ]
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The abrasive flow machining of fuel injector ports used polymer media with 500-grit diamond, achieving 0.2 μm Ra through reciprocating flow.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "abrasive flow machining",
+                "Material",
+                "polymer media"
+            ],
+            [
+                "abrasive flow machining",
+                "Abrasive",
+                "500-grit diamond"
+            ],
+            [
+                "abrasive flow machining",
+                "Surface Roughness",
+                "0.2 μm Ra"
+            ],
+            [
+                "abrasive flow machining",
+                "Operation",
+                "reciprocating flow"
+            ]
+        ],
+        "schema_definition": {
+            "Material": "The subject workpiece or part is made from the object material.",
+            "Abrasive": "The subject process uses the object abrasive material or medium.",
+            "Surface Roughness": "The subject workpiece or processed surface has the object roughness value or requirement.",
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation."
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "abrasive flow machining",
+                "Material",
+                "polymer media"
+            ],
+            [
+                "abrasive flow machining",
+                "Abrasive",
+                "500-grit diamond"
+            ],
+            [
+                "abrasive flow machining",
+                "Surface Roughness",
+                "0.2 μm Ra"
+            ],
+            [
+                "abrasive flow machining",
+                "Operation",
+                "reciprocating flow"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Precision turning of aluminum mirrors employed diamond tools with -5° rake angle, maintaining 0.005 mm depth of cut for optical finish.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision turning",
+                "Tool",
+                "diamond tools"
+            ],
+            [
+                "precision turning",
+                "Rake Angle",
+                "-5°"
+            ],
+            [
+                "precision turning",
+                "Depth Of Cut",
+                "0.005 mm"
+            ],
+            [
+                "precision turning",
+                "Surface Finish",
+                "optical finish"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Rake Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Rake Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。",
+            "Surface Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Angle': 1.18, 'Position Accuracy': 1.0577811200237672, 'Geometric Tolerance': 1.0319044062733385, 'Quality Grade': 1.0283092543333507, 'Table Speed': 1.0271483227008131}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1524465319626611, 'Step Over': 1.0344231366474759, 'Dressing Method': 0.9989781984379174, 'Material Removal Rate': 0.9714592837769362}, {'Surface Roughness': 0.9848484848484848, 'Tool Coating': 0.8588377223306375, 'Cutting Speed': 0.8446910948836804, 'Workpiece Speed': 0.8441351055643078, 'Tool Geometry': 0.8424409061870363}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision turning",
+                "Tool",
+                "diamond tools"
+            ],
+            null,
+            [
+                "precision turning",
+                "Depth of Cut",
+                "0.005 mm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The electrochemical deburring of micro-gears used NaNO3 electrolyte at 18V DC, achieving 0.03 mm edge radius through pulsed current.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "electrochemical deburring",
+                "Electrolyte",
+                "NaNO3"
+            ],
+            [
+                "electrochemical deburring",
+                "Voltage",
+                "18V DC"
+            ],
+            [
+                "electrochemical deburring",
+                "Process",
+                "pulsed current"
+            ],
+            [
+                "micro-gears",
+                "Edge Radius",
+                "0.03 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Electrolyte": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Electrolyte”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Edge Radius": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Edge Radius”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Angle': 0.9086457351570306, 'Voltage': 0.9069957787954451, 'Geometric Tolerance': 0.8393806831424208, 'Current': 0.8348699095022625, 'Diameter': 0.8316317246835443}, {}, {'Process Sequence': 0.9778172348484848, 'Pressure': 0.9187942210119631, 'Surface Roughness': 0.8544555530968576, 'Angle': 0.8384843272735141, 'Frequency': 0.836362116144725}, {'Quality Grade': 1.1107455100557229, 'Feed Rate': 1.0596417441871475, 'Angle': 1.0418108974358975, 'Table Speed': 1.0024186992707995, 'Infeed Rate': 0.9931419220355193}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "electrochemical deburring",
+                "Voltage",
+                "18V DC"
+            ],
+            [
+                "electrochemical deburring",
+                "Frequency",
+                "pulsed current"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Micro-EDM milling of micro-fluidic molds used tungsten electrodes at 60V, implementing orbital motion for 0.02 mm corner radius.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-edm milling",
+                "Tool",
+                "tungsten electrode"
+            ],
+            [
+                "micro-edm milling",
+                "Voltage",
+                "60V"
+            ],
+            [
+                "micro-edm milling",
+                "Orbital Motion",
+                "0.02 mm corner radius"
+            ],
+            [
+                "micro-edm milling",
+                "Process",
+                "milling"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Orbital Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Orbital Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Operation': 1.0596160748338237, 'Workpiece Speed': 1.0238288849247754, 'Position Accuracy': 1.0124802405311475, 'Wheel Speed': 1.002568920873251, 'Amplitude': 1.0025630623602226}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.8957201042684915, 'Surface Roughness': 0.8523863536395982, 'Angle': 0.8482474514732579, 'Material': 0.8264073677438305}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-edm milling",
+                "Tool",
+                "tungsten electrode"
+            ],
+            [
+                "micro-edm milling",
+                "Voltage",
+                "60V"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The plasma spray coating of cylinder liners used Mo-steel powder at 40kW, maintaining 100 mm standoff distance for 200 μm thickness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "plasma spray coating",
+                "Coating Material",
+                "Mo-steel powder"
+            ],
+            [
+                "plasma spray coating",
+                "Power",
+                "40kW"
+            ],
+            [
+                "plasma spray coating",
+                "Standoff Distance",
+                "100 mm"
+            ],
+            [
+                "plasma spray coating",
+                "Thickness",
+                "200 μm"
+            ]
+        ],
+        "schema_definition": {
+            "Coating Material": "主体类别=workpiece or part；方向=主体→客体；客体类别=material type；谓词语义=states the material from which the subject is made；范围边界=workpiece material property。",
+            "Power": "The subject process applies or maintains the object power.",
+            "Standoff Distance": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Standoff Distance”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Thickness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Thickness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Material': 1.1635193452380952, 'Tool Material': 1.1280250736047106, 'Tool Coating': 0.9316132106376008, 'Coating Thickness': 0.9292287668436097, 'Diameter': 0.8755202252944189}, {}, {'Step Over': 0.8989911574007952, 'Diameter': 0.8921134734441188, 'Tool Diameter': 0.8679492804492805, 'Geometric Tolerance': 0.8639883477855269, 'Dimensional Tolerance': 0.8625612693166088}, {'Coating Thickness': 0.9768115942028986, 'Hardness': 0.9578994949842327, 'Surface Roughness': 0.942307650182413, 'Width': 0.8698246137164544, 'Pressure': 0.8513622706537239}]",
+        "schema_canonicalizaiton": [
+            [
+                "plasma spray coating",
+                "Material",
+                "Mo-steel powder"
+            ],
+            [
+                "plasma spray coating",
+                "Power",
+                "40kW"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Precision profile grinding of cam lobes used CBN wheels at 45 m/s, with in-process probing for automated stock division.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision profile grinding",
+                "Tool",
+                "CBN wheels"
+            ],
+            [
+                "precision profile grinding",
+                "Speed",
+                "45 m/s"
+            ],
+            [
+                "precision profile grinding",
+                "Process",
+                "in-process probing"
+            ],
+            [
+                "precision profile grinding",
+                "Purpose",
+                "automated stock division"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Purpose": "The subject operation or condition serves the object stated purpose."
+        },
+        "canonicalization_candidates": "[{}, {'Wheel Speed': 0.9608028513824886, 'Table Speed': 0.9583864559983962, 'Spindle Speed': 0.9286562859229812, 'Feed Speed': 0.9258185969685192, 'Workpiece Speed': 0.9257492258984796}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.921815258193959, 'Surface Roughness': 0.852806904448209, 'Angle': 0.8461782520159989, 'Quality Grade': 0.8372865442473286}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision profile grinding",
+                "Tool",
+                "CBN wheels"
+            ],
+            null,
+            null,
+            [
+                "precision profile grinding",
+                "Purpose",
+                "automated stock division"
+            ]
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The laser cladding of turbine blades used Co-based powder with 3kW diode laser, maintaining 5 mm/s travel speed for 1 mm layer.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser cladding",
+                "Operation",
+                "laser cladding"
+            ],
+            [
+                "laser cladding",
+                "Material",
+                "Co-based powder"
+            ],
+            [
+                "laser cladding",
+                "Power",
+                "3kW"
+            ],
+            [
+                "laser cladding",
+                "Travel Speed",
+                "5 mm/s"
+            ],
+            [
+                "laser cladding",
+                "Layer Thickness",
+                "1 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Material": "The subject workpiece or part is made from the object material.",
+            "Power": "The subject process applies or maintains the object power.",
+            "Travel Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Travel Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Layer Thickness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Layer Thickness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Table Speed': 1.153304186852574, 'Wheel Speed': 1.1380808080808082, 'Workpiece Speed': 1.1161527011246506, 'Feed Speed': 1.09322506794281, 'Spindle Speed': 1.0917594384781883}, {'Coating Thickness': 0.9694444444444444, 'Hardness': 0.9556537526093979, 'Surface Roughness': 0.9317298933869738, 'Width': 0.8717491323500081, 'Geometric Tolerance': 0.8664013073794442}]",
+        "schema_canonicalizaiton": [
+            [
+                "laser cladding",
+                "Operation",
+                "laser cladding"
+            ],
+            [
+                "laser cladding",
+                "Material",
+                "Co-based powder"
+            ],
+            [
+                "laser cladding",
+                "Power",
+                "3kW"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Wire EDM cutting of stamping dies employed 0.2 mm zinc-coated wire at 120V, achieving 0.004 mm taper control through adaptive power.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "wire edm cutting",
+                "Tool",
+                "0.2 mm zinc-coated wire"
+            ],
+            [
+                "wire edm cutting",
+                "Power",
+                "120V"
+            ],
+            [
+                "wire edm cutting",
+                "Taper Control",
+                "0.004 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Power": "The subject process applies or maintains the object power.",
+            "Taper Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Taper Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Control Method': 0.9313315696649029, 'Table Speed': 0.8637770308567138, 'Tool Coating': 0.854317186644773, 'Geometric Tolerance': 0.8360979149535488, 'Tool Diameter': 0.8261423912600385}]",
+        "schema_canonicalizaiton": [
+            [
+                "wire edm cutting",
+                "Tool",
+                "0.2 mm zinc-coated wire"
+            ],
+            [
+                "wire edm cutting",
+                "Power",
+                "120V"
+            ],
+            null
+        ]
+    }
+]

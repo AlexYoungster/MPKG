@@ -1,0 +1,24 @@
+{
+  "total_lines": 1,
+  "nonblank_lines": 1,
+  "checked_lines": 1,
+  "pipeline_error_lines": 0,
+  "lines_with_extracted_triples": 1,
+  "lines_with_canonical_triples": 1,
+  "structural_and_schema_compliant_lines": 1,
+  "processing_completion_rate": 1.0,
+  "structural_and_schema_compliance_rate": 1.0,
+  "extracted_triples": 4,
+  "canonical_triples": 4,
+  "canonicalization_abstentions": 0,
+  "schema_relation_count": 49,
+  "relations_used": 4,
+  "flag_counts": {},
+  "relation_counts": {
+    "Cutting Speed": 1,
+    "Depth of Cut": 1,
+    "Feed Rate": 1,
+    "Tool": 1
+  },
+  "note": "Compliance checks only structure, schema membership and stage consistency. Literal source matching is a review signal. Semantic precision/recall requires labeled gold triples."
+}

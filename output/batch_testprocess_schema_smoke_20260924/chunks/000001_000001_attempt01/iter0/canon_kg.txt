@@ -1,0 +1,1 @@
+[['face milling operation', 'Cutting Speed', '180 m/min'], ['face milling operation', 'Feed Rate', '0.2 mm/rev'], ['face milling operation', 'Depth of Cut', '2.5 mm'], ['face milling operation', 'Tool', 'carbide tool']]

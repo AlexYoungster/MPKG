@@ -1,0 +1,30 @@
+{
+  "total_lines": 3,
+  "nonblank_lines": 3,
+  "checked_lines": 3,
+  "pipeline_error_lines": 0,
+  "lines_with_extracted_triples": 3,
+  "lines_with_canonical_triples": 3,
+  "structural_and_schema_compliant_lines": 3,
+  "processing_completion_rate": 1.0,
+  "structural_and_schema_compliance_rate": 1.0,
+  "extracted_triples": 24,
+  "canonical_triples": 24,
+  "canonicalization_abstentions": 0,
+  "schema_relation_count": 169,
+  "relations_used": 10,
+  "flag_counts": {},
+  "relation_counts": {
+    "主轴转速": 3,
+    "使用刀具": 3,
+    "冷却方式": 3,
+    "几何公差要求": 1,
+    "切削深度": 3,
+    "加工工序": 3,
+    "材料": 3,
+    "表面粗糙度要求": 2,
+    "进给速度": 1,
+    "进给量": 2
+  },
+  "note": "Compliance checks only structure, schema membership and stage consistency. Literal source matching is a review signal. Semantic precision/recall requires labeled gold triples."
+}

@@ -1,0 +1,270 @@
+[
+    {
+        "index": 0,
+        "input_text": "The taper turning of valve stems used ceramic tools at 350 m/min, maintaining 0.01 mm taper accuracy through CNC control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "valve stem",
+                "Operation",
+                "taper turning"
+            ],
+            [
+                "taper turning",
+                "Tool",
+                "ceramic tool"
+            ],
+            [
+                "taper turning",
+                "Feed Rate",
+                "350 m/min"
+            ],
+            [
+                "valve stem",
+                "Taper Accuracy",
+                "0.01 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Taper Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Taper Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Position Accuracy': 1.170625, 'Table Speed': 1.0532202013155063, 'Temperature': 1.0125606959298585, 'Cutting Speed': 1.0004468118983179, 'Geometric Tolerance': 0.9998086282625758}]",
+        "schema_canonicalizaiton": [
+            [
+                "valve stem",
+                "Operation",
+                "taper turning"
+            ],
+            [
+                "taper turning",
+                "Tool",
+                "ceramic tool"
+            ],
+            [
+                "taper turning",
+                "Feed Rate",
+                "350 m/min"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Precision keyway milling of motor shafts employed carbide cutters at 6000 rpm, achieving 0.01 mm width tolerance through rigid tooling.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision keyway milling",
+                "Tool",
+                "carbide cutters"
+            ],
+            [
+                "precision keyway milling",
+                "Spindle Speed",
+                "6000 rpm"
+            ],
+            [
+                "precision keyway milling",
+                "Tooling",
+                "rigid tooling"
+            ],
+            [
+                "precision keyway milling",
+                "Dimensional Tolerance",
+                "0.01 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Tooling": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tooling”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dimensional Tolerance": "The subject workpiece or feature has the object allowable dimensional deviation."
+        },
+        "canonicalization_candidates": "[{}, {}, {'Tool Coating': 0.9461381949497399, 'Tool Geometry': 0.9443122836429739, 'Tool Material': 0.9344345604023023, 'Tool Diameter': 0.926215537934288, 'Tool': 0.9193896409370199}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision keyway milling",
+                "Tool",
+                "carbide cutters"
+            ],
+            [
+                "precision keyway milling",
+                "Spindle Speed",
+                "6000 rpm"
+            ],
+            null,
+            [
+                "precision keyway milling",
+                "Dimensional Tolerance",
+                "0.01 mm"
+            ]
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The profile turning of CV joints used PCBN tools at 200 m/min, maintaining 0.02 mm profile accuracy through tool compensation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "profile turning",
+                "Operation",
+                "CV joints"
+            ],
+            [
+                "CV joints",
+                "Tool",
+                "PCBN tools"
+            ],
+            [
+                "profile turning",
+                "Feed Rate",
+                "200 m/min"
+            ],
+            [
+                "profile turning",
+                "Tool Compensation",
+                "maintaining 0.02 mm profile accuracy"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Tool Compensation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tool Compensation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Tool': 1.076682310744811, 'Position Accuracy': 1.0465176105653529, 'Dimensional Tolerance': 1.0219193249199399, 'Geometric Tolerance': 1.0116689860420511, 'Operation': 0.9800537520710326}]",
+        "schema_canonicalizaiton": [
+            [
+                "profile turning",
+                "Operation",
+                "CV joints"
+            ],
+            [
+                "CV joints",
+                "Tool",
+                "PCBN tools"
+            ],
+            [
+                "profile turning",
+                "Feed Rate",
+                "200 m/min"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Deep hole drilling of mold cooling channels employed carbide drills at 4000 rpm, achieving 0.05 mm straightness through MQL cooling.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "deep hole drilling",
+                "Tool",
+                "carbide drill"
+            ],
+            [
+                "deep hole drilling",
+                "Spindle Speed",
+                "4000 rpm"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant",
+                "MQL"
+            ],
+            [
+                "deep hole drilling",
+                "Straightness",
+                "0.05 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Straightness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Straightness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Geometric Tolerance': 1.0151056698351746, 'Angle': 1.0070339674649584, 'Step Over': 0.9986241952004684, 'Position Accuracy': 0.9862476346943376, 'Process Sequence': 0.9780680022351491}]",
+        "schema_canonicalizaiton": [
+            [
+                "deep hole drilling",
+                "Tool",
+                "carbide drill"
+            ],
+            [
+                "deep hole drilling",
+                "Spindle Speed",
+                "4000 rpm"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant",
+                "MQL"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The gear shaping of planetary gears used HSS cutters at 800 strokes/min, maintaining AGMA Q12 quality through CNC synchronization.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "planetary gears",
+                "Operation",
+                "gear shaping"
+            ],
+            [
+                "gear shaping",
+                "Tool",
+                "HSS cutters"
+            ],
+            [
+                "gear shaping",
+                "Strokes Per Minute",
+                "800"
+            ],
+            [
+                "planetary gears",
+                "Quality",
+                "AGMA Q12"
+            ],
+            [
+                "planetary gears",
+                "Process",
+                "CNC synchronization"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Strokes Per Minute": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Strokes Per Minute”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Quality": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Quality”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Feed per Tooth': 0.8739659471798429, 'Cutting Speed': 0.8462153419688762, 'Workpiece Speed': 0.8441937522571326, 'Cycle Time': 0.8385442892402516, 'Feed Rate': 0.8294155051761604}, {'Quality Grade': 1.0, 'Position Accuracy': 0.9007581066170791, 'Material': 0.893767016448822, 'Equipment': 0.8485251104616777, 'Diameter': 0.8464052907186711}, {'Process Sequence': 0.9824291300097752, 'Pressure': 0.920121441089183, 'Angle': 0.8548491830749896, 'Quality Grade': 0.8473414893022737, 'Surface Roughness': 0.8463372074785118}]",
+        "schema_canonicalizaiton": [
+            [
+                "planetary gears",
+                "Operation",
+                "gear shaping"
+            ],
+            [
+                "gear shaping",
+                "Tool",
+                "HSS cutters"
+            ],
+            null,
+            null,
+            null
+        ]
+    }
+]

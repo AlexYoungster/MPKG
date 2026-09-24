@@ -1,0 +1,616 @@
+[
+    {
+        "index": 0,
+        "input_text": "The precision face grinding of silicon wafers utilized a resin-bonded diamond wheel at 30 m/s, with work rotation of 300 rpm and automatic wheel dressing every 50 cycles.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "silicon wafers",
+                "Operation",
+                "precision face grinding"
+            ],
+            [
+                "precision face grinding",
+                "Tool",
+                "resin-bonded diamond wheel"
+            ],
+            [
+                "precision face grinding",
+                "Work Rotation",
+                "300 rpm"
+            ],
+            [
+                "precision face grinding",
+                "Feed Rate",
+                "30 m/s"
+            ],
+            [
+                "precision face grinding",
+                "Wheel Dressing",
+                "every 50 cycles"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Work Rotation": "主体类别=加工过程；方向=主体→客体；客体类别=旋转速度参数；谓词语义=表示加工过程中主轴的旋转速率；范围边界=主轴运动参数。",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Wheel Dressing": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Wheel Dressing”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Surface Roughness': 0.897842183583461, 'Workpiece Speed': 0.8648566308243727, 'Tool Coating': 0.8528439854262807, 'Coating Thickness': 0.768646787764435, 'Tool Geometry': 0.7639855727171424}, {}, {'Dressing Method': 0.9626666666666667, 'Wheel Speed': 0.947276539212023, 'Grinding Wheel': 0.9299055584001822, 'Tool Coating': 0.8762009929364245, 'Cutting Speed': 0.8461744629085378}]",
+        "schema_canonicalizaiton": [
+            [
+                "silicon wafers",
+                "Operation",
+                "precision face grinding"
+            ],
+            [
+                "precision face grinding",
+                "Tool",
+                "resin-bonded diamond wheel"
+            ],
+            null,
+            [
+                "precision face grinding",
+                "Feed Rate",
+                "30 m/s"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "A thread milling operation on stainless steel used a carbide thread mill with 3 flutes, running at 120 m/min with helical interpolation and through-tool coolant at 40 bar.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "thread milling",
+                "Tool",
+                "carbide thread mill"
+            ],
+            [
+                "thread milling",
+                "Number Of Flutes",
+                "3"
+            ],
+            [
+                "thread milling",
+                "Spindle Speed",
+                "120 m/min"
+            ],
+            [
+                "thread milling",
+                "Interpolation",
+                "helical"
+            ],
+            [
+                "thread milling",
+                "Coolant",
+                "through-tool coolant"
+            ],
+            [
+                "thread milling",
+                "Coolant Pressure",
+                "40 bar"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Number Of Flutes": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Number Of Flutes”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Interpolation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Interpolation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure."
+        },
+        "canonicalization_candidates": "[{}, {'Diameter': 0.9380124355930808, 'Tool Diameter': 0.8622539531320097, 'Coolant Flow Rate': 0.8463839567050339, 'Depth of Cut': 0.8456254315804879, 'Feed Rate': 0.8396170568561874}, {}, {'Position Accuracy': 0.867245285104279, 'Purpose': 0.8521740484987098, 'Diameter': 0.8511650731065624, 'Operation': 0.8378765553931895, 'Tool Coating': 0.8368372708885045}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "thread milling",
+                "Tool",
+                "carbide thread mill"
+            ],
+            null,
+            [
+                "thread milling",
+                "Spindle Speed",
+                "120 m/min"
+            ],
+            null,
+            [
+                "thread milling",
+                "Coolant",
+                "through-tool coolant"
+            ],
+            [
+                "thread milling",
+                "Coolant Pressure",
+                "40 bar"
+            ]
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The roller burnishing process was performed on a CNC lathe using a hydrostatically pressurized tool at 100 bar, with surface speed of 150 m/min and feed of 0.1 mm/rev.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "roller burnishing",
+                "Operation",
+                "burnishing"
+            ],
+            [
+                "burnishing",
+                "Tool",
+                "hydrostatically pressurized tool"
+            ],
+            [
+                "burnishing",
+                "Pressure",
+                "100 bar"
+            ],
+            [
+                "burnishing",
+                "Surface Speed",
+                "150 m/min"
+            ],
+            [
+                "burnishing",
+                "Feed",
+                "0.1 mm/rev"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Surface Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Feed": "主体类别=加工过程；方向=主体→客体；客体类别=每转进给参数；谓词语义=表示刀具相对于工件的每转进给距离；范围边界=进给运动参数。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Table Speed': 0.9570275281878556, 'Workpiece Speed': 0.9523458701816159, 'Surface Roughness': 0.950111486776639, 'Cutting Speed': 0.9235374112239784, 'Wheel Speed': 0.9167904496655479}, {'Diameter': 0.8331851480615263, 'Width': 0.8173914604771242, 'Feed Rate': 0.8135347120752313, 'Feed Speed': 0.8101893408134643, 'Feed per Tooth': 0.7919498556998558}]",
+        "schema_canonicalizaiton": [
+            [
+                "roller burnishing",
+                "Operation",
+                "burnishing"
+            ],
+            [
+                "burnishing",
+                "Tool",
+                "hydrostatically pressurized tool"
+            ],
+            [
+                "burnishing",
+                "Pressure",
+                "100 bar"
+            ],
+            null,
+            [
+                "burnishing",
+                "Feed Rate",
+                "0.1 mm/rev"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Precision jig grinding of die components employed a high-frequency spindle at 60,000 rpm, using a 1 mm diameter diamond pin with orbital motion of 0.8 mm diameter.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision jig grinding",
+                "Tool",
+                "diamond pin"
+            ],
+            [
+                "precision jig grinding",
+                "Spindle Speed",
+                "60,000 rpm"
+            ],
+            [
+                "precision jig grinding",
+                "Orbital Motion Diameter",
+                "0.8 mm"
+            ],
+            [
+                "die components",
+                "Operation",
+                "precision jig grinding"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Orbital Motion Diameter": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Orbital Motion Diameter”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation."
+        },
+        "canonicalization_candidates": "[{}, {}, {'Diameter': 0.9975806451612904, 'Tool Diameter': 0.9638018433179725, 'Dimensional Tolerance': 0.9249601717665811, 'Tool Geometry': 0.8687942319826595, 'Geometric Tolerance': 0.8531797226745859}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision jig grinding",
+                "Tool",
+                "diamond pin"
+            ],
+            [
+                "precision jig grinding",
+                "Spindle Speed",
+                "60,000 rpm"
+            ],
+            null,
+            [
+                "die components",
+                "Operation",
+                "precision jig grinding"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The skiving operation for internal gears used a carbide skiving cutter at 200 m/min cutting speed, with synchronized rotation and 0.15 mm/rev axial feed rate.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "skiving operation",
+                "Operation",
+                "skiving"
+            ],
+            [
+                "skiving",
+                "Tool",
+                "carbide skiving cutter"
+            ],
+            [
+                "skiving",
+                "Cutting Speed",
+                "200 m/min"
+            ],
+            [
+                "skiving",
+                "Axial Feed Rate",
+                "0.15 mm/rev"
+            ],
+            [
+                "skiving",
+                "Rotation",
+                "synchronized"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Axial Feed Rate": "主体类别=machining operation；方向=主体→客体；客体类别=feed distance parameter；谓词语义=states tool displacement relative to the workpiece per revolution or stroke；范围边界=feed motion。",
+            "Rotation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Rotation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Feed Rate': 1.18, 'Infeed Rate': 1.1553792242703533, 'Feed Speed': 1.1329836894635883, 'Feed per Tooth': 1.0967667022032694, 'Material Removal Rate': 1.0597440353074155}, {'Cycle Time': 0.8516751699309839, 'Dimensional Tolerance': 0.8492052391608818, 'Geometric Tolerance': 0.8443318713450292, 'Operation': 0.8413337958069063, 'Angle': 0.8188518211130779}]",
+        "schema_canonicalizaiton": [
+            [
+                "skiving operation",
+                "Operation",
+                "skiving"
+            ],
+            [
+                "skiving",
+                "Tool",
+                "carbide skiving cutter"
+            ],
+            [
+                "skiving",
+                "Cutting Speed",
+                "200 m/min"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "During the precision lapping of valve seats, a cast iron lap was used with 15 µm diamond paste, operating at 150 rpm with oscillating motion and constant pressure of 2 bar.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "cast iron lap",
+                "Tool",
+                "diamond paste"
+            ],
+            [
+                "precision lapping",
+                "Tool",
+                "cast iron lap"
+            ],
+            [
+                "precision lapping",
+                "Speed",
+                "150 rpm"
+            ],
+            [
+                "precision lapping",
+                "Motion",
+                "oscillating"
+            ],
+            [
+                "precision lapping",
+                "Pressure",
+                "2 bar"
+            ],
+            [
+                "precision lapping",
+                "Material",
+                "valve seats"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Speed": "主体类别=加工过程；方向=主体→客体；客体类别=旋转速度参数；谓词语义=表示加工过程中主轴的旋转速率；范围边界=主轴运动参数。",
+            "Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Material": "The subject workpiece or part is made from the object material."
+        },
+        "canonicalization_candidates": "[{}, {}, {'Wheel Speed': 0.8473980303970223, 'Workpiece Speed': 0.8333526509332961, 'Cutting Speed': 0.823611729551421, 'Table Speed': 0.8179486125918028, 'Spindle Speed': 0.8086610456429536}, {'Operation': 0.9267848705747359, 'Position Accuracy': 0.860907826818627, 'Frequency': 0.8471977222772316, 'Power': 0.8225546887396202, 'Pressure': 0.8058571384932273}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "cast iron lap",
+                "Tool",
+                "diamond paste"
+            ],
+            [
+                "precision lapping",
+                "Tool",
+                "cast iron lap"
+            ],
+            null,
+            null,
+            [
+                "precision lapping",
+                "Pressure",
+                "2 bar"
+            ],
+            [
+                "precision lapping",
+                "Material",
+                "valve seats"
+            ]
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The creep feed grinding of turbine blades utilized a specially profiled CBN wheel at 35 m/s, with depth of cut of 3 mm and table speed of 150 mm/min.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "creep feed grinding",
+                "Tool",
+                "special profiled CBN wheel"
+            ],
+            [
+                "creep feed grinding",
+                "Feed Rate",
+                "35 m/s"
+            ],
+            [
+                "creep feed grinding",
+                "Table Speed",
+                "150 mm/min"
+            ],
+            [
+                "turbine blades",
+                "Dimensional Tolerance",
+                "3 mm"
+            ],
+            [
+                "creep feed grinding",
+                "Depth Of Cut",
+                "3 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Table Speed": "The subject operation has the object translational speed of its work table.",
+            "Dimensional Tolerance": "The subject workpiece or feature has the object allowable dimensional deviation.",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1479776674937965, 'Step Over': 1.0344231366474759, 'Dressing Method': 1.0205740590043662, 'Feed per Tooth': 0.978355524780506}]",
+        "schema_canonicalizaiton": [
+            [
+                "creep feed grinding",
+                "Tool",
+                "special profiled CBN wheel"
+            ],
+            [
+                "creep feed grinding",
+                "Feed Rate",
+                "35 m/s"
+            ],
+            [
+                "creep feed grinding",
+                "Table Speed",
+                "150 mm/min"
+            ],
+            [
+                "turbine blades",
+                "Dimensional Tolerance",
+                "3 mm"
+            ],
+            [
+                "creep feed grinding",
+                "Depth of Cut",
+                "3 mm"
+            ]
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "A gun drilling operation on tool steel employed a 5 mm diameter carbide drill at 70 m/min, with coolant pressure of 100 bar and pecking cycle every 2 mm depth.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "gun drilling operation",
+                "Tool",
+                "5 mm diameter carbide drill"
+            ],
+            [
+                "gun drilling operation",
+                "Coolant Pressure",
+                "100 bar"
+            ],
+            [
+                "gun drilling operation",
+                "Table Speed",
+                "70 m/min"
+            ],
+            [
+                "gun drilling operation",
+                "Pecking Cycle",
+                "every 2 mm depth"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure.",
+            "Table Speed": "The subject operation has the object translational speed of its work table.",
+            "Pecking Cycle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Pecking Cycle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Cycle Time': 0.9794117647058823, 'Cutting Speed': 0.8864505226446668, 'Grinding Wheel': 0.867855065937746, 'Pitch': 0.8575653265338394, 'Depth of Cut': 0.8315241911331381}]",
+        "schema_canonicalizaiton": [
+            [
+                "gun drilling operation",
+                "Tool",
+                "5 mm diameter carbide drill"
+            ],
+            [
+                "gun drilling operation",
+                "Coolant Pressure",
+                "100 bar"
+            ],
+            [
+                "gun drilling operation",
+                "Table Speed",
+                "70 m/min"
+            ],
+            [
+                "gun drilling operation",
+                "Depth of Cut",
+                "every 2 mm depth"
+            ]
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The gear shaving process used a helical shaving cutter with 45 teeth, operating at 180 rpm with crossed-axis angle of 15° and radial feed of 0.02 mm per stroke.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "gear shaving process",
+                "Tool",
+                "helical shaving cutter"
+            ],
+            [
+                "helical shaving cutter",
+                "Teeth",
+                "45"
+            ],
+            [
+                "gear shaving process",
+                "Spindle Speed",
+                "180 rpm"
+            ],
+            [
+                "gear shaving process",
+                "Crossed-Axis Angle",
+                "15°"
+            ],
+            [
+                "gear shaving process",
+                "Radial Feed",
+                "0.02 mm per stroke"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Teeth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Teeth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Crossed-Axis Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Crossed-Axis Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Radial Feed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Radial Feed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Diameter': 0.9161058239885114, 'Feed per Tooth': 0.8693885511092911, 'Width': 0.8515074608041755, 'Angle': 0.8493527916645626, 'Material': 0.8408021174091099}, {}, {'Angle': 1.0, 'Geometric Tolerance': 0.9195616778272546, 'Surface Roughness': 0.9095279358634001, 'Position Accuracy': 0.8970708024778826, 'Process Sequence': 0.8624440859575946}, {'Feed Rate': 1.1502534562211981, 'Feed Speed': 1.1429600181735575, 'Infeed Rate': 1.0889378075070846, 'Feed per Tooth': 1.0696052805793497, 'Quality Grade': 1.0572922630909012}]",
+        "schema_canonicalizaiton": [
+            [
+                "gear shaving process",
+                "Tool",
+                "helical shaving cutter"
+            ],
+            null,
+            [
+                "gear shaving process",
+                "Spindle Speed",
+                "180 rpm"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "During electrical discharge grinding of PCD tools, copper-tungsten electrodes were used with 80V gap voltage, 10A peak current, and electrode rotation speed of 800 rpm.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "electrical discharge grinding",
+                "Tool",
+                "copper-tungsten electrodes"
+            ],
+            [
+                "electrical discharge grinding",
+                "Gap Voltage",
+                "80V"
+            ],
+            [
+                "electrical discharge grinding",
+                "Peak Current",
+                "10A"
+            ],
+            [
+                "electrical discharge grinding",
+                "Electrode Rotation Speed",
+                "800 rpm"
+            ],
+            [
+                "electrical discharge grinding",
+                "Tool",
+                "PCD tools"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Gap Voltage": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Gap Voltage”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Peak Current": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Peak Current”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Electrode Rotation Speed": "主体类别=加工过程；方向=主体→客体；客体类别=旋转速度参数；谓词语义=表示加工过程中主轴的旋转速率；范围边界=主轴运动参数。"
+        },
+        "canonicalization_candidates": "[{}, {'Voltage': 0.9848484848484848, 'Tool Geometry': 0.9249644558234282, 'Current': 0.8504502748068925, 'Geometric Tolerance': 0.8329854649663374, 'Quality Grade': 0.825962608604352}, {'Current': 0.9520110249081257, 'Position Accuracy': 0.84448117830029, 'Tool Coating': 0.8104745744451627, 'Equipment': 0.8081396429677292, 'Wheel Speed': 0.7972771727117212}, {'Wheel Speed': 0.8495219447890819, 'Surface Roughness': 0.8384181261977081, 'Workpiece Speed': 0.8265412365412366, 'Table Speed': 0.8178327228327228, 'Spindle Speed': 0.8156178908810487}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "electrical discharge grinding",
+                "Tool",
+                "copper-tungsten electrodes"
+            ],
+            null,
+            null,
+            null,
+            [
+                "electrical discharge grinding",
+                "Tool",
+                "PCD tools"
+            ]
+        ]
+    }
+]

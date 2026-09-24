@@ -1,0 +1,491 @@
+[
+    {
+        "index": 0,
+        "input_text": "The gun drilling of injection mold cooling channels used carbide drills at 3500 rpm, maintaining straightness within 0.05 mm/m through guide bushings.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "gun drilling",
+                "Tool",
+                "carbide drills"
+            ],
+            [
+                "gun drilling",
+                "Spindle Speed",
+                "3500 rpm"
+            ],
+            [
+                "gun drilling",
+                "Straightness",
+                "0.05 mm/m"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Straightness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Straightness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Angle': 1.019469787458918, 'Geometric Tolerance': 1.0171140104848673, 'Position Accuracy': 0.9897111091953743, 'Process Sequence': 0.9822020383797274, 'Temperature': 0.9793531683686829}]",
+        "schema_canonicalizaiton": [
+            [
+                "gun drilling",
+                "Tool",
+                "carbide drills"
+            ],
+            [
+                "gun drilling",
+                "Spindle Speed",
+                "3500 rpm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Precision broaching of turbine disc slots used HSS tools at 8 m/min, achieving 0.02 mm slot width accuracy through progressive cutting.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision broaching",
+                "Tool",
+                "HSS tools"
+            ],
+            [
+                "precision broaching",
+                "Cutting Speed",
+                "8 m/min"
+            ],
+            [
+                "precision broaching",
+                "Slot Width Accuracy",
+                "0.02 mm"
+            ],
+            [
+                "precision broaching",
+                "Process",
+                "turbine disc slots"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Slot Width Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Slot Width Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Position Accuracy': 1.1676923076923076, 'Dimensional Tolerance': 1.0241385623035717, 'Geometric Tolerance': 1.0041390759202231, 'Depth of Cut': 0.994681828358648, 'Cutting Speed': 0.988853878526152}, {'Process Sequence': 0.9824291300097752, 'Pressure': 0.9122955772506609, 'Surface Roughness': 0.8558210383242831, 'Angle': 0.8384843272735141, 'Position Accuracy': 0.821210033207113}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision broaching",
+                "Tool",
+                "HSS tools"
+            ],
+            [
+                "precision broaching",
+                "Cutting Speed",
+                "8 m/min"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The thread whirling of lead screws employed carbide inserts at 2000 rpm, maintaining 0.01 mm pitch accuracy with synchronized motion.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "thread whirling",
+                "Operation",
+                "lead screws"
+            ],
+            [
+                "lead screws",
+                "Tool",
+                "carbide inserts"
+            ],
+            [
+                "thread whirling",
+                "Spindle Speed",
+                "2000 rpm"
+            ],
+            [
+                "thread whirling",
+                "Pitch Accuracy",
+                "0.01 mm"
+            ],
+            [
+                "thread whirling",
+                "Motion",
+                "synchronized motion"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Pitch Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Pitch Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Pitch': 1.1719354838709677, 'Position Accuracy': 1.1688120839733742, 'Quality Grade': 1.0658425267404013, 'Cycle Time': 1.0367047946997392, 'Cutting Speed': 1.0254926951645564}, {'Operation': 0.9166304220130795, 'Pitch': 0.8527926860886684, 'Position Accuracy': 0.8357751370420676, 'Wheel Speed': 0.8237767580761534, 'Material': 0.816393297829865}]",
+        "schema_canonicalizaiton": [
+            [
+                "thread whirling",
+                "Operation",
+                "lead screws"
+            ],
+            [
+                "lead screws",
+                "Tool",
+                "carbide inserts"
+            ],
+            [
+                "thread whirling",
+                "Spindle Speed",
+                "2000 rpm"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Micro-end milling of mold cavities used 0.2 mm carbide tools at 40,000 rpm, achieving 0.005 mm corner radius through high-speed spindles.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-end milling",
+                "Tool",
+                "0.2 mm carbide tools"
+            ],
+            [
+                "micro-end milling",
+                "Spindle Speed",
+                "40,000 rpm"
+            ],
+            [
+                "micro-end milling",
+                "Corner Radius",
+                "0.005 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Corner Radius": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Corner Radius”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Quality Grade': 1.0893872884178095, 'Feed Rate': 1.049870875838618, 'Feed per Tooth': 0.9963470621429622, 'Infeed Rate': 0.9814010111323366, 'Angle': 0.9749884128552606}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-end milling",
+                "Tool",
+                "0.2 mm carbide tools"
+            ],
+            [
+                "micro-end milling",
+                "Spindle Speed",
+                "40,000 rpm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The skiving of internal splines used carbide tools at 1500 rpm, maintaining 0.03 mm profile accuracy with crossed-axis cutting motion.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "skiving",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "skiving",
+                "Spindle Speed",
+                "1500 rpm"
+            ],
+            [
+                "skiving",
+                "Profile Accuracy",
+                "0.03 mm"
+            ],
+            [
+                "skiving",
+                "Cutting Motion",
+                "crossed-axis"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Profile Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Profile Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Cutting Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cutting Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Position Accuracy': 1.18, 'Quality Grade': 1.0552377453021096, 'Process Sequence': 1.0529404088206418, 'Geometric Tolerance': 1.0154704477530565, 'Angle': 1.015307985231291}, {'Cutting Speed': 0.971830985915493, 'Tool Coating': 0.8946520666833168, 'Depth of Cut': 0.8838432674251432, 'Position Accuracy': 0.855667655139611, 'Coating Thickness': 0.8492529463708562}]",
+        "schema_canonicalizaiton": [
+            [
+                "skiving",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "skiving",
+                "Spindle Speed",
+                "1500 rpm"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Precision turning of ceramic bearings employed diamond tools at 300 m/min, achieving 0.2 μm Ra surface finish through controlled feed.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision turning",
+                "Tool",
+                "diamond tools"
+            ],
+            [
+                "precision turning",
+                "Feed Rate",
+                "300 m/min"
+            ],
+            [
+                "precision turning",
+                "Surface Finish",
+                "0.2 μm Ra"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Surface Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Cutting Speed': 1.0333620259426712, 'Workpiece Speed': 1.0295428932928934, 'Position Accuracy': 1.0137311921740266, 'Process Sequence': 1.0069680301583805, 'Surface Roughness': 0.9848484848484848}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision turning",
+                "Tool",
+                "diamond tools"
+            ],
+            [
+                "precision turning",
+                "Feed Rate",
+                "300 m/min"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The gear shaping of internal gears used HSS cutters at 600 strokes/min, maintaining AGMA Q11 quality through synchronized rotation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "gear shaping",
+                "Operation",
+                "internal gears"
+            ],
+            [
+                "internal gears",
+                "Tool",
+                "HSS cutters"
+            ],
+            [
+                "gear shaping",
+                "Strokes Per Minute",
+                "600"
+            ],
+            [
+                "gear shaping",
+                "Quality",
+                "AGMA Q11"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Strokes Per Minute": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Strokes Per Minute”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Quality": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Quality”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Feed per Tooth': 0.8723606840219481, 'Workpiece Speed': 0.8419244070190374, 'Cutting Speed': 0.8409907511809053, 'Cycle Time': 0.8385442892402516, 'Feed Rate': 0.8274071645264676}, {'Quality Grade': 1.0, 'Position Accuracy': 0.8928031772861917, 'Material': 0.887511140745578, 'Diameter': 0.844195145791135, 'Amplitude': 0.8416439034447104}]",
+        "schema_canonicalizaiton": [
+            [
+                "gear shaping",
+                "Operation",
+                "internal gears"
+            ],
+            [
+                "internal gears",
+                "Tool",
+                "HSS cutters"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Deep groove milling of die cavities employed ball nose cutters at 10,000 rpm, achieving 0.01 mm scallop height through optimized step-over.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "deep groove milling",
+                "Tool",
+                "ball nose cutters"
+            ],
+            [
+                "deep groove milling",
+                "Spindle Speed",
+                "10,000 rpm"
+            ],
+            [
+                "deep groove milling",
+                "Scallop Height",
+                "0.01 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Scallop Height": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Scallop Height”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Diameter': 0.8746137906319704, 'Width': 0.8590333371777934, 'Quality Grade': 0.8433665100331768, 'Dimensional Tolerance': 0.8426830405878633, 'Surface Roughness': 0.8245741195741196}]",
+        "schema_canonicalizaiton": [
+            [
+                "deep groove milling",
+                "Tool",
+                "ball nose cutters"
+            ],
+            [
+                "deep groove milling",
+                "Spindle Speed",
+                "10,000 rpm"
+            ],
+            [
+                "deep groove milling",
+                "Surface Roughness",
+                "0.01 mm"
+            ]
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The precision drilling of PCB holes used carbide drills at 150,000 rpm, maintaining 0.1 mm position accuracy through vision alignment.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision drilling",
+                "Tool",
+                "carbide drills"
+            ],
+            [
+                "precision drilling",
+                "Spindle Speed",
+                "150,000 rpm"
+            ],
+            [
+                "precision drilling",
+                "Position Accuracy",
+                "0.1 mm"
+            ],
+            [
+                "precision drilling",
+                "Alignment",
+                "vision alignment"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Position Accuracy": "The subject workpiece or process has the object position accuracy requirement or result.",
+            "Alignment": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Alignment”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Angle': 0.8857233146067416, 'Dimensional Tolerance': 0.8687403674561973, 'Quality Grade': 0.8680599955599956, 'Material': 0.8546716282195734, 'Equipment': 0.8416518339582523}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision drilling",
+                "Tool",
+                "carbide drills"
+            ],
+            [
+                "precision drilling",
+                "Spindle Speed",
+                "150,000 rpm"
+            ],
+            [
+                "precision drilling",
+                "Position Accuracy",
+                "0.1 mm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Hard milling of tool steel molds employed CBN tools at 15,000 rpm, achieving 0.5 μm Ra surface finish through high-speed machining.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "tool steel molds",
+                "Operation",
+                "hard milling"
+            ],
+            [
+                "hard milling",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "hard milling",
+                "Spindle Speed",
+                "15,000 rpm"
+            ],
+            [
+                "tool steel molds",
+                "Surface Roughness",
+                "0.5 μm Ra"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Surface Roughness": "The subject workpiece or processed surface has the object roughness value or requirement."
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "tool steel molds",
+                "Operation",
+                "hard milling"
+            ],
+            [
+                "hard milling",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "hard milling",
+                "Spindle Speed",
+                "15,000 rpm"
+            ],
+            [
+                "tool steel molds",
+                "Surface Roughness",
+                "0.5 μm Ra"
+            ]
+        ]
+    }
+]

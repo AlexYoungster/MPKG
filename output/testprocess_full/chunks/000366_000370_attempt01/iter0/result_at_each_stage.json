@@ -1,0 +1,261 @@
+[
+    {
+        "index": 0,
+        "input_text": "Precision boring of turbine housings employed diamond tools at 2000 rpm, achieving 0.005 mm roundness through active damping.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision boring",
+                "Tool",
+                "diamond tools"
+            ],
+            [
+                "precision boring",
+                "Spindle Speed",
+                "2000 rpm"
+            ],
+            [
+                "precision boring",
+                "Roundness",
+                "0.005 mm"
+            ],
+            [
+                "precision boring",
+                "Process",
+                "diamond tools"
+            ],
+            [
+                "precision boring",
+                "Process",
+                "active damping"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Roundness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Roundness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Surface Roughness': 0.978396871945259, 'Hardness': 0.966148737410597, 'Coating Thickness': 0.8983388213441406, 'Diameter': 0.8713890462171658, 'Process Sequence': 0.8597251595864852}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.9122955772506609, 'Diameter': 0.8472886700036543, 'Angle': 0.8384843272735141, 'Surface Roughness': 0.8336288741451785}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.9290814880927083, 'Surface Roughness': 0.8499170196850848, 'Angle': 0.8482474514732579, 'Operation': 0.8337948859320138}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision boring",
+                "Tool",
+                "diamond tools"
+            ],
+            [
+                "precision boring",
+                "Spindle Speed",
+                "2000 rpm"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "The thread milling of bone screws used carbide tools at 6000 rpm, maintaining M3.5×0.6 thread profile through helical interpolation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "thread milling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "thread milling",
+                "Spindle Speed",
+                "6000 rpm"
+            ],
+            [
+                "thread milling",
+                "Interpolation",
+                "helical interpolation"
+            ],
+            [
+                "bone screws",
+                "Thread Profile",
+                "M3.5×0.6"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Interpolation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Interpolation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Thread Profile": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Thread Profile”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Position Accuracy': 0.8729308691970709, 'Purpose': 0.8559928487460816, 'Diameter': 0.8512415890162772, 'Dimensional Tolerance': 0.8411251702621142, 'Tool Coating': 0.8344947209653093}, {'Process Sequence': 0.9365661205134032, 'Quality Grade': 0.8897315898348708, 'Angle': 0.8466859390787682, 'Pitch': 0.8264883446047041, 'Feed Rate': 0.8217450722241672}]",
+        "schema_canonicalizaiton": [
+            [
+                "thread milling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "thread milling",
+                "Spindle Speed",
+                "6000 rpm"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "Micro-drilling of watch components employed carbide drills at 80,000 rpm, achieving 0.1 mm diameter through peck cycles.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-drilling",
+                "Tool",
+                "carbide drills"
+            ],
+            [
+                "micro-drilling",
+                "Spindle Speed",
+                "80,000 rpm"
+            ],
+            [
+                "micro-drilling",
+                "Process",
+                "peck cycles"
+            ],
+            [
+                "micro-drilling",
+                "Dimensional Tolerance",
+                "0.1 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dimensional Tolerance": "The subject workpiece or feature has the object allowable dimensional deviation."
+        },
+        "canonicalization_candidates": "[{}, {}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.9084284376018247, 'Surface Roughness': 0.8465334751747796, 'Angle': 0.8461782520159989, 'Quality Grade': 0.8372865442473286}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-drilling",
+                "Tool",
+                "carbide drills"
+            ],
+            [
+                "micro-drilling",
+                "Spindle Speed",
+                "80,000 rpm"
+            ],
+            null,
+            [
+                "micro-drilling",
+                "Dimensional Tolerance",
+                "0.1 mm"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "The face grooving of seal rings used CBN tools at 280 m/min, maintaining 0.015 mm groove depth through CNC control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "seal rings",
+                "Operation",
+                "face grooving"
+            ],
+            [
+                "face grooving",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "face grooving",
+                "Spindle Speed",
+                "280 m/min"
+            ],
+            [
+                "face grooving",
+                "Groove Depth",
+                "0.015 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Groove Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Groove Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Depth of Cut': 0.9270833333333334, 'Surface Roughness': 0.9150987230950711, 'Grinding Wheel': 0.8715640718653054, 'Tool Geometry': 0.8562937759359883, 'Width': 0.8532111618364262}]",
+        "schema_canonicalizaiton": [
+            [
+                "seal rings",
+                "Operation",
+                "face grooving"
+            ],
+            [
+                "face grooving",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "face grooving",
+                "Spindle Speed",
+                "280 m/min"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "Precision turning of optical lenses employed diamond tools at 500 m/min, achieving 0.1 μm Ra surface finish through air bearings.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision turning",
+                "Tool",
+                "diamond tools"
+            ],
+            [
+                "precision turning",
+                "Speed",
+                "500 m/min"
+            ],
+            [
+                "precision turning",
+                "Surface Finish",
+                "0.1 μm Ra"
+            ],
+            [
+                "precision turning",
+                "Support",
+                "air bearings"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Support": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Support”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Table Speed': 0.9625885225885227, 'Wheel Speed': 0.9518585698575619, 'Workpiece Speed': 0.9370295047594037, 'Spindle Speed': 0.9307891530558483, 'Feed Speed': 0.9280879422066145}, {'Cutting Speed': 1.0333620259426712, 'Workpiece Speed': 1.0278942446442447, 'Position Accuracy': 1.0121676241630901, 'Process Sequence': 1.0105543902315448, 'Surface Roughness': 0.9848484848484848}, {'Purpose': 0.9446705922512374, 'Angle': 0.8611477715587306, 'Power': 0.8508491179872758, 'Position Accuracy': 0.8427671699126161, 'Pressure': 0.8393977255517465}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision turning",
+                "Tool",
+                "diamond tools"
+            ],
+            [
+                "precision turning",
+                "Feed Speed",
+                "500 m/min"
+            ],
+            null,
+            null
+        ]
+    }
+]

@@ -1,0 +1,5 @@
+[['precision boring', 'Tool', 'diamond tools'], ['precision boring', 'Spindle Speed', '2000 rpm']]
+[['thread milling', 'Tool', 'carbide tools'], ['thread milling', 'Spindle Speed', '6000 rpm']]
+[['micro-drilling', 'Tool', 'carbide drills'], ['micro-drilling', 'Spindle Speed', '80,000 rpm'], ['micro-drilling', 'Dimensional Tolerance', '0.1 mm']]
+[['seal rings', 'Operation', 'face grooving'], ['face grooving', 'Tool', 'CBN tools'], ['face grooving', 'Spindle Speed', '280 m/min']]
+[['precision turning', 'Tool', 'diamond tools'], ['precision turning', 'Feed Speed', '500 m/min']]

@@ -1,0 +1,59 @@
+[
+    {
+        "index": 0,
+        "input_text": "The face milling operation was performed at a cutting speed of 180 m/min with a feed rate of 0.2 mm/rev and cutting depth of 2.5 mm using a carbide tool.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "face milling operation",
+                "Cutting Speed",
+                "180 m/min"
+            ],
+            [
+                "face milling operation",
+                "Feed Rate",
+                "0.2 mm/rev"
+            ],
+            [
+                "face milling operation",
+                "Cutting Depth",
+                "2.5 mm"
+            ],
+            [
+                "face milling operation",
+                "Tool",
+                "carbide tool"
+            ]
+        ],
+        "schema_definition": {
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Cutting Depth": "主体类别=加工过程；方向=主体→客体；客体类别=切入深度参数；谓词语义=表示每次加工行程中材料被切入的深度；范围边界=切削或磨削深度参数。",
+            "Tool": "The subject operation uses the object cutting or forming tool."
+        },
+        "canonicalization_candidates": "[{}, {}, {'Coating Thickness': 0.9081998340796701, 'Tool Coating': 0.8941220238095238, 'Cutting Speed': 0.8588213399503722, 'Depth of Cut': 0.8386344086021505, 'Surface Roughness': 0.820048141914615}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "face milling operation",
+                "Cutting Speed",
+                "180 m/min"
+            ],
+            [
+                "face milling operation",
+                "Feed Rate",
+                "0.2 mm/rev"
+            ],
+            [
+                "face milling operation",
+                "Depth of Cut",
+                "2.5 mm"
+            ],
+            [
+                "face milling operation",
+                "Tool",
+                "carbide tool"
+            ]
+        ]
+    }
+]

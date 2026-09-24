@@ -1,0 +1,460 @@
+[
+    {
+        "index": 0,
+        "input_text": "The precision hard turning of bearing rings employed CBN tools with -5° rake angle, maintaining 0.05 mm depth of cut at 150 m/min for 0.2 μm Ra finish.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision hard turning",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "precision hard turning",
+                "Rake Angle",
+                "-5°"
+            ],
+            [
+                "precision hard turning",
+                "Depth Of Cut",
+                "0.05 mm"
+            ],
+            [
+                "precision hard turning",
+                "Feed Rate",
+                "150 m/min"
+            ],
+            [
+                "bearing rings",
+                "Surface Roughness",
+                "0.000001 μm Ra"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Rake Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Rake Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Surface Roughness": "The subject workpiece or processed surface has the object roughness value or requirement."
+        },
+        "canonicalization_candidates": "[{}, {'Angle': 1.18, 'Position Accuracy': 1.0485785338168705, 'Quality Grade': 1.0302149088163248, 'Table Speed': 1.0256634152032473, 'Geometric Tolerance': 1.0237438711562816}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1547890818858562, 'Step Over': 1.0344231366474759, 'Dressing Method': 1.000390235474954, 'Angle': 0.9719401544401545}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision hard turning",
+                "Tool",
+                "CBN tools"
+            ],
+            null,
+            [
+                "precision hard turning",
+                "Depth of Cut",
+                "0.05 mm"
+            ],
+            [
+                "precision hard turning",
+                "Feed Rate",
+                "150 m/min"
+            ],
+            [
+                "bearing rings",
+                "Surface Roughness",
+                "0.000001 μm Ra"
+            ]
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Ultrasonic chemical machining of glass microfluidics used 25kHz vibration with HF solution, achieving 50 μm channel width with ±2 μm tolerance.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ultrasonic chemical machining",
+                "Vibration",
+                "25kHz"
+            ],
+            [
+                "ultrasonic chemical machining",
+                "Solution",
+                "HF solution"
+            ],
+            [
+                "glass microfluidics",
+                "Channel Width",
+                "50 μm"
+            ],
+            [
+                "glass microfluidics",
+                "Tolerance",
+                "±2 μm"
+            ]
+        ],
+        "schema_definition": {
+            "Vibration": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vibration”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Solution": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Solution”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Channel Width": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Channel Width”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Tolerance": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tolerance”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Operation': 1.0764694063618558, 'Amplitude': 1.0699139138675156, 'Abrasive': 1.0621085937245922, 'Position Accuracy': 1.0085013535669585, 'Equipment': 1.005976678388014}, {'Operation': 0.9128656311009253, 'Tool Coating': 0.8597157980001118, 'Control Method': 0.8518002265353958, 'Coolant': 0.82977044849676, 'Position Accuracy': 0.8225470838539182}, {'Width': 1.0, 'Angle': 0.8948946575812249, 'Diameter': 0.8713909709920478, 'Coating Thickness': 0.867670248682477, 'Pitch': 0.862140758971102}, {'Geometric Tolerance': 1.18, 'Dimensional Tolerance': 1.1439083683964468, 'Angle': 1.0653301158934962, 'Temperature': 1.0131266461808603, 'Feed per Tooth': 0.9861437377226852}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The laser shock peening of titanium blades employed 8 ns pulses at 8 J/cm², maintaining 75% overlap for 1 mm affected depth with black tape confinement.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser shock peening",
+                "Pulse Duration",
+                "8 ns"
+            ],
+            [
+                "laser shock peening",
+                "Energy Density",
+                "8 J/cm²"
+            ],
+            [
+                "laser shock peening",
+                "Overlap",
+                "75%"
+            ],
+            [
+                "laser shock peening",
+                "Affected Depth",
+                "1 mm"
+            ],
+            [
+                "laser shock peening",
+                "Confinement",
+                "black tape"
+            ]
+        ],
+        "schema_definition": {
+            "Pulse Duration": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Pulse Duration”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Energy Density": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Energy Density”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Overlap": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Overlap”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Affected Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Affected Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Confinement": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Confinement”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Cycle Time': 1.10568509984639, 'Purpose': 1.0962459470576849, 'Hold Time': 1.0858173924840593, 'Position Accuracy': 1.034987231587885, 'Process Sequence': 1.0041818341841227}, {'Quality Grade': 0.9100775904203324, 'Position Accuracy': 0.8615748728744156, 'Dimensional Tolerance': 0.855818846048745, 'Frequency': 0.8223212707944335, 'Hardness': 0.8135431633197538}, {'Step Over': 0.9626666666666667, 'Diameter': 0.873779315987483, 'Angle': 0.8524368962759684, 'Operation': 0.8475458365164249, 'Material': 0.8362397435762985}, {'Depth of Cut': 0.932608695652174, 'Width': 0.8727442224833531, 'Diameter': 0.8558607830529333, 'Feed Rate': 0.8530836056585152, 'Feed per Tooth': 0.8483484119628699}, {'Equipment': 0.8762232277526395, 'Hardness': 0.859018114458808, 'Surface Roughness': 0.8349628721129615, 'Temperature': 0.8348832590424904, 'Diameter': 0.8337281346184862}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Precision grinding of silicon nitride balls used V-groove lapping with 800-grit diamond paste, achieving 0.02 μm sphericity through eccentric rotation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision grinding",
+                "Lapping Method",
+                "V-groove lapping"
+            ],
+            [
+                "V-groove lapping",
+                "Material",
+                "silicon nitride balls"
+            ],
+            [
+                "V-groove lapping",
+                "Lapping Paste",
+                "800-grit diamond paste"
+            ],
+            [
+                "precision grinding",
+                "Sphericity",
+                "0.02 μm"
+            ]
+        ],
+        "schema_definition": {
+            "Lapping Method": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Lapping Method”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Material": "The subject workpiece or part is made from the object material.",
+            "Lapping Paste": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Lapping Paste”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Sphericity": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Sphericity”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Dressing Method': 0.9082010582010581, 'Control Method': 0.884820621830834, 'Tool Coating': 0.8585295348251455, 'Tool Geometry': 0.857327261371379, 'Cutting Speed': 0.8333070290864009}, {}, {'Step Over': 0.9439621282615236, 'Angle': 0.8439437918188901, 'Cutting Speed': 0.8295060357527649, 'Diameter': 0.8261866271063903, 'Coating Thickness': 0.8224452073925662}, {'Quality Grade': 0.9241427432216905, 'Material': 0.8818229914157334, 'Geometric Tolerance': 0.8799728298104038, 'Position Accuracy': 0.8409160787028568, 'Diameter': 0.8374110946935791}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "V-groove lapping",
+                "Material",
+                "silicon nitride balls"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The electron beam drilling of cooling holes maintained 60kV acceleration voltage in 10^-4 mbar vacuum, achieving 0.3 mm diameter with 1:20 taper ratio.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "electron beam drilling",
+                "Acceleration Voltage",
+                "60kV"
+            ],
+            [
+                "electron beam drilling",
+                "Vacuum",
+                "10^-4 mbar"
+            ],
+            [
+                "electron beam drilling",
+                "Drilling Diameter",
+                "0.3 mm"
+            ],
+            [
+                "electron beam drilling",
+                "Taper Ratio",
+                "1:20"
+            ]
+        ],
+        "schema_definition": {
+            "Acceleration Voltage": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Acceleration Voltage”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Vacuum": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Vacuum”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Drilling Diameter": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Drilling Diameter”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Taper Ratio": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Taper Ratio”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Position Accuracy': 1.1336600075025123, 'Geometric Tolerance': 1.0251570192332538, 'Cycle Time': 1.0088541304999685, 'Table Speed': 0.9988215327455947, 'Voltage': 0.9936507936507936}, {'Voltage': 0.909777715699577, 'Material': 0.8595569940805985, 'Angle': 0.8557409951159952, 'Current': 0.8357344742828614, 'Diameter': 0.8252103381850218}, {'Diameter': 0.9911290322580646, 'Tool Diameter': 0.9896185355862774, 'Dimensional Tolerance': 0.8999637854489829, 'Tool Geometry': 0.8807637909615902, 'Dressing Method': 0.87252886002886}, {'Feed Rate': 1.0729966389643808, 'Table Speed': 1.056503702177819, 'Material Removal Rate': 1.0438476331259905, 'Infeed Rate': 1.0328862099805967, 'Position Accuracy': 0.9988678197255014}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Micro-EDM milling of injection mold features used tungsten electrodes at 90V, implementing orbital motion for 0.05 mm corner radius accuracy.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-edm milling",
+                "Tool",
+                "tungsten electrode"
+            ],
+            [
+                "micro-edm milling",
+                "Voltage",
+                "90V"
+            ],
+            [
+                "micro-edm milling",
+                "Orbital Motion",
+                "0.05 mm corner radius accuracy"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Orbital Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Orbital Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Position Accuracy': 1.0991437152233499, 'Operation': 1.050806703845377, 'Workpiece Speed': 1.0214922123977321, 'Amplitude': 1.010513938580799, 'Wheel Speed': 0.9990456905557157}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-edm milling",
+                "Tool",
+                "tungsten electrode"
+            ],
+            [
+                "micro-edm milling",
+                "Voltage",
+                "90V"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The plasma nitriding of mold steels maintained 490°C temperature for 36 hours under 350 Pa pressure, achieving 0.4 mm case depth with 950HV hardness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "plasma nitriding",
+                "Temperature",
+                "490°C"
+            ],
+            [
+                "plasma nitriding",
+                "Time",
+                "36 hours"
+            ],
+            [
+                "plasma nitriding",
+                "Pressure",
+                "350 Pa"
+            ],
+            [
+                "plasma nitriding",
+                "Case Depth",
+                "0.4 mm"
+            ],
+            [
+                "plasma nitriding",
+                "Hardness",
+                "950HV"
+            ]
+        ],
+        "schema_definition": {
+            "Temperature": "The subject process applies or maintains the object temperature.",
+            "Time": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Time”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Case Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Case Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Hardness": "The subject workpiece or layer has the object hardness requirement or result."
+        },
+        "canonicalization_candidates": "[{}, {'Hold Time': 0.9717336894635884, 'Cycle Time': 0.9373542566553319, 'Diameter': 0.9057222869722871, 'Angle': 0.8542745126017086, 'Dimensional Tolerance': 0.8183587819185645}, {}, {'Depth of Cut': 0.9257731958762887, 'Width': 0.923986873341712, 'Step Over': 0.8666947809613736, 'Diameter': 0.8498829140699613, 'Tool Diameter': 0.8466922659658407}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "plasma nitriding",
+                "Temperature",
+                "490°C"
+            ],
+            null,
+            [
+                "plasma nitriding",
+                "Pressure",
+                "350 Pa"
+            ],
+            null,
+            [
+                "plasma nitriding",
+                "Hardness",
+                "950HV"
+            ]
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Precision form grinding of polycrystalline diamond tools used reverse-plated wheels at 30 m/s, with acoustic emission monitoring for wheel wear control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision form grinding",
+                "Tool",
+                "polycrystalline diamond tools"
+            ],
+            [
+                "precision form grinding",
+                "Workpiece",
+                "reverse-plated wheels"
+            ],
+            [
+                "precision form grinding",
+                "Monitoring",
+                "acoustic emission monitoring"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Workpiece": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Workpiece”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Monitoring": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Monitoring”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Workpiece Speed': 0.9510025062656641, 'Material': 0.9066760937073439, 'Process Sequence': 0.8796612110536391, 'Width': 0.8703098117379902, 'Diameter': 0.8625116533793004}, {'Position Accuracy': 0.8686496555367489, 'Tool Coating': 0.8489133964402782, 'Operation': 0.8298753916945859, 'Quality Grade': 0.8277478953073274, 'Material': 0.8270922947591343}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision form grinding",
+                "Tool",
+                "polycrystalline diamond tools"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The selective laser melting of cobalt-chrome dental implants used 200W Yb-fiber laser with 20 μm layers, maintaining 99.9% density through parameter optimization.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "cobalt-chrome dental implants",
+                "Operation",
+                "selective laser melting"
+            ],
+            [
+                "selective laser melting",
+                "Laser Power",
+                "200W Yb-fiber laser"
+            ],
+            [
+                "selective laser melting",
+                "Layer Thickness",
+                "20 μm"
+            ],
+            [
+                "cobalt-chrome dental implants",
+                "Density",
+                "99.9%"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Laser Power": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Laser Power”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Layer Thickness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Layer Thickness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Density": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Density”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Power': 0.9768115942028986, 'Purpose': 0.8998117959983633, 'Voltage': 0.8415287629036351, 'Coolant': 0.8399781183450477, 'Diameter': 0.8359908677997657}, {'Coating Thickness': 0.9694444444444444, 'Hardness': 0.9624651670014575, 'Surface Roughness': 0.9316690345794071, 'Geometric Tolerance': 0.8749067814550484, 'Diameter': 0.8555355872057241}, {'Quality Grade': 0.8875697575173983, 'Dimensional Tolerance': 0.8741658607350097, 'Position Accuracy': 0.8678829648210903, 'Diameter': 0.8665605871978422, 'Amplitude': 0.8659946567439277}]",
+        "schema_canonicalizaiton": [
+            [
+                "cobalt-chrome dental implants",
+                "Operation",
+                "selective laser melting"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Chemical mechanical polishing of copper interconnects employed colloidal alumina slurry with 2 psi down force, achieving 10 nm Ra finish through dual-platen process.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "chemical mechanical polishing",
+                "Slurry",
+                "colloidal alumina slurry"
+            ],
+            [
+                "chemical mechanical polishing",
+                "Down Force",
+                "2 psi"
+            ],
+            [
+                "chemical mechanical polishing",
+                "Finish",
+                "10 nm Ra"
+            ]
+        ],
+        "schema_definition": {
+            "Slurry": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Slurry”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Down Force": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Down Force”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Surface Roughness': 0.9213889965755637, 'Tool Geometry': 0.8478665857121249, 'Temperature': 0.8396776010664493, 'Coolant': 0.8392491775379713, 'Angle': 0.8325297785431027}, {'Power': 0.9177349089041389, 'Position Accuracy': 0.8827994121035512, 'Process Sequence': 0.8806603737038519, 'Geometric Tolerance': 0.8533058035466099, 'Hardness': 0.8414350365681603}, {'Quality Grade': 1.02559979365514, 'Pitch': 0.995051118730657, 'Angle': 0.9880001297763072, 'Grinding Wheel': 0.963014459317149, 'Process Sequence': 0.9551276649722766}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null
+        ]
+    }
+]

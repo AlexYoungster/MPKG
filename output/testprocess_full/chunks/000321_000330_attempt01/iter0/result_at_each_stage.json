@@ -1,0 +1,605 @@
+[
+    {
+        "index": 0,
+        "input_text": "The high-speed face milling of aluminum alloy blocks used carbide tools at 12,000 rpm, maintaining 0.15 mm/tooth feed with through-spindle coolant at 40 bar.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "aluminum alloy blocks",
+                "Operation",
+                "high-speed face milling"
+            ],
+            [
+                "high-speed face milling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "high-speed face milling",
+                "Spindle Speed",
+                "12,000 rpm"
+            ],
+            [
+                "high-speed face milling",
+                "Feed Rate",
+                "0.15 mm/tooth"
+            ],
+            [
+                "high-speed face milling",
+                "Coolant",
+                "through-spindle coolant"
+            ],
+            [
+                "high-speed face milling",
+                "Coolant Pressure",
+                "40 bar"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure."
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "aluminum alloy blocks",
+                "Operation",
+                "high-speed face milling"
+            ],
+            [
+                "high-speed face milling",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "high-speed face milling",
+                "Spindle Speed",
+                "12,000 rpm"
+            ],
+            [
+                "high-speed face milling",
+                "Feed Rate",
+                "0.15 mm/tooth"
+            ],
+            [
+                "high-speed face milling",
+                "Coolant",
+                "through-spindle coolant"
+            ],
+            [
+                "high-speed face milling",
+                "Coolant Pressure",
+                "40 bar"
+            ]
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Precision boring of hydraulic cylinder tubes employed single-point CBN tools at 800 rpm, achieving 0.008 mm cylindricity through active vibration control.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision boring",
+                "Operation",
+                "boring"
+            ],
+            [
+                "boring",
+                "Tool",
+                "single-point CBN tools"
+            ],
+            [
+                "boring",
+                "Spindle Speed",
+                "800 rpm"
+            ],
+            [
+                "boring",
+                "Cylindricity",
+                "0.008 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Cylindricity": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cylindricity”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Geometric Tolerance': 0.8991770923432107, 'Quality Grade': 0.8902304292929294, 'Cycle Time': 0.8777412307923063, 'Diameter': 0.8608816168507771, 'Position Accuracy': 0.8535679679190388}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision boring",
+                "Operation",
+                "boring"
+            ],
+            [
+                "boring",
+                "Tool",
+                "single-point CBN tools"
+            ],
+            [
+                "boring",
+                "Spindle Speed",
+                "800 rpm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The deep hole drilling of crankshaft oil passages used gun drills at 2500 rpm, maintaining 0.05 mm/rev feed with 100 bar coolant pressure.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "deep hole drilling",
+                "Tool",
+                "gun drill"
+            ],
+            [
+                "deep hole drilling",
+                "Spindle Speed",
+                "2500 rpm"
+            ],
+            [
+                "deep hole drilling",
+                "Feed Rate",
+                "0.05 mm/rev"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant Pressure",
+                "100 bar"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure."
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "deep hole drilling",
+                "Tool",
+                "gun drill"
+            ],
+            [
+                "deep hole drilling",
+                "Spindle Speed",
+                "2500 rpm"
+            ],
+            [
+                "deep hole drilling",
+                "Feed Rate",
+                "0.05 mm/rev"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant Pressure",
+                "100 bar"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Micro-threading of titanium bone screws employed carbide tools at 4000 rpm, achieving M2×0.4 threads with synchronized spindle motion.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-threading",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "micro-threading",
+                "Spindle Speed",
+                "4000 rpm"
+            ],
+            [
+                "titanium bone screws",
+                "Threads",
+                "M2×0.4"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Threads": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Threads”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Pitch': 0.8898160208401173, 'Width': 0.8768533083628447, 'Material': 0.8767384399874321, 'Pressure': 0.8730337268827912, 'Hardness': 0.854268928593566}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-threading",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "micro-threading",
+                "Spindle Speed",
+                "4000 rpm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The precision turning of stainless steel shafts used PCBN tools at 250 m/min, maintaining 0.1 mm depth of cut with high-pressure coolant.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "stainless steel shafts",
+                "Operation",
+                "precision turning"
+            ],
+            [
+                "precision turning",
+                "Tool",
+                "PCBN tools"
+            ],
+            [
+                "precision turning",
+                "Cutting Speed",
+                "250 m/min"
+            ],
+            [
+                "precision turning",
+                "Depth Of Cut",
+                "0.1 mm"
+            ],
+            [
+                "precision turning",
+                "Coolant",
+                "high-pressure coolant"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。",
+            "Coolant": "The subject operation uses the object cooling medium or method."
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1524465319626611, 'Step Over': 1.0344231366474759, 'Dressing Method': 1.000390235474954, 'Angle': 0.9719853228962818}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "stainless steel shafts",
+                "Operation",
+                "precision turning"
+            ],
+            [
+                "precision turning",
+                "Tool",
+                "PCBN tools"
+            ],
+            [
+                "precision turning",
+                "Cutting Speed",
+                "250 m/min"
+            ],
+            [
+                "precision turning",
+                "Depth of Cut",
+                "0.1 mm"
+            ],
+            [
+                "precision turning",
+                "Coolant",
+                "high-pressure coolant"
+            ]
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "CNC profile milling of turbine blade roots employed 5-axis machining at 8000 rpm, achieving 0.02 mm profile accuracy through tool compensation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "cnc profile milling",
+                "Operation",
+                "tool compensation"
+            ],
+            [
+                "cnc profile milling",
+                "Machine Tool",
+                "5-axis machining"
+            ],
+            [
+                "cnc profile milling",
+                "Spindle Speed",
+                "8000 rpm"
+            ],
+            [
+                "turbine blade roots",
+                "Profile Accuracy",
+                "0.02 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Machine Tool": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Machine Tool”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Profile Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Profile Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Tool Material': 0.952228524164008, 'Tool Geometry': 0.9434251014685798, 'Tool Diameter': 0.9272358023476952, 'Tool Coating': 0.9256698302817254, 'Tool': 0.9186160216595}, {}, {'Position Accuracy': 1.18, 'Quality Grade': 1.0532554107343468, 'Process Sequence': 1.035327784891165, 'Geometric Tolerance': 1.0135259452446952, 'Table Speed': 1.0133571055192503}]",
+        "schema_canonicalizaiton": [
+            [
+                "cnc profile milling",
+                "Operation",
+                "tool compensation"
+            ],
+            null,
+            [
+                "cnc profile milling",
+                "Spindle Speed",
+                "8000 rpm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The tapping of aluminum engine blocks used forming taps at 1200 rpm, maintaining 60% thread height with MQL lubrication at 50 mL/hr.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "aluminum engine blocks",
+                "Operation",
+                "tapping"
+            ],
+            [
+                "tapping",
+                "Tool",
+                "forming taps"
+            ],
+            [
+                "tapping",
+                "Spindle Speed",
+                "1200 rpm"
+            ],
+            [
+                "tapping",
+                "Thread Height Maintenance",
+                "60%"
+            ],
+            [
+                "tapping",
+                "Coolant",
+                "MQL"
+            ],
+            [
+                "tapping",
+                "Coolant Flow Rate",
+                "50 mL/hr"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Thread Height Maintenance": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Thread Height Maintenance”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Coolant": "The subject operation uses the object cooling medium or method.",
+            "Coolant Flow Rate": "The subject operation supplies coolant at the object volume flow rate."
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Geometric Tolerance': 0.9241532102017378, 'Dimensional Tolerance': 0.8870191132537095, 'Tool Material': 0.8604857654398095, 'Process Sequence': 0.8321334739328634, 'Dressing Method': 0.8029416477783164}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "aluminum engine blocks",
+                "Operation",
+                "tapping"
+            ],
+            [
+                "tapping",
+                "Tool",
+                "forming taps"
+            ],
+            [
+                "tapping",
+                "Spindle Speed",
+                "1200 rpm"
+            ],
+            null,
+            [
+                "tapping",
+                "Coolant",
+                "MQL"
+            ],
+            [
+                "tapping",
+                "Coolant Flow Rate",
+                "50 mL/hr"
+            ]
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Precision reaming of valve guides used carbide reamers at 600 rpm, achieving 0.01 mm cylindricity through floating holder adaptation.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision reaming",
+                "Tool",
+                "carbide reamer"
+            ],
+            [
+                "precision reaming",
+                "Spindle Speed",
+                "600 rpm"
+            ],
+            [
+                "precision reaming",
+                "Cylindricity",
+                "0.01 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Cylindricity": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cylindricity”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Quality Grade': 0.8947691197691199, 'Geometric Tolerance': 0.8904030737211057, 'Cycle Time': 0.879516569150173, 'Position Accuracy': 0.8749572687276492, 'Diameter': 0.8649388167177543}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision reaming",
+                "Tool",
+                "carbide reamer"
+            ],
+            [
+                "precision reaming",
+                "Spindle Speed",
+                "600 rpm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The helical milling of steel gears used carbide cutters at 3000 rpm, maintaining 0.2 module accuracy with synchronized axis motion.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "helical milling",
+                "Tool",
+                "carbide cutters"
+            ],
+            [
+                "helical milling",
+                "Spindle Speed",
+                "3000 rpm"
+            ],
+            [
+                "helical milling",
+                "Module Accuracy",
+                "0.2"
+            ],
+            [
+                "helical milling",
+                "Axis Motion",
+                "synchronized"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Module Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Module Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Axis Motion": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Axis Motion”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Position Accuracy': 1.18, 'Quality Grade': 1.0477455011878645, 'Dimensional Tolerance': 1.0330926773455378, 'Cycle Time': 1.0107950523062725, 'Angle': 1.0018687249802518}, {'Position Accuracy': 0.9136187085663494, 'Operation': 0.8414199743109408, 'Workpiece Speed': 0.8177574641039252, 'Tool Material': 0.8145170022008694, 'Geometric Tolerance': 0.8099232923257763}]",
+        "schema_canonicalizaiton": [
+            [
+                "helical milling",
+                "Tool",
+                "carbide cutters"
+            ],
+            [
+                "helical milling",
+                "Spindle Speed",
+                "3000 rpm"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Hard turning of bearing races employed CBN tools at 180 m/min, achieving 0.3 μm Ra surface finish through wiper geometry inserts.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "hard turning",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "hard turning",
+                "Speed",
+                "180 m/min"
+            ],
+            [
+                "hard turning",
+                "Surface Finish",
+                "0.3 μm Ra"
+            ],
+            [
+                "bearing races",
+                "Operation",
+                "hard turning"
+            ],
+            [
+                "bearing races",
+                "Wiper Geometry",
+                "wiper geometry inserts"
+            ],
+            [
+                "bearing races",
+                "Process",
+                "hard turning"
+            ],
+            [
+                "bearing races",
+                "Surface Finish",
+                "0.3 μm Ra"
+            ],
+            [
+                "bearing races",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "bearing races",
+                "Speed",
+                "180 m/min"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Wiper Geometry": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Wiper Geometry”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Table Speed': 0.9625885225885227, 'Wheel Speed': 0.9518585698575619, 'Workpiece Speed': 0.9370295047594037, 'Spindle Speed': 0.9329886722866175, 'Feed Speed': 0.9280879422066145}, {'Workpiece Speed': 1.0338970746127358, 'Cutting Speed': 1.031092680704576, 'Process Sequence': 0.9946298728977758, 'Position Accuracy': 0.9875414033716001, 'Surface Roughness': 0.9848484848484848}, {}, {'Tool Geometry': 0.9876923076923076, 'Geometric Tolerance': 0.9799667178699437, 'Diameter': 0.9525602076889086, 'Width': 0.9177576510676735, 'Tool Diameter': 0.8796353826551577}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.911361129909517, 'Hardness': 0.8725528131079084, 'Surface Roughness': 0.8582822373345007, 'Angle': 0.8525798378368944}, {'Workpiece Speed': 1.038291971916972, 'Cutting Speed': 1.0246910948836805, 'Position Accuracy': 1.0098301919780794, 'Process Sequence': 0.9891785345717234, 'Surface Roughness': 0.9848484848484848}, {}, {'Table Speed': 0.9580363006169459, 'Wheel Speed': 0.9541279150956571, 'Spindle Speed': 0.9352580175247128, 'Workpiece Speed': 0.9347601595213084, 'Feed Speed': 0.9282379518072289}]",
+        "schema_canonicalizaiton": [
+            [
+                "hard turning",
+                "Tool",
+                "CBN tools"
+            ],
+            null,
+            [
+                "hard turning",
+                "Surface Roughness",
+                "0.3 μm Ra"
+            ],
+            [
+                "bearing races",
+                "Operation",
+                "hard turning"
+            ],
+            null,
+            null,
+            null,
+            [
+                "bearing races",
+                "Tool",
+                "CBN tools"
+            ],
+            null
+        ]
+    }
+]

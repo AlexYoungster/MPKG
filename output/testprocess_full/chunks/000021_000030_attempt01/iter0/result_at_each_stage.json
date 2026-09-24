@@ -1,0 +1,575 @@
+[
+    {
+        "index": 0,
+        "input_text": "The keyway broaching operation was performed using a pull-type HSS broach with 8 roughing teeth and 4 finishing teeth, operating at 3 m/min cutting speed with flood coolant.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "keyway broaching",
+                "Tool",
+                "pull-type HSS broach"
+            ],
+            [
+                "keyway broaching",
+                "Number of Teeth",
+                "8"
+            ],
+            [
+                "keyway broaching",
+                "Number of Teeth",
+                "4"
+            ],
+            [
+                "keyway broaching",
+                "Cutting Speed",
+                "3 m/min"
+            ],
+            [
+                "keyway broaching",
+                "Coolant",
+                "flood coolant"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Number of Teeth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Number of Teeth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Coolant": "The subject operation uses the object cooling medium or method."
+        },
+        "canonicalization_candidates": "[{}, {'Diameter': 0.9425016614890033, 'Feed per Tooth': 0.916920852495336, 'Tool Diameter': 0.8904772351683943, 'Depth of Cut': 0.8822103014592934, 'Width': 0.8715261776753712}, {'Diameter': 0.9425016614890033, 'Feed per Tooth': 0.916920852495336, 'Tool Diameter': 0.8904772351683943, 'Depth of Cut': 0.8822103014592934, 'Width': 0.8696851313977054}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "keyway broaching",
+                "Tool",
+                "pull-type HSS broach"
+            ],
+            null,
+            null,
+            [
+                "keyway broaching",
+                "Cutting Speed",
+                "3 m/min"
+            ],
+            [
+                "keyway broaching",
+                "Coolant",
+                "flood coolant"
+            ]
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "A precision boring operation on a hydraulic cylinder employed a twin-cutter boring head with micro-adjustment capability of 0.005 mm, running at 180 m/min with oil mist cooling.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision boring operation",
+                "Tool",
+                "twin-cutter boring head"
+            ],
+            [
+                "precision boring operation",
+                "Micro-Adjustment",
+                "0.005 mm"
+            ],
+            [
+                "precision boring operation",
+                "Spindle Speed",
+                "180 m/min"
+            ],
+            [
+                "precision boring operation",
+                "Coolant",
+                "oil mist cooling"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Micro-Adjustment": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Micro-Adjustment”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Coolant": "The subject operation uses the object cooling medium or method."
+        },
+        "canonicalization_candidates": "[{}, {'Dimensional Tolerance': 0.8820272016457031, 'Position Accuracy': 0.8709503160565282, 'Quality Grade': 0.8561865070138728, 'Surface Roughness': 0.8356694369001704, 'Geometric Tolerance': 0.8327733371208633}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision boring operation",
+                "Tool",
+                "twin-cutter boring head"
+            ],
+            null,
+            [
+                "precision boring operation",
+                "Spindle Speed",
+                "180 m/min"
+            ],
+            [
+                "precision boring operation",
+                "Coolant",
+                "oil mist cooling"
+            ]
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The gear shaping process utilized a HSS shaper cutter with 30 teeth, operating at 120 strokes/min with a radial feed of 0.1 mm/stroke and cutting speed of 30 m/min.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "gear shaping process",
+                "Tool",
+                "HSS shaper cutter"
+            ],
+            [
+                "gear shaping process",
+                "Number Of Teeth",
+                "30"
+            ],
+            [
+                "gear shaping process",
+                "Strokes Per Minute",
+                "120"
+            ],
+            [
+                "gear shaping process",
+                "Radial Feed",
+                "0.1 mm/stroke"
+            ],
+            [
+                "gear shaping process",
+                "Cutting Speed",
+                "30 m/min"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Number Of Teeth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Number Of Teeth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Strokes Per Minute": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Strokes Per Minute”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Radial Feed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Radial Feed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface."
+        },
+        "canonicalization_candidates": "[{}, {'Diameter': 0.9335023377706306, 'Feed per Tooth': 0.9101815512240216, 'Depth of Cut': 0.8860768398268398, 'Tool Diameter': 0.8597674527179066, 'Geometric Tolerance': 0.8581945342239461}, {'Feed per Tooth': 0.8648047750186707, 'Surface Roughness': 0.8487643665017084, 'Cutting Speed': 0.8392354188491408, 'Workpiece Speed': 0.8302982304101707, 'Cycle Time': 0.8287811650405076}, {'Feed Rate': 1.1502534562211981, 'Feed Speed': 1.1429600181735575, 'Infeed Rate': 1.0805278810364964, 'Feed per Tooth': 1.0673359353412546, 'Quality Grade': 1.0610698476635656}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "gear shaping process",
+                "Tool",
+                "HSS shaper cutter"
+            ],
+            null,
+            null,
+            null,
+            [
+                "gear shaping process",
+                "Cutting Speed",
+                "30 m/min"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Surface grinding of tungsten carbide inserts was performed using a diamond wheel at 20 m/s wheel speed, with cross feed of 0.3 mm/pass and depth of cut of 0.01 mm.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "surface grinding",
+                "Operation",
+                "surface grinding"
+            ],
+            [
+                "surface grinding",
+                "Wheel",
+                "diamond wheel"
+            ],
+            [
+                "surface grinding",
+                "Wheel Speed",
+                "20 m/s"
+            ],
+            [
+                "surface grinding",
+                "Cross Feed",
+                "0.3 mm/pass"
+            ],
+            [
+                "surface grinding",
+                "Depth Of Cut",
+                "0.01 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Wheel": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Wheel”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Wheel Speed": "The subject grinding operation has the object rotational or peripheral speed of the wheel.",
+            "Cross Feed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cross Feed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。"
+        },
+        "canonicalization_candidates": "[{}, {'Wheel Speed': 0.9600261551874455, 'Grinding Wheel': 0.9503770423125262, 'Diameter': 0.8719427093306693, 'Width': 0.857267621920114, 'Material': 0.8444390085235157}, {}, {'Feed Speed': 0.9599420280706185, 'Feed Rate': 0.945938751844824, 'Infeed Rate': 0.9027140958116655, 'Feed per Tooth': 0.8852748662870945, 'Surface Roughness': 0.8315056575369075}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1547890818858562, 'Step Over': 1.037953910330671, 'Dressing Method': 1.0130985688082876, 'Angle': 0.9702915057915058}]",
+        "schema_canonicalizaiton": [
+            [
+                "surface grinding",
+                "Operation",
+                "surface grinding"
+            ],
+            null,
+            [
+                "surface grinding",
+                "Wheel Speed",
+                "20 m/s"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The deep hole drilling of an injection mold used a gun drill of 8 mm diameter at 60 m/min cutting speed, with coolant pressure of 80 bar and peck drilling cycle of 1 mm depth.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "injection mold",
+                "Operation",
+                "deep hole drilling"
+            ],
+            [
+                "deep hole drilling",
+                "Tool",
+                "gun drill"
+            ],
+            [
+                "deep hole drilling",
+                "Cutting Speed",
+                "60 m/min"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant Pressure",
+                "80 bar"
+            ],
+            [
+                "deep hole drilling",
+                "Peck Drilling Cycle",
+                "1 mm depth"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure.",
+            "Peck Drilling Cycle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Peck Drilling Cycle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {'Cycle Time': 0.9694116310767832, 'Dressing Method': 0.8824059023413863, 'Grinding Wheel': 0.8793680223285488, 'Cutting Speed': 0.8608019854352811, 'Tool Coating': 0.8319108042117924}]",
+        "schema_canonicalizaiton": [
+            [
+                "injection mold",
+                "Operation",
+                "deep hole drilling"
+            ],
+            [
+                "deep hole drilling",
+                "Tool",
+                "gun drill"
+            ],
+            [
+                "deep hole drilling",
+                "Cutting Speed",
+                "60 m/min"
+            ],
+            [
+                "deep hole drilling",
+                "Coolant Pressure",
+                "80 bar"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "A precision turning operation on brass components utilized a PCD insert running at 300 m/min, with feed rate of 0.05 mm/rev and depth of cut of 0.2 mm to achieve Ra 0.4.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "brass components",
+                "Operation",
+                "precision turning"
+            ],
+            [
+                "precision turning",
+                "Tool",
+                "PCD insert"
+            ],
+            [
+                "precision turning",
+                "Spindle Speed",
+                "300 m/min"
+            ],
+            [
+                "precision turning",
+                "Feed Rate",
+                "0.05 mm/rev"
+            ],
+            [
+                "precision turning",
+                "Depth Of Cut",
+                "0.2 mm"
+            ],
+            [
+                "brass components",
+                "Surface Roughness",
+                "Ra 0.4"
+            ],
+            [
+                "precision turning",
+                "Process",
+                "turning"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。",
+            "Surface Roughness": "The subject workpiece or processed surface has the object roughness value or requirement.",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1524465319626611, 'Step Over': 1.0344231366474759, 'Dressing Method': 1.000390235474954, 'Angle': 0.9702915057915058}, {}, {'Process Sequence': 0.9824291300097752, 'Pressure': 0.9184727924405344, 'Surface Roughness': 0.8536524759006389, 'Angle': 0.8503803186061252, 'Power': 0.8318974932228611}]",
+        "schema_canonicalizaiton": [
+            [
+                "brass components",
+                "Operation",
+                "precision turning"
+            ],
+            [
+                "precision turning",
+                "Tool",
+                "PCD insert"
+            ],
+            [
+                "precision turning",
+                "Spindle Speed",
+                "300 m/min"
+            ],
+            [
+                "precision turning",
+                "Feed Rate",
+                "0.05 mm/rev"
+            ],
+            null,
+            [
+                "brass components",
+                "Surface Roughness",
+                "Ra 0.4"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The form grinding of cam lobes was performed using a specially profiled CBN wheel at 40 m/s wheel speed, with work speed of 40 rpm and in-process gauging system.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "form grinding",
+                "Tool",
+                "special profiled CBN wheel"
+            ],
+            [
+                "form grinding",
+                "Wheel Speed",
+                "40 m/s"
+            ],
+            [
+                "form grinding",
+                "Work Speed",
+                "40 rpm"
+            ],
+            [
+                "form grinding",
+                "In-Process Gauging",
+                "in-process gauging system"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Wheel Speed": "The subject grinding operation has the object rotational or peripheral speed of the wheel.",
+            "Work Speed": "主体类别=加工过程；方向=主体→客体；客体类别=旋转速度参数；谓词语义=表示加工过程中主轴的旋转速率；范围边界=主轴运动参数。",
+            "In-Process Gauging": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“In-Process Gauging”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Workpiece Speed': 0.8688888888888888, 'Wheel Speed': 0.8486922916912837, 'Table Speed': 0.8228373015873017, 'Diameter': 0.8149360813593713, 'Cutting Speed': 0.8007825157544654}, {'Process Sequence': 0.9515839131351467, 'Surface Roughness': 0.9061368474674375, 'Tool Geometry': 0.8676892133741448, 'Quality Grade': 0.8618543233082707, 'Infeed Rate': 0.8583652102702394}]",
+        "schema_canonicalizaiton": [
+            [
+                "form grinding",
+                "Tool",
+                "special profiled CBN wheel"
+            ],
+            [
+                "form grinding",
+                "Wheel Speed",
+                "40 m/s"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Micro-milling of medical implants employed a 0.3 mm diameter carbide end mill at 40,000 rpm, with feed per tooth of 0.002 mm and minimum quantity lubrication.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-milling",
+                "Tool",
+                "0.3 mm diameter carbide end mill"
+            ],
+            [
+                "micro-milling",
+                "Feed per Tooth",
+                "0.002 mm"
+            ],
+            [
+                "micro-milling",
+                "Lubrication",
+                "minimum quantity lubrication"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Feed per Tooth": "The subject milling operation has the object feed distance per tool tooth.",
+            "Lubrication": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Lubrication”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Operation': 0.9141966160774211, 'Tool Coating': 0.9021063127304362, 'Tool Material': 0.844095505721282, 'Abrasive': 0.8383495273109245, 'Material': 0.83722470341244}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-milling",
+                "Tool",
+                "0.3 mm diameter carbide end mill"
+            ],
+            [
+                "micro-milling",
+                "Feed per Tooth",
+                "0.002 mm"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The spline rolling process was conducted using hardened steel dies at 120 rpm workpiece speed, with automatic lubrication system maintaining oil film thickness of 0.1 mm.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "spline rolling",
+                "Process",
+                "rolling"
+            ],
+            [
+                "spline rolling",
+                "Material",
+                "hardened steel dies"
+            ],
+            [
+                "spline rolling",
+                "Workpiece Speed",
+                "120 rpm"
+            ],
+            [
+                "spline rolling",
+                "Lubrication",
+                "automatic lubrication system"
+            ],
+            [
+                "spline rolling",
+                "Oil Film Thickness",
+                "0.1 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Material": "The subject workpiece or part is made from the object material.",
+            "Workpiece Speed": "The subject operation has the object rotational or linear speed of the workpiece.",
+            "Lubrication": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Lubrication”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Oil Film Thickness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Oil Film Thickness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Process Sequence': 0.9824291300097752, 'Pressure': 0.9235561257738678, 'Surface Roughness': 0.8737756544482088, 'Angle': 0.84032537355118, 'Power': 0.8279564312211372}, {}, {}, {'Tool Coating': 0.9102668478474931, 'Operation': 0.9099945494872947, 'Tool Material': 0.8614589107322388, 'Abrasive': 0.8415241835370513, 'Tool Geometry': 0.831797252415459}, {'Coating Thickness': 0.9648648648648648, 'Surface Roughness': 0.960261739104244, 'Hardness': 0.890473754396181, 'Width': 0.861119176526332, 'Tool Coating': 0.8555433705222737}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "spline rolling",
+                "Material",
+                "hardened steel dies"
+            ],
+            [
+                "spline rolling",
+                "Workpiece Speed",
+                "120 rpm"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "During the honing operation of cylinder liners, a diamond honing tool was used with 45° crossing angle, operating at 30 m/min surface speed and 25 strokes/min reciprocation rate.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "cylinder liners",
+                "Operation",
+                "honing"
+            ],
+            [
+                "honing",
+                "Tool",
+                "diamond honing tool"
+            ],
+            [
+                "honing",
+                "Crossing Angle",
+                "45°"
+            ],
+            [
+                "honing",
+                "Surface Speed",
+                "30 m/min"
+            ],
+            [
+                "honing",
+                "Reciprocation Rate",
+                "25 strokes/min"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Crossing Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Crossing Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Reciprocation Rate": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Reciprocation Rate”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Angle': 1.0, 'Cutting Speed': 0.8731969556281731, 'Position Accuracy': 0.8685300609941606, 'Coating Thickness': 0.8628909986007174, 'Tool Coating': 0.8552657113001941}, {'Table Speed': 0.9594468830265653, 'Workpiece Speed': 0.9500765249435207, 'Surface Roughness': 0.9480422873193799, 'Cutting Speed': 0.9211180563852688, 'Wheel Speed': 0.918859649122807}, {'Feed Rate': 1.120715971675846, 'Position Accuracy': 1.089158062843018, 'Material Removal Rate': 1.0848788091341284, 'Infeed Rate': 1.0831104108309992, 'Quality Grade': 1.0139499909812408}]",
+        "schema_canonicalizaiton": [
+            [
+                "cylinder liners",
+                "Operation",
+                "honing"
+            ],
+            [
+                "honing",
+                "Tool",
+                "diamond honing tool"
+            ],
+            null,
+            null,
+            null
+        ]
+    }
+]

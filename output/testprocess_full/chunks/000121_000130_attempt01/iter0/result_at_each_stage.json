@@ -1,0 +1,587 @@
+[
+    {
+        "index": 0,
+        "input_text": "The micro-turning operation of titanium medical implants required a maximum depth of cut of 0.05 mm, using PCD tools with 0.2 mm nose radius at 120 m/min cutting speed for optimal surface finish.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "ti titanium medical implants",
+                "Operation",
+                "micro-turning"
+            ],
+            [
+                "micro-turning",
+                "Depth Of Cut",
+                "0.05 mm"
+            ],
+            [
+                "micro-turning",
+                "Tool",
+                "PCD tools"
+            ],
+            [
+                "micro-turning",
+                "Nose Radius",
+                "0.2 mm"
+            ],
+            [
+                "micro-turning",
+                "Cutting Speed",
+                "120 m/min"
+            ],
+            [
+                "micro-turning",
+                "Surface Finish",
+                "optimal"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Nose Radius": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Nose Radius”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Surface Finish": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Finish”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1501771867245658, 'Step Over': 1.0384149036354922, 'Dressing Method': 1.009663884123603, 'Material Removal Rate': 0.9736588030077054}, {}, {'Quality Grade': 1.1041196997446998, 'Feed Rate': 1.033233725446412, 'Purpose': 1.0158748180936212, 'Infeed Rate': 1.0089528287434215, 'Position Accuracy': 1.007583315377433}, {}, {'Surface Roughness': 0.9848484848484848, 'Tool Coating': 0.8607878502078754, 'Tool Geometry': 0.8512975305064556, 'Cutting Speed': 0.8369971701411958, 'Workpiece Speed': 0.8354293854293855}]",
+        "schema_canonicalizaiton": [
+            [
+                "ti titanium medical implants",
+                "Operation",
+                "micro-turning"
+            ],
+            [
+                "micro-turning",
+                "Depth of Cut",
+                "0.05 mm"
+            ],
+            [
+                "micro-turning",
+                "Tool",
+                "PCD tools"
+            ],
+            null,
+            [
+                "micro-turning",
+                "Cutting Speed",
+                "120 m/min"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "High-precision gear grinding employed a single-rib CBN wheel with 0.008 mm dressing increment, maintaining a 45 m/s wheel speed and 0.3 mm/rev workpiece feed for AGMA class 12 accuracy.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "high-precision gear grinding",
+                "Grinding Wheel",
+                "single-rib CBN wheel"
+            ],
+            [
+                "high-precision gear grinding",
+                "Dressing Increment",
+                "0.008 mm"
+            ],
+            [
+                "high-precision gear grinding",
+                "Wheel Speed",
+                "45 m/s"
+            ],
+            [
+                "high-precision gear grinding",
+                "Workpiece Feed",
+                "0.3 mm/rev"
+            ],
+            [
+                "high-precision gear grinding",
+                "Accuracy",
+                "AGMA class 12"
+            ]
+        ],
+        "schema_definition": {
+            "Grinding Wheel": "The subject grinding operation uses the object grinding wheel.",
+            "Dressing Increment": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Dressing Increment”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Wheel Speed": "The subject grinding operation has the object rotational or peripheral speed of the wheel.",
+            "Workpiece Feed": "主体类别=加工过程；方向=主体→客体；客体类别=每转进给参数；谓词语义=表示刀具相对于工件的每转进给距离；范围边界=进给运动参数。",
+            "Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Dressing Method': 0.9386363636363636, 'Infeed Rate': 0.8931871502184003, 'Coating Thickness': 0.8709327248692169, 'Surface Roughness': 0.8664464101430046, 'Equipment': 0.8341027064891364}, {}, {'Workpiece Speed': 0.8542857142857143, 'Diameter': 0.8210768403096065, 'Surface Roughness': 0.8198190331109392, 'Width': 0.8131011801791412, 'Feed Rate': 0.7840334596403785}, {'Position Accuracy': 1.18, 'Quality Grade': 1.0953603342004306, 'Purpose': 1.0256462396336616, 'Temperature': 0.996612435472809, 'Cutting Speed': 0.9831502975859341}]",
+        "schema_canonicalizaiton": [
+            [
+                "high-precision gear grinding",
+                "Grinding Wheel",
+                "single-rib CBN wheel"
+            ],
+            null,
+            [
+                "high-precision gear grinding",
+                "Wheel Speed",
+                "45 m/s"
+            ],
+            [
+                "high-precision gear grinding",
+                "Feed Rate",
+                "0.3 mm/rev"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The vacuum heat treatment process for tool steel parts specified a heating rate of 10°C/min to 850°C, followed by 2-hour soak time and nitrogen gas quenching at 5 bar pressure.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "tool steel parts",
+                "Operation",
+                "vacuum heat treatment"
+            ],
+            [
+                "vacuum heat treatment",
+                "Heating Rate",
+                "10°C/min"
+            ],
+            [
+                "vacuum heat treatment",
+                "Soak Time",
+                "2 hours"
+            ],
+            [
+                "vacuum heat treatment",
+                "Quenching",
+                "nitrogen gas"
+            ],
+            [
+                "vacuum heat treatment",
+                "Quench Pressure",
+                "5 bar"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Heating Rate": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Heating Rate”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Soak Time": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Soak Time”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Quenching": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Quenching”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Quench Pressure": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Quench Pressure”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Temperature': 1.0903539426523299, 'Coolant Flow Rate': 1.087554678503016, 'Infeed Rate': 1.0791329023994418, 'Feed Rate': 1.0703918846853628, 'Material Removal Rate': 1.0549608839701006}, {'Hold Time': 0.9696303346022842, 'Cycle Time': 0.942552767821585, 'Tool Coating': 0.9021248417791246, 'Coating Thickness': 0.8641367142975085, 'Feed Speed': 0.830784311615002}, {'Pitch': 0.9416158615273437, 'Process Sequence': 0.9102044286143794, 'Quality Grade': 0.8660946567179686, 'Frequency': 0.8426509364356949, 'Tool Coating': 0.8396329324616706}, {'Pressure': 0.9703599812996727, 'Coolant Pressure': 0.9193215829730629, 'Pitch': 0.9154966296671442, 'Process Sequence': 0.9092463369963372, 'Surface Roughness': 0.8962232292443035}]",
+        "schema_canonicalizaiton": [
+            [
+                "tool steel parts",
+                "Operation",
+                "vacuum heat treatment"
+            ],
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "Wire EDM cutting of carbide dies used 0.25 mm brass wire with 5 cutting passes, reducing power from 8A to 2A for final passes to achieve 0.005 mm dimensional accuracy.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "wire edm cutting",
+                "Tool",
+                "brass wire"
+            ],
+            [
+                "wire edm cutting",
+                "Number Of Passes",
+                "5"
+            ],
+            [
+                "wire edm cutting",
+                "Power",
+                "8A"
+            ],
+            [
+                "wire edm cutting",
+                "Final Power",
+                "2A"
+            ],
+            [
+                "wire edm cutting",
+                "Dimensional Accuracy",
+                "0.005 mm"
+            ],
+            [
+                "wire edm cutting",
+                "Tool",
+                "carbide dies"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Number Of Passes": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Number Of Passes”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Power": "The subject process applies or maintains the object power.",
+            "Final Power": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Final Power”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dimensional Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Dimensional Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Process Sequence': 0.9147494796281153, 'Diameter': 0.887196029776675, 'Depth of Cut': 0.8741254125412542, 'Step Over': 0.8556912753769876, 'Pressure': 0.8329691382178231}, {}, {'Power': 0.9794117647058823, 'Cutting Speed': 0.8526501279173403, 'Purpose': 0.839960049699806, 'Material': 0.8353468544994197, 'Voltage': 0.8312402441056406}, {'Dimensional Tolerance': 1.1632913306451613, 'Position Accuracy': 1.158396871945259, 'Geometric Tolerance': 0.9995771221832404, 'Depth of Cut': 0.9773820245189084, 'Cycle Time': 0.9763412481078717}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "wire edm cutting",
+                "Tool",
+                "brass wire"
+            ],
+            null,
+            [
+                "wire edm cutting",
+                "Power",
+                "8A"
+            ],
+            null,
+            null,
+            [
+                "wire edm cutting",
+                "Tool",
+                "carbide dies"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "Plasma nitriding of steel gears maintained chamber temperature at 520°C for 48 hours under 400 Pa pressure, achieving case depth of 0.6 mm with surface hardness 850HV.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "plasma nitriding",
+                "Process",
+                "nitriding"
+            ],
+            [
+                "plasma nitriding",
+                "Temperature",
+                "520°C"
+            ],
+            [
+                "plasma nitriding",
+                "Time",
+                "48 hours"
+            ],
+            [
+                "plasma nitriding",
+                "Pressure",
+                "400 Pa"
+            ],
+            [
+                "steel gears",
+                "Case Depth",
+                "0.6 mm"
+            ],
+            [
+                "steel gears",
+                "Surface Hardness",
+                "850HV"
+            ]
+        ],
+        "schema_definition": {
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Temperature": "The subject process applies or maintains the object temperature.",
+            "Time": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Time”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Pressure": "The subject process applies or maintains the object pressure.",
+            "Case Depth": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Case Depth”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Surface Hardness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Surface Hardness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Process Sequence': 0.9824291300097752, 'Pressure': 0.9253460318771541, 'Angle': 0.8441699113663061, 'Power': 0.8341668384609562, 'Surface Roughness': 0.8329600144960557}, {}, {'Hold Time': 0.9717336894635884, 'Cycle Time': 0.9373542566553319, 'Diameter': 0.9039814193923784, 'Angle': 0.8542745126017086, 'Dimensional Tolerance': 0.8198065667286911}, {}, {'Depth of Cut': 0.923353841037579, 'Width': 0.9128594616477217, 'Step Over': 0.8902213628269966, 'Diameter': 0.8615040555217929, 'Tool Diameter': 0.8611905054024602}, {'Hardness': 0.9959677419354839, 'Surface Roughness': 0.9732185844968706, 'Coating Thickness': 0.9045466678024817, 'Geometric Tolerance': 0.8544976153507562, 'Position Accuracy': 0.8478424471590592}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "plasma nitriding",
+                "Temperature",
+                "520°C"
+            ],
+            null,
+            [
+                "plasma nitriding",
+                "Pressure",
+                "400 Pa"
+            ],
+            null,
+            [
+                "steel gears",
+                "Hardness",
+                "850HV"
+            ]
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "The precision honing of hydraulic cylinders employed 150-grit diamond stones with 45° crosshatch pattern, using 2.5 bar expansion pressure and 0.2 mm total stock removal.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "hydraulic cylinder",
+                "Operation",
+                "precision honing"
+            ],
+            [
+                "precision honing",
+                "Tool",
+                "150-grit diamond stones"
+            ],
+            [
+                "precision honing",
+                "Crosshatch Pattern",
+                "45°"
+            ],
+            [
+                "precision honing",
+                "Expansion Pressure",
+                "2.5 bar"
+            ],
+            [
+                "precision honing",
+                "Total Stock Removal",
+                "0.2 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Crosshatch Pattern": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Crosshatch Pattern”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Expansion Pressure": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Expansion Pressure”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Total Stock Removal": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Total Stock Removal”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Pitch': 0.9531040449924292, 'Material': 0.8975033981806473, 'Diameter': 0.8392192683859351, 'Process Sequence': 0.8197872924806977, 'Geometric Tolerance': 0.8197454338910035}, {'Pressure': 0.9794117647058823, 'Coolant Pressure': 0.9128699700698372, 'Temperature': 0.8634878854219883, 'Process Sequence': 0.8629152312218675, 'Surface Roughness': 0.8557593595290917}, {'Material Removal Rate': 0.9605263157894737, 'Dimensional Tolerance': 0.9163624266969338, 'Tool Material': 0.9160684767984469, 'Tool Coating': 0.8950617337470499, 'Step Over': 0.8654143191452459}]",
+        "schema_canonicalizaiton": [
+            [
+                "hydraulic cylinder",
+                "Operation",
+                "precision honing"
+            ],
+            [
+                "precision honing",
+                "Tool",
+                "150-grit diamond stones"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "Laser hardening of cam lobes used 2kW Nd:YAG laser with 8 mm spot size, maintaining 1200°C surface temperature through pyrometer control for 0.8 mm case depth.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "laser hardening",
+                "Laser",
+                "2kW Nd:YAG laser"
+            ],
+            [
+                "laser hardening",
+                "Spot Size",
+                "8 mm"
+            ],
+            [
+                "laser hardening",
+                "Temperature",
+                "1200°C"
+            ],
+            [
+                "laser hardening",
+                "Time",
+                "0.8 mm"
+            ],
+            [
+                "laser hardening",
+                "Process",
+                "cam lobes"
+            ],
+            [
+                "laser hardening",
+                "Tool",
+                "2kW Nd:YAG laser"
+            ]
+        ],
+        "schema_definition": {
+            "Laser": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Laser”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Spot Size": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Spot Size”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Temperature": "The subject process applies or maintains the object temperature.",
+            "Time": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Time”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Tool": "The subject operation uses the object cutting or forming tool."
+        },
+        "canonicalization_candidates": "[{'Diameter': 0.9089984123137649, 'Material': 0.8665935272956814, 'Angle': 0.8664196716064094, 'Hardness': 0.8542621712864251, 'Coolant': 0.845240232215802}, {'Position Accuracy': 0.9001152279093456, 'Diameter': 0.8709317785085049, 'Feed Speed': 0.8579044718313472, 'Table Speed': 0.8529245262639661, 'Width': 0.84313313887342}, {}, {'Hold Time': 0.9603700530999519, 'Cycle Time': 0.9373542566553319, 'Diameter': 0.9237529137529138, 'Angle': 0.8642365326988887, 'Hardness': 0.8430721091731267}, {'Process Sequence': 0.9848484848484848, 'Pressure': 0.9060858876786296, 'Hardness': 0.8763438655090178, 'Surface Roughness': 0.8632965285203615, 'Angle': 0.8525798378368944}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "laser hardening",
+                "Temperature",
+                "1200°C"
+            ],
+            null,
+            null,
+            [
+                "laser hardening",
+                "Tool",
+                "2kW Nd:YAG laser"
+            ]
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "The electroplating process for automotive components specified copper strike layer of 5 μm, followed by 25 μm nickel and 0.5 μm chromium for corrosion protection.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "electroplating process",
+                "Material",
+                "copper"
+            ],
+            [
+                "electroplating process",
+                "Material",
+                "nickel"
+            ],
+            [
+                "electroplating process",
+                "Material",
+                "chromium"
+            ],
+            [
+                "electroplating process",
+                "Thickness",
+                "5 μm"
+            ],
+            [
+                "electroplating process",
+                "Thickness",
+                "25 μm"
+            ],
+            [
+                "electroplating process",
+                "Thickness",
+                "0.5 μm"
+            ]
+        ],
+        "schema_definition": {
+            "Material": "The subject workpiece or part is made from the object material.",
+            "Thickness": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Thickness”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Coating Thickness': 0.9768115942028986, 'Hardness': 0.9492285639252419, 'Surface Roughness': 0.9466400365460493, 'Angle': 0.8605813964745869, 'Width': 0.8594099795701129}, {'Coating Thickness': 0.9768115942028986, 'Hardness': 0.9472202232755492, 'Surface Roughness': 0.9466400365460493, 'Width': 0.8580655775718762, 'Angle': 0.8541798106536912}, {'Coating Thickness': 0.9768115942028986, 'Hardness': 0.9472202232755492, 'Surface Roughness': 0.9466400365460493, 'Angle': 0.8605813964745869, 'Width': 0.8602017760394794}]",
+        "schema_canonicalizaiton": [
+            [
+                "electroplating process",
+                "Material",
+                "copper"
+            ],
+            [
+                "electroplating process",
+                "Material",
+                "nickel"
+            ],
+            [
+                "electroplating process",
+                "Material",
+                "chromium"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "Precision jig boring of fixture plates required pre-mapping of thermal growth, implementing 0.002 mm compensation per 1°C temperature change for holes under 10 mm.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision jig boring",
+                "Pre-Mapping",
+                "thermal growth"
+            ],
+            [
+                "precision jig boring",
+                "Temperature Compensation",
+                "0.002 mm per 1°C"
+            ],
+            [
+                "precision jig boring",
+                "Dimensional Tolerance",
+                "holes under 10 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Pre-Mapping": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Pre-Mapping”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Temperature Compensation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Temperature Compensation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Dimensional Tolerance": "The subject workpiece or feature has the object allowable dimensional deviation."
+        },
+        "canonicalization_candidates": "[{'Material': 0.8774899396378271, 'Tool Coating': 0.8558827441381922, 'Tool Material': 0.8541075538056432, 'Angle': 0.844338105202166, 'Diameter': 0.81340015531192}, {'Temperature': 1.176774193548387, 'Dimensional Tolerance': 1.0528653869915006, 'Coolant Pressure': 1.0482788127417004, 'Coolant': 1.0253697599464808, 'Material Removal Rate': 1.0090942230734452}, {}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            [
+                "precision jig boring",
+                "Dimensional Tolerance",
+                "holes under 10 mm"
+            ]
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "The powder coating application used corona charging at 60kV with powder flow rate of 150 g/min, maintaining 200 mm gun-to-part distance for uniform 60 μm coating thickness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "powder coating application",
+                "Corona Charging",
+                "60kV"
+            ],
+            [
+                "powder coating application",
+                "Powder Flow Rate",
+                "150 g/min"
+            ],
+            [
+                "powder coating application",
+                "Gun-to-Part Distance",
+                "200 mm"
+            ],
+            [
+                "powder coating application",
+                "Coating Thickness",
+                "60 μm"
+            ]
+        ],
+        "schema_definition": {
+            "Corona Charging": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Corona Charging”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Powder Flow Rate": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Powder Flow Rate”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Gun-to-Part Distance": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Gun-to-Part Distance”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Coating Thickness": "The subject coated workpiece has the object coating thickness."
+        },
+        "canonicalization_candidates": "[{'Tool Coating': 0.8906496032840119, 'Coating Thickness': 0.8748579835724049, 'Control Method': 0.8463222993208614, 'Power': 0.8450430381716285, 'Cutting Speed': 0.838243307308421}, {'Coolant Flow Rate': 1.1471232876712327, 'Feed Rate': 1.1066621332539985, 'Infeed Rate': 1.0776740641587306, 'Material Removal Rate': 1.0434104077410982, 'Quality Grade': 0.9979641465282418}, {'Geometric Tolerance': 0.9491461100569262, 'Dimensional Tolerance': 0.8951220034246576, 'Tool Diameter': 0.8907210726013056, 'Diameter': 0.841525045742586, 'Position Accuracy': 0.8242157444005269}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "powder coating application",
+                "Power",
+                "60kV"
+            ],
+            null,
+            null,
+            [
+                "powder coating application",
+                "Coating Thickness",
+                "60 μm"
+            ]
+        ]
+    }
+]

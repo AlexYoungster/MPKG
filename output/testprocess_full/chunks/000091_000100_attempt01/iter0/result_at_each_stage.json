@@ -1,0 +1,531 @@
+[
+    {
+        "index": 0,
+        "input_text": "The keyway milling process specified climb cutting for roughing passes and conventional cutting for finishing pass, with 0.2 mm side step-over for wall finishing.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "keyway milling",
+                "Cutting Mode",
+                "climb cutting"
+            ],
+            [
+                "keyway milling",
+                "Cutting Mode",
+                "conventional cutting"
+            ],
+            [
+                "keyway milling",
+                "Side Step-Over",
+                "0.2 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Cutting Mode": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cutting Mode”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Side Step-Over": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Side Step-Over”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Cutting Speed': 0.9671232876712328, 'Tool Coating': 0.9193666131166133, 'Depth of Cut': 0.8930794116277987, 'Dressing Method': 0.8686395896073316, 'Coating Thickness': 0.8631873076184223}, {'Cutting Speed': 0.9600920376712329, 'Tool Coating': 0.9307302494802495, 'Depth of Cut': 0.8907368617046038, 'Coating Thickness': 0.8687126699372628, 'Dressing Method': 0.8665067224744645}, {'Step Over': 0.9694444444444444, 'Depth of Cut': 0.8791948513785723, 'Diameter': 0.8531670168067228, 'Material': 0.8381365789546568, 'Width': 0.8286196728898343}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Precision boring of blind holes included a roughing cycle with 0.2 mm wall stock, followed by semi-finishing at 0.05 mm and spring passes for final size accuracy.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision boring",
+                "Operation",
+                "roughing"
+            ],
+            [
+                "roughing",
+                "Wall Stock",
+                "0.2 mm"
+            ],
+            [
+                "precision boring",
+                "Operation",
+                "semi-finishing"
+            ],
+            [
+                "semi-finishing",
+                "Wall Stock",
+                "0.05 mm"
+            ],
+            [
+                "precision boring",
+                "Operation",
+                "spring passes"
+            ],
+            [
+                "spring passes",
+                "Final Size Accuracy",
+                "accuracy"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Wall Stock": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Wall Stock”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Final Size Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Final Size Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Tool Material': 0.9236615769065433, 'Tool Coating': 0.921492746658781, 'Tool Diameter': 0.8912196549503896, 'Tool Geometry': 0.8610284084692555, 'Angle': 0.8588183139239477}, {}, {'Tool Material': 0.929689244890733, 'Tool Coating': 0.9262546514206857, 'Tool Diameter': 0.8902965440356747, 'Tool': 0.8599173360687317, 'Material': 0.8570918843737598}, {}, {'Position Accuracy': 1.162089552238806, 'Dimensional Tolerance': 1.0909426083454723, 'Quality Grade': 1.0528581002331003, 'Wheel Speed': 0.9852072020431664, 'Material Removal Rate': 0.9723676363210059}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision boring",
+                "Operation",
+                "roughing"
+            ],
+            null,
+            [
+                "precision boring",
+                "Operation",
+                "semi-finishing"
+            ],
+            null,
+            [
+                "precision boring",
+                "Operation",
+                "spring passes"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The thread milling operation for large diameter threads used helical interpolation with 360° rotation and 2 mm pitch feed, maintaining constant tool centerline offset.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "thread milling operation",
+                "Interpolation",
+                "helical interpolation"
+            ],
+            [
+                "thread milling operation",
+                "Rotation",
+                "360°"
+            ],
+            [
+                "thread milling operation",
+                "Feed",
+                "2 mm"
+            ],
+            [
+                "thread milling operation",
+                "Tool Centerline Offset",
+                "constant"
+            ]
+        ],
+        "schema_definition": {
+            "Interpolation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Interpolation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Rotation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Rotation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Feed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Feed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Tool Centerline Offset": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tool Centerline Offset”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Position Accuracy': 0.8690863313819448, 'Operation': 0.8648729733773792, 'Purpose': 0.8574650409568136, 'Diameter': 0.8405265635448563, 'Dimensional Tolerance': 0.8370476301551623}, {'Operation': 0.8515827922077921, 'Cycle Time': 0.8474731033408577, 'Geometric Tolerance': 0.8381546561551559, 'Dimensional Tolerance': 0.8351405341889688, 'Angle': 0.8219556771060897}, {'Feed Speed': 0.9600261551874455, 'Feed Rate': 0.9450783410138248, 'Feed per Tooth': 0.9144106761294262, 'Infeed Rate': 0.8725676245181161, 'Width': 0.8422439411438647}, {'Tool Geometry': 0.9368698272807863, 'Tool Diameter': 0.9366929832086703, 'Tool Coating': 0.9336063382182335, 'Tool Material': 0.9260802930622011, 'Tool': 0.9095344888589724}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "During plunge grinding of grooves, the infeed rate was reduced from 0.01 mm/s for roughing to 0.002 mm/s for finishing, with coolant pressure increased to 6 bar.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "plunge grinding",
+                "Infeed Rate",
+                "0.01 mm/s"
+            ],
+            [
+                "plunge grinding",
+                "Infeed Rate",
+                "0.002 mm/s"
+            ],
+            [
+                "plunge grinding",
+                "Coolant Pressure",
+                "6 bar"
+            ]
+        ],
+        "schema_definition": {
+            "Infeed Rate": "The subject grinding operation has the object infeed distance per revolution or unit time.",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure."
+        },
+        "canonicalization_candidates": "[{}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "plunge grinding",
+                "Infeed Rate",
+                "0.01 mm/s"
+            ],
+            [
+                "plunge grinding",
+                "Infeed Rate",
+                "0.002 mm/s"
+            ],
+            [
+                "plunge grinding",
+                "Coolant Pressure",
+                "6 bar"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The turning of hardened shafts required PCBN tools with -5° rake angle and 0.4 mm nose radius, starting with 0.15 mm depth of cut and 0.08 mm/rev feed rate.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "hardened shafts",
+                "Operation",
+                "turning"
+            ],
+            [
+                "turning",
+                "Tool",
+                "PCBN tools"
+            ],
+            [
+                "turning",
+                "Rake Angle",
+                "-5°"
+            ],
+            [
+                "turning",
+                "Nose Radius",
+                "0.4 mm"
+            ],
+            [
+                "turning",
+                "Depth Of Cut",
+                "0.15 mm"
+            ],
+            [
+                "turning",
+                "Feed Rate",
+                "0.08 mm/rev"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Rake Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Rake Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Nose Radius": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Nose Radius”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke."
+        },
+        "canonicalization_candidates": "[{}, {}, {'Angle': 1.18, 'Table Speed': 1.0359576936892598, 'Geometric Tolerance': 1.0299018589139812, 'Position Accuracy': 1.0288784520395775, 'Quality Grade': 1.026728647440244}, {'Quality Grade': 1.1013300655983584, 'Feed Rate': 1.0303010331387195, 'Purpose': 1.0167127301815333, 'Infeed Rate': 1.0102477837883768, 'Position Accuracy': 1.004490559113447}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1501771867245658, 'Step Over': 1.040108720740268, 'Dressing Method': 1.0080152354749543, 'Material Removal Rate': 0.9714592837769362}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "hardened shafts",
+                "Operation",
+                "turning"
+            ],
+            [
+                "turning",
+                "Tool",
+                "PCBN tools"
+            ],
+            null,
+            null,
+            null,
+            [
+                "turning",
+                "Feed Rate",
+                "0.08 mm/rev"
+            ]
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Surface grinding of thin plates used magnetic chuck with reduced magnetic force, implementing cross grinding pattern with 0.01 mm depth per pass to minimize distortion.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "surface grinding",
+                "Workpiece",
+                "thin plates"
+            ],
+            [
+                "surface grinding",
+                "Tool",
+                "magnetic chuck"
+            ],
+            [
+                "surface grinding",
+                "Grinding Pattern",
+                "cross grinding pattern"
+            ],
+            [
+                "surface grinding",
+                "Depth Per Pass",
+                "0.01 mm"
+            ],
+            [
+                "surface grinding",
+                "Grinding Parameter",
+                "Depth Per Pass"
+            ],
+            [
+                "surface grinding",
+                "Grinding Parameter",
+                "Grinding Pattern"
+            ],
+            [
+                "surface grinding",
+                "Grinding Parameter",
+                "Magnetic Force"
+            ]
+        ],
+        "schema_definition": {
+            "Workpiece": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Workpiece”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Grinding Pattern": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Grinding Pattern”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Per Pass": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Depth Per Pass”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Grinding Parameter": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Grinding Parameter”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Workpiece Speed': 0.9491626794258373, 'Material': 0.9118662974296777, 'Width': 0.8739537567200041, 'Diameter': 0.8696856643467896, 'Angle': 0.8622424276491313}, {}, {'Grinding Wheel': 0.9506172839506172, 'Dressing Method': 0.9158012199737305, 'Material': 0.8779439550719405, 'Coating Thickness': 0.8503446630377522, 'Diameter': 0.8477737044136922}, {'Depth of Cut': 0.946987951807229, 'Step Over': 0.8913332776292335, 'Feed per Tooth': 0.8733990693051416, 'Surface Roughness': 0.8423328442865544, 'Diameter': 0.8358153237092051}, {'Grinding Wheel': 1.1364102564102565, 'Dressing Method': 1.0811778292272245, 'Geometric Tolerance': 1.0153583295377628, 'Angle': 1.008222859034597, 'Infeed Rate': 0.9950650042434004}, {'Grinding Wheel': 1.1364102564102565, 'Dressing Method': 1.0857897243885146, 'Geometric Tolerance': 1.0139105447276364, 'Angle': 1.008222859034597, 'Infeed Rate': 0.9931474881690001}, {'Grinding Wheel': 1.1364102564102565, 'Dressing Method': 1.0788352793040294, 'Geometric Tolerance': 1.0203168414360428, 'Angle': 1.0151773041190821, 'Infeed Rate': 1.010205632272088}]",
+        "schema_canonicalizaiton": [
+            null,
+            [
+                "surface grinding",
+                "Tool",
+                "magnetic chuck"
+            ],
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The end milling of deep pockets employed a helical ramping entry at 3° angle, followed by layer-by-layer cutting with 40% step-down of tool diameter.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "end milling",
+                "Entry Method",
+                "helical ramping entry"
+            ],
+            [
+                "end milling",
+                "Entry Angle",
+                "3°"
+            ],
+            [
+                "end milling",
+                "Cutting Method",
+                "layer-by-layer cutting"
+            ],
+            [
+                "end milling",
+                "Tool Diameter Step Down",
+                "40%"
+            ]
+        ],
+        "schema_definition": {
+            "Entry Method": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Entry Method”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Entry Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Entry Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Cutting Method": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cutting Method”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Tool Diameter Step Down": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tool Diameter Step Down”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Control Method': 1.0835309375589512, 'Dressing Method': 1.0663265095119934, 'Quality Grade': 1.0139637445887446, 'Process Sequence': 0.9955345517038563, 'Equipment': 0.9926498947157212}, {'Angle': 1.0, 'Tool Geometry': 0.9405879220423672, 'Current': 0.861611575226376, 'Quality Grade': 0.8546583687949644, 'Equipment': 0.8518947443000616}, {'Cutting Speed': 0.9470434528862479, 'Tool Coating': 0.9199009681709517, 'Depth of Cut': 0.8999044685587777, 'Dressing Method': 0.8948211324330727, 'Tool Geometry': 0.8741670340216454}, {'Tool Diameter': 0.9936507936507936, 'Diameter': 0.9734018669502542, 'Tool Geometry': 0.9412573689255981, 'Tool Material': 0.9188801364920768, 'Tool Coating': 0.9080727295092967}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "Precision reaming of alignment holes required floating holder use, with cutting speed reduced to 10 m/min and feed rate set at 0.1 mm/rev for optimal roundness.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision reaming",
+                "Operation",
+                "reaming"
+            ],
+            [
+                "reaming",
+                "Cutting Speed",
+                "10 m/min"
+            ],
+            [
+                "reaming",
+                "Feed Rate",
+                "0.1 mm/rev"
+            ],
+            [
+                "precision reaming",
+                "Purpose",
+                "alignment holes required floating holder use"
+            ],
+            [
+                "precision reaming",
+                "Process",
+                "floating holder use"
+            ],
+            [
+                "precision reaming",
+                "Parameter",
+                "optimal roundness"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Purpose": "The subject operation or condition serves the object stated purpose.",
+            "Process": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Process”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Parameter": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Parameter”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {'Process Sequence': 0.98008658008658, 'Pressure': 0.9168675292826397, 'Surface Roughness': 0.8412538741451787, 'Angle': 0.8366944211702276, 'Power': 0.8194045717421676}, {'Angle': 1.0680841869398208, 'Temperature': 1.0323433961799298, 'Position Accuracy': 1.0142956483400372, 'Diameter': 0.9820006695813147, 'Control Method': 0.9731270203780173}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision reaming",
+                "Operation",
+                "reaming"
+            ],
+            [
+                "reaming",
+                "Cutting Speed",
+                "10 m/min"
+            ],
+            [
+                "reaming",
+                "Feed Rate",
+                "0.1 mm/rev"
+            ],
+            [
+                "precision reaming",
+                "Purpose",
+                "alignment holes required floating holder use"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The cylindrical grinding between centers used dead centers with 0.02 mm runout tolerance, work speed set at 80 rpm and automatic size control for diameter tolerance.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "cylindrical grinding between centers",
+                "Operation",
+                "grinding"
+            ],
+            [
+                "grinding",
+                "Tool",
+                "dead centers"
+            ],
+            [
+                "grinding",
+                "Runout Tolerance",
+                "0.02 mm"
+            ],
+            [
+                "grinding",
+                "Work Speed",
+                "80 rpm"
+            ],
+            [
+                "grinding",
+                "Automatic Size Control",
+                "diameter tolerance"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Runout Tolerance": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Runout Tolerance”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Work Speed": "主体类别=加工过程；方向=主体→客体；客体类别=旋转速度参数；谓词语义=表示加工过程中主轴的旋转速率；范围边界=主轴运动参数。",
+            "Automatic Size Control": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Automatic Size Control”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Geometric Tolerance': 1.175967741935484, 'Dimensional Tolerance': 1.1408028513824886, 'Angle': 0.9951830796938284, 'Process Sequence': 0.9743151647286821, 'Wheel Speed': 0.9700002732238593}, {'Workpiece Speed': 0.8688888888888888, 'Wheel Speed': 0.8485422820906693, 'Table Speed': 0.8205679563492063, 'Diameter': 0.8147786030116031, 'Cutting Speed': 0.8026769256923536}, {'Control Method': 1.104469160768453, 'Geometric Tolerance': 1.0841221592028045, 'Dimensional Tolerance': 1.069558670683381, 'Position Accuracy': 1.0085662909606106, 'Cutting Speed': 0.9492154547637199}]",
+        "schema_canonicalizaiton": [
+            [
+                "cylindrical grinding between centers",
+                "Operation",
+                "grinding"
+            ],
+            [
+                "grinding",
+                "Tool",
+                "dead centers"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Face milling of cast iron surfaces specified symmetrical cutter positioning, with entry and exit angles maintained at 45° to minimize cutting force variations.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "face milling",
+                "Cutter Positioning",
+                "symmetrical cutter positioning"
+            ],
+            [
+                "face milling",
+                "Entry Angle",
+                "45°"
+            ],
+            [
+                "face milling",
+                "Exit Angle",
+                "45°"
+            ],
+            [
+                "face milling",
+                "Cutting Force",
+                "minimized"
+            ],
+            [
+                "face milling",
+                "Cutting Force",
+                "variations"
+            ]
+        ],
+        "schema_definition": {
+            "Cutter Positioning": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cutter Positioning”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Entry Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Entry Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Exit Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Exit Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Cutting Force": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cutting Force”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{'Position Accuracy': 0.9693911395403932, 'Cutting Speed': 0.9474086474727217, 'Purpose': 0.9295659324942792, 'Tool Coating': 0.8922835591627117, 'Depth of Cut': 0.8895237325699511}, {'Angle': 1.0, 'Tool Geometry': 0.9426571214996263, 'Current': 0.8586714448724864, 'Quality Grade': 0.849454679801302, 'Geometric Tolerance': 0.846632077510891}, {'Angle': 1.0, 'Diameter': 0.8500439404635898, 'Geometric Tolerance': 0.8410060367360823, 'Cutting Speed': 0.8213454766120208, 'Amplitude': 0.820266716165078}, {'Cutting Speed': 0.9600261551874455, 'Tool Coating': 0.9227623244810745, 'Depth of Cut': 0.8919970979960901, 'Coating Thickness': 0.8875782743390711, 'Process Sequence': 0.8425939697046537}, {'Cutting Speed': 0.9624455100261552, 'Tool Coating': 0.9227623244810745, 'Depth of Cut': 0.8918470883954754, 'Coating Thickness': 0.8797752679970146, 'Process Sequence': 0.8545525072957108}]",
+        "schema_canonicalizaiton": [
+            null,
+            null,
+            null,
+            null,
+            null
+        ]
+    }
+]

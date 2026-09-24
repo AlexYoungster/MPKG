@@ -1,0 +1,574 @@
+[
+    {
+        "index": 0,
+        "input_text": "The gear hobbing of helical gears utilized carbide hobs at 180 m/min cutting speed, maintaining AGMA Q13 quality through CNC synchronization with 2.5 mm module and 20° pressure angle.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "gear hobbing",
+                "Tool",
+                "carbide hobs"
+            ],
+            [
+                "gear hobbing",
+                "Cutting Speed",
+                "180 m/min"
+            ],
+            [
+                "gear hobbing",
+                "Quality",
+                "AGMA Q13"
+            ],
+            [
+                "gear hobbing",
+                "Module",
+                "2.5 mm"
+            ],
+            [
+                "gear hobbing",
+                "Pressure Angle",
+                "20°"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Quality": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Quality”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Module": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Module”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Pressure Angle": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Pressure Angle”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Quality Grade': 1.0, 'Position Accuracy': 0.8956251663441958, 'Material': 0.8845027567245357, 'Diameter': 0.8439200958615853, 'Amplitude': 0.841353326564694}, {'Angle': 0.9453993055555556, 'Diameter': 0.8630824798507725, 'Material': 0.8621791905167865, 'Geometric Tolerance': 0.8318167730089773, 'Control Method': 0.8168852219405185}, {'Angle': 0.9895161290322582, 'Pressure': 0.9694116310767832, 'Coolant Pressure': 0.9016865079365078, 'Surface Roughness': 0.8823915284062345, 'Temperature': 0.8811504454811359}]",
+        "schema_canonicalizaiton": [
+            [
+                "gear hobbing",
+                "Tool",
+                "carbide hobs"
+            ],
+            [
+                "gear hobbing",
+                "Cutting Speed",
+                "180 m/min"
+            ],
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "Micro-turning of ceramic injection nozzles employed monocrystalline diamond tools at 3,000 rpm, achieving 0.1 μm Ra finish through hydrostatic bearings with 0.002 mm depth of cut.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "micro-turning",
+                "Tool",
+                "monocrystalline diamond tools"
+            ],
+            [
+                "micro-turning",
+                "Spindle Speed",
+                "3,000 rpm"
+            ],
+            [
+                "micro-turning",
+                "Operation",
+                "turning"
+            ],
+            [
+                "micro-turning",
+                "Bearings",
+                "hydrostatic bearings"
+            ],
+            [
+                "micro-turning",
+                "Depth Of Cut",
+                "0.002 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Bearings": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Bearings”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Depth Of Cut": "主体类别=machining operation；方向=主体→客体；客体类别=cutting depth parameter；谓词语义=states the depth of material removed or entered during each pass；范围边界=cutting or grinding depth。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Material': 0.8968250825527841, 'Angle': 0.8783943060076927, 'Grinding Wheel': 0.8768731602890019, 'Tool Coating': 0.853327839704965, 'Hardness': 0.8525749453322453}, {'Depth of Cut': 1.18, 'Cutting Speed': 1.1501771867245658, 'Step Over': 1.0345703658203658, 'Dressing Method': 1.009663884123603, 'Material Removal Rate': 0.9736588030077054}]",
+        "schema_canonicalizaiton": [
+            [
+                "micro-turning",
+                "Tool",
+                "monocrystalline diamond tools"
+            ],
+            [
+                "micro-turning",
+                "Spindle Speed",
+                "3,000 rpm"
+            ],
+            [
+                "micro-turning",
+                "Operation",
+                "turning"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "The creep-feed grinding of turbine root profiles used vitrified CBN wheels at 50 m/s, maintaining 0.01 mm profile accuracy through 80 bar coolant pressure with 0.1 mm/pass depth of cut.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "creep-feed grinding",
+                "Tool",
+                "vitrified CBN wheels"
+            ],
+            [
+                "creep-feed grinding",
+                "Speed",
+                "50 m/s"
+            ],
+            [
+                "creep-feed grinding",
+                "Coolant Pressure",
+                "80 bar"
+            ],
+            [
+                "creep-feed grinding",
+                "Profile Accuracy",
+                "0.01 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Coolant Pressure": "The subject operation supplies coolant at the object pressure.",
+            "Profile Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Profile Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Wheel Speed': 0.9632222062211981, 'Table Speed': 0.9516162105867989, 'Feed Speed': 0.9282379518072289, 'Spindle Speed': 0.9262369310842716, 'Workpiece Speed': 0.9236163587656125}, {}, {'Position Accuracy': 1.18, 'Quality Grade': 1.047805971422967, 'Process Sequence': 1.0257320661794347, 'Geometric Tolerance': 1.0041334156813237, 'Angle': 0.9934270247799626}]",
+        "schema_canonicalizaiton": [
+            [
+                "creep-feed grinding",
+                "Tool",
+                "vitrified CBN wheels"
+            ],
+            null,
+            [
+                "creep-feed grinding",
+                "Coolant Pressure",
+                "80 bar"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "High-precision face milling of aluminum optical mounts employed PCD tools at 20,000 rpm, achieving 0.2 μm flatness through thermal-stable conditions with 0.04 mm/tooth feed.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "high-precision face milling",
+                "Operation",
+                "milling"
+            ],
+            [
+                "milling",
+                "Tool",
+                "PCD tools"
+            ],
+            [
+                "milling",
+                "Spindle Speed",
+                "20,000 rpm"
+            ],
+            [
+                "high-precision face milling",
+                "Thermal Stability",
+                "thermal-stable conditions"
+            ],
+            [
+                "high-precision face milling",
+                "Feed Rate",
+                "0.04 mm/tooth"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Thermal Stability": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Thermal Stability”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke."
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Dimensional Tolerance': 0.9051379247351116, 'Quality Grade': 0.886102238990987, 'Temperature': 0.860922159887798, 'Table Speed': 0.8577570055861495, 'Wheel Speed': 0.8114115332521749}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "high-precision face milling",
+                "Operation",
+                "milling"
+            ],
+            [
+                "milling",
+                "Tool",
+                "PCD tools"
+            ],
+            [
+                "milling",
+                "Spindle Speed",
+                "20,000 rpm"
+            ],
+            null,
+            [
+                "high-precision face milling",
+                "Feed Rate",
+                "0.04 mm/tooth"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "The taper grinding of tool steel punches used diamond wheels at 30 m/s, maintaining 0.005 mm taper accuracy through CNC dress compensation with 0.5° included angle.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "tool steel punches",
+                "Operation",
+                "taper grinding"
+            ],
+            [
+                "taper grinding",
+                "Tool",
+                "diamond wheels"
+            ],
+            [
+                "taper grinding",
+                "Speed",
+                "30 m/s"
+            ],
+            [
+                "taper grinding",
+                "CNC Dress Compensation",
+                "0.5°"
+            ],
+            [
+                "tool steel punches",
+                "Taper Accuracy",
+                "0.005 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Speed": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Speed”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "CNC Dress Compensation": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“CNC Dress Compensation”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Taper Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Taper Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Wheel Speed': 0.9678341013824885, 'Table Speed': 0.9583864559983962, 'Spindle Speed': 0.9304961127628081, 'Workpiece Speed': 0.9258158779963818, 'Feed Speed': 0.9168743154435925}, {'Dressing Method': 0.925754975978037, 'Tool Coating': 0.8927160646501676, 'Coating Thickness': 0.8735259853765125, 'Operation': 0.8471477396399127, 'Position Accuracy': 0.8215348324684567}, {'Position Accuracy': 1.170625, 'Table Speed': 1.0450345694520364, 'Geometric Tolerance': 1.0105905280318173, 'Purpose': 0.9849413264245463, 'Cutting Speed': 0.98329841151821}]",
+        "schema_canonicalizaiton": [
+            [
+                "tool steel punches",
+                "Operation",
+                "taper grinding"
+            ],
+            [
+                "taper grinding",
+                "Tool",
+                "diamond wheels"
+            ],
+            null,
+            null,
+            [
+                "tool steel punches",
+                "Cutting Speed",
+                "0.005 mm"
+            ]
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "Precision broaching of turbine disc fir-tree slots employed carbide tools at 6 m/min, achieving 0.01 mm slot width accuracy through progressive cutting with 0.05 mm per tooth rise.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "precision broaching",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "precision broaching",
+                "Cutting Speed",
+                "6 m/min"
+            ],
+            [
+                "precision broaching",
+                "Progressive Cutting",
+                "yes"
+            ],
+            [
+                "precision broaching",
+                "Tooth Rise",
+                "0.05 mm per tooth"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Progressive Cutting": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Progressive Cutting”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Tooth Rise": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Tooth Rise”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Cutting Speed': 0.9556354166666666, 'Tool Coating': 0.9266191639135718, 'Abrasive': 0.9016658125456485, 'Depth of Cut': 0.893883468681856, 'Process Sequence': 0.8758684965441942}, {'Feed per Tooth': 0.9297872340425531, 'Tool Material': 0.8718918508392194, 'Tool Diameter': 0.857429836044964, 'Tool Coating': 0.8530555116602533, 'Tool Geometry': 0.8515267780512387}]",
+        "schema_canonicalizaiton": [
+            [
+                "precision broaching",
+                "Tool",
+                "carbide tools"
+            ],
+            [
+                "precision broaching",
+                "Cutting Speed",
+                "6 m/min"
+            ],
+            null,
+            null
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "The form turning of spherical valve balls used CBN tools at 250 m/min, maintaining 0.002 mm sphericity through tool path optimization with 0.08 mm/rev feed rate.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "form turning",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "form turning",
+                "Spindle Speed",
+                "250 m/min"
+            ],
+            [
+                "form turning",
+                "Feed Rate",
+                "0.08 mm/rev"
+            ],
+            [
+                "spherical valve balls",
+                "Sphericity",
+                "0.002 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Sphericity": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Sphericity”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Quality Grade': 0.9150422937644315, 'Material': 0.8934699694377114, 'Geometric Tolerance': 0.8730995903737839, 'Surface Roughness': 0.8679826884260599, 'Diameter': 0.8529909079956519}]",
+        "schema_canonicalizaiton": [
+            [
+                "form turning",
+                "Tool",
+                "CBN tools"
+            ],
+            [
+                "form turning",
+                "Spindle Speed",
+                "250 m/min"
+            ],
+            [
+                "form turning",
+                "Feed Rate",
+                "0.08 mm/rev"
+            ],
+            [
+                "spherical valve balls",
+                "Surface Roughness",
+                "0.002 mm"
+            ]
+        ]
+    },
+    {
+        "index": 7,
+        "input_text": "High-speed drilling of composite aircraft structures employed diamond-coated tools at 40,000 rpm, achieving 0.02 mm hole position accuracy through orbital drilling with 0.01 mm/rev feed.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "high-speed drilling",
+                "Tool",
+                "diamond-coated tools"
+            ],
+            [
+                "high-speed drilling",
+                "Spindle Speed",
+                "40,000 rpm"
+            ],
+            [
+                "high-speed drilling",
+                "Feed Rate",
+                "0.01 mm/rev"
+            ],
+            [
+                "composite aircraft structures",
+                "Drilling Accuracy",
+                "0.02 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Drilling Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Drilling Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {'Position Accuracy': 1.176774193548387, 'Cutting Speed': 1.0714527565704661, 'Dressing Method': 1.0443058181364633, 'Quality Grade': 1.0248441116658649, 'Geometric Tolerance': 1.0052430361974733}]",
+        "schema_canonicalizaiton": [
+            [
+                "high-speed drilling",
+                "Tool",
+                "diamond-coated tools"
+            ],
+            [
+                "high-speed drilling",
+                "Spindle Speed",
+                "40,000 rpm"
+            ],
+            [
+                "high-speed drilling",
+                "Feed Rate",
+                "0.01 mm/rev"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 8,
+        "input_text": "The precision reaming of fuel injector bodies used carbide reamers at 1,200 rpm, maintaining 0.004 mm cylindricity through floating holders with 0.15 mm/rev feed rate.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "fuel injector body",
+                "Operation",
+                "reaming"
+            ],
+            [
+                "reaming",
+                "Tool",
+                "carbide reamer"
+            ],
+            [
+                "reaming",
+                "Spindle Speed",
+                "1,200 rpm"
+            ],
+            [
+                "reaming",
+                "Feed Rate",
+                "0.15 mm/rev"
+            ],
+            [
+                "fuel injector body",
+                "Cylindricity",
+                "0.004 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Operation": "The subject workpiece or part undergoes the object manufacturing operation.",
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Spindle Speed": "The subject operation has the object rotational speed of its spindle.",
+            "Feed Rate": "The subject operation has the object feed distance per revolution or stroke.",
+            "Cylindricity": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Cylindricity”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {}, {}, {}, {'Quality Grade': 0.8902304292929294, 'Geometric Tolerance': 0.8757155538816722, 'Cycle Time': 0.8745022779643122, 'Diameter': 0.8494346735963492, 'Spindle Speed': 0.8439111999112}]",
+        "schema_canonicalizaiton": [
+            [
+                "fuel injector body",
+                "Operation",
+                "reaming"
+            ],
+            [
+                "reaming",
+                "Tool",
+                "carbide reamer"
+            ],
+            [
+                "reaming",
+                "Spindle Speed",
+                "1,200 rpm"
+            ],
+            [
+                "reaming",
+                "Feed Rate",
+                "0.15 mm/rev"
+            ],
+            null
+        ]
+    },
+    {
+        "index": 9,
+        "input_text": "Wire EDM cutting of carbide die inserts employed 0.1 mm brass wire at 15V DC, achieving 0.005 mm profile accuracy through 4-axis simultaneous control with 0.8 m/min cutting speed.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "wire edm cutting",
+                "Tool",
+                "carbide die inserts"
+            ],
+            [
+                "wire edm cutting",
+                "Wire",
+                "0.1 mm brass wire"
+            ],
+            [
+                "wire edm cutting",
+                "Voltage",
+                "15V DC"
+            ],
+            [
+                "wire edm cutting",
+                "Cutting Speed",
+                "0.8 m/min"
+            ],
+            [
+                "wire edm cutting",
+                "Profile Accuracy",
+                "0.005 mm"
+            ]
+        ],
+        "schema_definition": {
+            "Tool": "The subject operation uses the object cutting or forming tool.",
+            "Wire": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Wire”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。",
+            "Voltage": "The subject process applies or maintains the object electrical potential.",
+            "Cutting Speed": "The subject operation has the object relative cutting velocity at the workpiece surface.",
+            "Profile Accuracy": "主体类别=关系实例中的主体类别；方向=主体→客体；客体类别=关系实例中的客体类别；谓词语义=概括关系名“Profile Accuracy”在实例中表示的共同语义；范围边界=以同一关系的实例共性为准。"
+        },
+        "canonicalization_candidates": "[{}, {'Angle': 1.0515889126305795, 'Amplitude': 1.0199879251553854, 'Temperature': 0.9958462834894724, 'Abrasive': 0.975752070748303, 'Quality Grade': 0.9515950991973943}, {}, {}, {'Position Accuracy': 1.18, 'Quality Grade': 1.0433371069541026, 'Process Sequence': 1.0364701069885436, 'Geometric Tolerance': 1.0054155026981115, 'Angle': 1.004699289579117}]",
+        "schema_canonicalizaiton": [
+            [
+                "wire edm cutting",
+                "Tool",
+                "carbide die inserts"
+            ],
+            null,
+            [
+                "wire edm cutting",
+                "Voltage",
+                "15V DC"
+            ],
+            [
+                "wire edm cutting",
+                "Cutting Speed",
+                "0.8 m/min"
+            ],
+            null
+        ]
+    }
+]

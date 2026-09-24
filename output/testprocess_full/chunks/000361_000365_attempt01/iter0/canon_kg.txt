@@ -1,0 +1,5 @@
+[['valve stem', 'Operation', 'taper turning'], ['taper turning', 'Tool', 'ceramic tool'], ['taper turning', 'Feed Rate', '350 m/min']]
+[['precision keyway milling', 'Tool', 'carbide cutters'], ['precision keyway milling', 'Spindle Speed', '6000 rpm'], ['precision keyway milling', 'Dimensional Tolerance', '0.01 mm']]
+[['profile turning', 'Operation', 'CV joints'], ['CV joints', 'Tool', 'PCBN tools'], ['profile turning', 'Feed Rate', '200 m/min']]
+[['deep hole drilling', 'Tool', 'carbide drill'], ['deep hole drilling', 'Spindle Speed', '4000 rpm'], ['deep hole drilling', 'Coolant', 'MQL']]
+[['planetary gears', 'Operation', 'gear shaping'], ['gear shaping', 'Tool', 'HSS cutters']]

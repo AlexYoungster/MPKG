@@ -1,0 +1,59 @@
+[
+    {
+        "index": 0,
+        "input_text": "The face milling operation was performed at a cutting speed of 180 m/min with a feed rate of 0.2 mm/rev and cutting depth of 2.5 mm using a carbide tool.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "face milling operation",
+                "Cutting Speed",
+                "180 m/min"
+            ],
+            [
+                "face milling operation",
+                "Feed Rate",
+                "0.2 mm/rev"
+            ],
+            [
+                "face milling operation",
+                "Cutting Depth",
+                "2.5 mm"
+            ],
+            [
+                "face milling operation",
+                "Tool",
+                "carbide tool"
+            ]
+        ],
+        "schema_definition": {
+            "Cutting Depth": "主体类别=零件或加工对象；方向=主体→客体；客体类别=表面质量指标；谓词语义=表示主体表面需要满足的粗糙程度要求；范围边界=表面质量要求。",
+            "Cutting Speed": "主体类别=零件或加工对象；方向=主体→客体；客体类别=表面质量指标；谓词语义=表示主体表面需要满足的粗糙程度要求；范围边界=表面质量要求。",
+            "Feed Rate": "主体类别=零件或加工对象；方向=主体→客体；客体类别=表面质量指标；谓词语义=表示主体表面需要满足的粗糙程度要求；范围边界=表面质量要求。",
+            "Tool": "主体类别=零件或加工对象；方向=主体→客体；客体类别=表面质量指标；谓词语义=表示主体表面需要满足的粗糙程度要求；范围边界=表面质量要求。"
+        },
+        "canonicalization_candidates": "[{}, {}, {'Cutting Speed': 1.1251967387451258, 'Depth of Cut': 1.1146041055718474, 'Dressing Method': 1.013122536910948, 'Feed per Tooth': 1.004464583788725, 'Quality Grade': 0.9897051603424152}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "face milling operation",
+                "Cutting Speed",
+                "180 m/min"
+            ],
+            [
+                "face milling operation",
+                "Feed Rate",
+                "0.2 mm/rev"
+            ],
+            [
+                "face milling operation",
+                "Depth of Cut",
+                "2.5 mm"
+            ],
+            [
+                "face milling operation",
+                "Tool",
+                "carbide tool"
+            ]
+        ]
+    }
+]

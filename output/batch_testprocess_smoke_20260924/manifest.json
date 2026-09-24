@@ -1,0 +1,27 @@
+{
+  "source": "F:\\MPKG\\datasets\\TestProcess.txt",
+  "source_lines": 400,
+  "selected_lines": 1,
+  "files_sha256": {
+    "F:\\MPKG\\datasets\\TestProcess.txt": "9ef5e84e63a5a97eeaebf3e7aaa1b8c38adfc897165103aa057fb22f969f3036",
+    "F:\\MPKG\\schemas\\process_relations_en.csv": "4f613bc1ed86db9032cdd15ba442fe73266fb26880d4e720a400bb3fa68c3d1e",
+    "F:\\MPKG\\prompt_templates\\oie_template_en.txt": "49f4f10171512642312583fcedf1947e70cfeca066d3f06b35f1694d07ed8cf4",
+    "F:\\MPKG\\few_shot_examples\\TestProcess\\oie_few_shot_examples.txt": "e8713801b03328200e1317c478f5520187b6729fe8cccb771d8718e7dd264a45",
+    "F:\\MPKG\\prompt_templates\\sd_template.txt": "a6c81bbd5bb4d8810c5b44f91b6d49c4d2c27fe20636c3f8e8be5e2ce94e9afb",
+    "F:\\MPKG\\few_shot_examples\\example\\sd_few_shot_examples.txt": "087cab9177cdf7a9f182df79bf752e5a718b89a81aa65971380bfc5d5692524a",
+    "F:\\MPKG\\prompt_templates\\sc_template.txt": "5f7b4968ef81c52a1881c462d252b737f5211ce0fead2c8a2ae36e324cd2fd71",
+    "F:\\MPKG\\batch_extract.py": "ad9fdc112bf6ae117095277fa8fb9578ddb0a16079f35fc173aa37717b8dd54d",
+    "F:\\MPKG\\evaluate\\compliance_report.py": "e0b1191cf7dbe2f3e84944e607d3cf7dc135ca7dc48f9c6596171f321fc9f503",
+    "F:\\MPKG\\edc\\edc_framework.py": "624b4b8d0108f8545be9616e1fc1c2b3538768e2baec9e435a29a1e309f7b728",
+    "F:\\MPKG\\edc\\extract.py": "f97ebc0502c809684b46b4cb7d1feaf879bf831f87cf62b247021997a3816e5c",
+    "F:\\MPKG\\edc\\schema_definition.py": "1e00780f00774089e4a7259f95f94d7497ce8fc488090cb41e311204fda45418",
+    "F:\\MPKG\\edc\\schema_canonicalization.py": "95cd6e60730c8a90e277bbf5f6c369afb17dc50fe88892a6fb1cf5d9fc17e955"
+  },
+  "models": {
+    "oie": "Qwen/Qwen3-1.7B",
+    "sd": "Qwen/Qwen3-1.7B",
+    "sc": "Qwen/Qwen3-1.7B",
+    "embedder": "intfloat/multilingual-e5-small"
+  },
+  "chunk_size": 1
+}
