@@ -11,7 +11,7 @@ from pathlib import Path
 from build_graph import ingest, load_source
 from graph_rag import (GraphRAG, GraphRetriever, build_messages, prose_answer,
                         quantity_type_warning, _drop_mismatched_catalog_citations,
-                        QwenGenerator, _usage_snapshot)
+                        compose_catalog_answer, QwenGenerator, _usage_snapshot)
 from qa_backend import handler_for
 
 
@@ -160,6 +160,28 @@ class GraphRAGChecks(unittest.TestCase):
             self.assertEqual(result["retrieval"]["agent_status"], "sufficient")
             self.assertTrue(result["retrieval"]["agent_assessment"]["sufficient"])
             self.assertTrue(result["retrieval"]["evidence_truncated"])
+
+    def test_catalogue_answers_are_assembled_deterministically(self):
+        retrieved = {
+            "documents": [], "facts": [],
+            "catalogs": [
+                {"id": "C1", "relation": "Operation", "value": "boring",
+                 "occurrences": 8, "outgoing_relations": ["Tool", "Spindle Speed"],
+                 "sources": [{"source_line": 3, "input_text": "boring was used"}]},
+                {"id": "C2", "relation": "Operation", "value": "deburring",
+                 "occurrences": 1, "outgoing_relations": [], "sources": []},
+            ],
+            "catalogue_truncated": False,
+        }
+        answer, citations, explanation = compose_catalog_answer(retrieved)
+        # Every value appears verbatim with its own citation; no generation limit
+        # can truncate the enumeration, so evidence cannot silently disappear.
+        self.assertIn("boring [C1]", answer)
+        self.assertIn("deburring [C2]", answer)
+        self.assertIn("有参数记录支撑", answer)
+        self.assertIn("仅出现名称", answer)
+        self.assertEqual(citations, ["C1", "C2"])
+        self.assertIn("[C1]", explanation)
 
     def test_quantity_is_not_used_as_category_name(self):
         self.assertTrue(quantity_type_warning("Coolant", "8 L/min"))

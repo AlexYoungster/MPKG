@@ -793,6 +793,49 @@ def prose_answer(raw: str, valid_citations: set[str]) -> tuple[str, list[str]]:
     return answer, cited
 
 
+def compose_catalog_answer(retrieved: dict) -> tuple[str, list[str], str]:
+    """Deterministically assemble a catalogue answer from graph aggregates.
+
+    Enumeration, ordering and citation binding are program jobs; the model is
+    never asked to reproduce a large catalogue in prose.  This keeps aggregate
+    answers complete (no generation-limit truncation) and binds every value
+    verbatim from the graph to its own citation id.  Grouping is purely
+    structural — values that act as a subject with parameter relations are
+    reported as parameter-backed, the rest as name-only records.
+    """
+    catalogs = retrieved.get("catalogs", [])
+    if not catalogs:
+        return "", [], ""
+    relation = str(catalogs[0].get("relation", ""))
+    total_occurrences = sum(int(item.get("occurrences", 0)) for item in catalogs)
+    parameterized, name_only = [], []
+    for item in catalogs:
+        outgoing = [r for r in item.get("outgoing_relations", []) if r != relation]
+        (parameterized if outgoing else name_only).append(item)
+    lines = [f"当前图谱在关系“{relation}”下共聚合出 {len(catalogs)} 个不同客体值，"
+             f"来自 {total_occurrences} 次图谱记录。"]
+    cited = []
+    if parameterized:
+        lines.append(f"一、有参数记录支撑的 {len(parameterized)} 项（名称为图谱原样值，"
+                     "括号内为记录次数与作为主体时的参数关系）：")
+        for item in parameterized:
+            outgoing = [r for r in item.get("outgoing_relations", []) if r != relation]
+            suffix = " 等" if len(outgoing) > 8 else ""
+            lines.append(f"- {item['value']} [{item['id']}]（{item['occurrences']} 次记录；"
+                         f"参数关系：{'、'.join(outgoing[:8])}{suffix}）")
+            cited.append(item["id"])
+    if name_only:
+        lines.append(f"二、仅出现名称、未记录参数的 {len(name_only)} 项（证据较弱，供核对原文）：")
+        for item in name_only:
+            lines.append(f"- {item['value']} [{item['id']}]（{item['occurrences']} 次记录）")
+            cited.append(item["id"])
+    if retrieved.get("catalogue_truncated"):
+        lines.append("注意：聚合结果未覆盖全部客体值，以上并非完整清单。")
+    answer = "\n".join(lines)
+    explanation = evidence_explanation(retrieved, cited)
+    return answer, cited, explanation
+
+
 def _drop_mismatched_catalog_citations(answer: str, citations: list[str],
                                        catalogs: list[dict]) -> tuple[str, list[str]]:
     """Remove C citations whose candidate value is absent from their sentence.
@@ -1068,6 +1111,12 @@ class GraphRAG:
         translated_query = None
         needs_translation = (not retrieved["facts"] or
                              (retrieved["ambiguous"] and re.search(r"[\u4e00-\u9fff]", question)))
+        # Overview questions ("有哪些/多少种/列举...") have no entity to anchor on;
+        # an English rewrite cannot help entity matching, so skip the call.
+        overview_intent = bool(re.search(
+            r"有哪些|多少种|列举|哪些类型|都有什么|有哪些类型|分类", question))
+        if overview_intent and retrieved["mode"] == "entity_missing":
+            needs_translation = False
         if needs_translation and entity is None and hasattr(self.generator, "translate_for_lookup"):
             translated_query = self.generator.translate_for_lookup(question)
             if translated_query and translated_query.casefold() != question.strip().casefold():
@@ -1123,6 +1172,16 @@ class GraphRAG:
             candidates = retrieved["documents"]
             public["evidence_explanation"] = "候选出处：" + "、".join(
                 _document_citation(item) for item in candidates)
+            attach_usage()
+            return public
+        if answer_mode in {"list", "aggregate", "compare"} and retrieved.get("catalogs"):
+            # Catalogue answers are assembled by code, not generated: enumeration
+            # of many values cannot fit a generation limit and free-form prose
+            # reliably loses or misbinds citations (the empty-answer failure).
+            answer, citations, explanation = compose_catalog_answer(retrieved)
+            public["answer"] = answer
+            public["evidence_explanation"] = explanation
+            public["cited_evidence"] = citations
             attach_usage()
             return public
         answer_messages = build_messages(question, retrieved)
