@@ -23,6 +23,8 @@
 
 每个响应的 `retrieval` 字段包含 `agent_status`、`agent_assessment`、`agent_rounds` 和 `agent_trace`，用于审计模型生成的查询表达式及其充分性判断。状态为 `sufficient` 表示模型主动判断当前证据足够；`insufficient` 表示模型确认图谱无法回答；`step_limit` 表示达到轮数上限而没有完成核验。候选记录或聚合值被截断时，后端把这一事实交给模型，由模型决定是否继续分页；不会用固定规则覆盖模型的充分性结论。聚合结果放在 `evidence.catalogs` 中，使用 `[C1]` 等编号引用，引用对应的完整原文会写入 `evidence_explanation`。
 
+生成器还返回 `token_usage`、`token_totals` 和 `context_limit`。每条 `token_usage` 记录对应一个阶段（`translation`、`agent` 或 `answer`），包含输入、输出、总 token 数和请求的输出预算。Qwen 的上下文上限从模型配置读取；当前缓存的 Qwen3-1.7B 配置为 40960 token。也可以用 `--max-context-tokens` 设置更低的运行上限。
+
 若“材料、刀具、冷却介质”等类别关系的客体却是带单位的量值，后端将其标记为类型冲突，不向 Qwen 提供为可用的类别事实。若生成回答仍复用了该量值，后端返回无法通过证据校验的说明、原文行号和 `grounding_warning`，避免把流量等参数写成介质名称。
 
 ## 启动
@@ -41,7 +43,7 @@
 
 服务会在首个需要生成回答的请求中加载 Qwen，随后复用同一个模型实例。构图文件更新后，重启服务以重新读取图谱。服务默认只监听本机地址。
 
-`--max-agent-steps` 可限制模型自主查询轮数，默认 6。更大的值允许跨更多文档分页和多跳追踪，但会增加模型调用时间；达到上限时响应会标记 `retrieval.agent_status=step_limit`，由于模型没有提交 finish 核验结论，后端不会生成完整答案。
+`--max-agent-steps` 可限制模型自主查询轮数，默认 6。`--max-context-tokens` 默认使用模型配置上限，也可设置为 8192、16384 等较低值以控制显存和延迟。更大的上下文和更多 Agent 步数会增加模型调用时间；达到 Agent 步数上限时响应会标记 `retrieval.agent_status=step_limit`，由于模型没有提交 finish 核验结论，后端不会生成完整答案。
 
 另一终端可用 PowerShell 发送问题：
 

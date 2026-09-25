@@ -10,7 +10,8 @@ from pathlib import Path
 
 from build_graph import ingest, load_source
 from graph_rag import (GraphRAG, GraphRetriever, build_messages, prose_answer,
-                        quantity_type_warning, _drop_mismatched_catalog_citations)
+                        quantity_type_warning, _drop_mismatched_catalog_citations,
+                        QwenGenerator, _usage_snapshot)
 from qa_backend import handler_for
 
 
@@ -185,6 +186,21 @@ class GraphRAGChecks(unittest.TestCase):
         self.assertIn("precision grinding [C1]", answer)
         self.assertNotIn("[C2]", answer)
         self.assertEqual(citations, ["C1"])
+
+    def test_generation_usage_is_recorded_per_stage(self):
+        generator = QwenGenerator()
+        generator._record_usage(stage="agent", input_tokens=100,
+                                 output_tokens=20, requested_output_tokens=220,
+                                 context_limit=40960)
+        generator._record_usage(stage="answer", input_tokens=800,
+                                 output_tokens=120, requested_output_tokens=512,
+                                 context_limit=40960)
+        usage, totals, context_limit = _usage_snapshot(generator)
+        self.assertEqual([item["stage"] for item in usage], ["agent", "answer"])
+        self.assertEqual(totals["input_tokens"], 900)
+        self.assertEqual(totals["output_tokens"], 140)
+        self.assertEqual(totals["total_tokens"], 1040)
+        self.assertIsNone(context_limit)
 
     def make_service(self, root):
         schema = root / "schema.csv"

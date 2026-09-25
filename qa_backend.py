@@ -11,7 +11,8 @@ from graph_rag import GraphRAG, GraphRetriever, QwenGenerator
 def create_service(args):
     retriever = GraphRetriever(args.db, max_documents=args.max_documents)
     generator = QwenGenerator(model_name=args.model, offline=args.offline,
-                              max_new_tokens=args.max_new_tokens)
+                              max_new_tokens=args.max_new_tokens,
+                              max_context_tokens=args.max_context_tokens)
     return GraphRAG(retriever, generator, max_agent_steps=args.max_agent_steps)
 
 
@@ -69,6 +70,10 @@ def parser():
                              help="Use already cached Qwen model files")
         command.add_argument("--max-documents", type=int, default=3)
         command.add_argument("--max-new-tokens", type=int, default=320)
+        command.add_argument(
+            "--max-context-tokens", type=int, default=None,
+            help="Maximum model context to use; default is the model config limit",
+        )
         command.add_argument("--max-agent-steps", type=int, default=6,
                              help="Maximum graph-tool decisions for the agent loop")
     ask = commands.choices["ask"]
@@ -82,9 +87,12 @@ def parser():
 
 def main(argv=None):
     args = parser().parse_args(argv)
-    if args.max_documents < 1 or args.max_new_tokens < 32 or args.max_agent_steps < 1:
+    if (args.max_documents < 1 or args.max_new_tokens < 32
+            or args.max_agent_steps < 1
+            or (args.max_context_tokens is not None and args.max_context_tokens < 512)):
         raise ValueError("--max-documents and --max-agent-steps must be positive; "
-                         "--max-new-tokens must be at least 32")
+                         "--max-new-tokens must be at least 32; "
+                         "--max-context-tokens must be at least 512")
     service = create_service(args)
     if args.command == "ask":
         result = service.ask(args.question, entity=args.entity)

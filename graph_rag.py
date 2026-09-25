@@ -614,14 +614,19 @@ def build_messages(question: str, retrieved: dict) -> list[dict]:
 
 class QwenGenerator:
     def __init__(self, model_name="Qwen/Qwen3-1.7B", *, cache_root: Path | None = None,
-                 offline=False, max_new_tokens=320):
+                 offline=False, max_new_tokens=320,
+                 max_context_tokens: int | None = None):
         self.model_name = model_name
         self.cache_root = cache_root or Path(os.environ.get(
             "MPKG_MODEL_CACHE", Path(__file__).resolve().parent / ".cache" / "models"))
         self.offline = offline
         self.max_new_tokens = max_new_tokens
+        self.max_context_tokens = max_context_tokens
+        self.context_limit = None
         self.model = None
         self.tokenizer = None
+        self.token_usage = []
+        self._generation_calls = 0
 
     def _load(self):
         if self.model is not None:
@@ -641,8 +646,31 @@ class QwenGenerator:
             quantization_config=quantization, torch_dtype=torch.float16,
             local_files_only=self.offline)
         self.model.eval()
+        model_limit = getattr(self.model.config, "max_position_embeddings", None)
+        if not isinstance(model_limit, int) or model_limit < 512:
+            model_limit = 4096
+        if self.max_context_tokens is not None:
+            if self.max_context_tokens < 512:
+                raise ValueError("max_context_tokens must be at least 512")
+            model_limit = min(model_limit, self.max_context_tokens)
+        self.context_limit = model_limit
 
-    def generate(self, messages: list[dict], max_new_tokens: int | None = None) -> str:
+    def _record_usage(self, *, stage: str, input_tokens: int,
+                      output_tokens: int, requested_output_tokens: int,
+                      context_limit: int) -> None:
+        self._generation_calls += 1
+        self.token_usage.append({
+            "call": self._generation_calls,
+            "stage": stage,
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "total_tokens": input_tokens + output_tokens,
+            "requested_output_tokens": requested_output_tokens,
+            "context_limit": context_limit,
+        })
+
+    def generate(self, messages: list[dict], max_new_tokens: int | None = None,
+                 *, stage: str = "answer") -> str:
         self._load()
         import torch
         from transformers import GenerationConfig
@@ -651,16 +679,26 @@ class QwenGenerator:
             messages, tokenize=True, add_generation_prompt=True,
             enable_thinking=False, return_dict=True, return_tensors="pt",
         ).to(self.model.device)
-        if inputs["input_ids"].shape[-1] > 4096:
-            raise ValueError("检索上下文超过 4096 tokens；请提供更具体的工件名称")
+        requested_output_tokens = max_new_tokens or self.max_new_tokens
+        context_limit = self.context_limit or 4096
+        input_tokens = int(inputs["input_ids"].shape[-1])
+        if input_tokens + requested_output_tokens > context_limit:
+            raise ValueError(
+                f"上下文长度不足：输入 {input_tokens} + 请求输出 {requested_output_tokens} "
+                f"> 模型上限 {context_limit} tokens；请减少证据或降低输出长度"
+            )
         generation = GenerationConfig(
-            do_sample=False, max_new_tokens=max_new_tokens or self.max_new_tokens,
+            do_sample=False, max_new_tokens=requested_output_tokens,
             pad_token_id=self.tokenizer.eos_token_id,
             eos_token_id=self.model.generation_config.eos_token_id,
         )
         with torch.inference_mode():
             output = self.model.generate(**inputs, generation_config=generation)
         new_ids = output[0][inputs["input_ids"].shape[-1]:]
+        self._record_usage(stage=stage, input_tokens=input_tokens,
+                           output_tokens=int(new_ids.shape[-1]),
+                           requested_output_tokens=requested_output_tokens,
+                           context_limit=context_limit)
         answer = self.tokenizer.decode(new_ids, skip_special_tokens=True).strip()
         answer = re.sub(r"^<think>.*?</think>\s*", "", answer, flags=re.DOTALL)
         return answer
@@ -668,10 +706,10 @@ class QwenGenerator:
     def translate_for_lookup(self, question: str) -> str:
         messages = [
             {"role": "system", "content": "把用户的机械加工问题改写成一句简短的英文检索句。"
-             "准确翻译工件和工序名称，保留型号、数值、单位；不要回答问题，不要增添事实。只输出英文句子。"},
+             "只做字面翻译，准确翻译工件和工序名称，保留型号、数值、单位；不要回答问题、猜测任何数值或增添事实。‘是多少’必须保留为英文疑问句。只输出英文句子。"},
             {"role": "user", "content": question},
         ]
-        output = self.generate(messages, max_new_tokens=80)
+        output = self.generate(messages, max_new_tokens=80, stage="translation")
         return output.splitlines()[0].strip().strip('"“”') if output else ""
 
     def agent_step(self, question: str, observation: str,
@@ -687,7 +725,7 @@ class QwenGenerator:
             {"role": "system", "content": AGENT_SYSTEM_PROMPT},
             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
         ]
-        return _parse_agent_json(self.generate(messages, max_new_tokens=220))
+        return _parse_agent_json(self.generate(messages, max_new_tokens=220, stage="agent"))
 
 
 def _document_source(document: dict) -> str:
@@ -803,6 +841,7 @@ AGENT_SYSTEM_PROMPT = """你是机械加工知识图谱代理。你负责规划�
 query.kind 可用 aggregate（按 relation 聚合客体并给出原文出处）、match/documents（按 entity、relations、object_terms、text_terms 过滤原文）、path/traverse（同一原文内沿 relation_path 多跳）、union（合并子查询）。可组合 limit、offset 等字段。关系名必须来自用户消息中的 canonical_relations（每个名称后附图谱定义）；实体和客体词可用英文图谱名称。
 
 你要根据问题自行发现需要的关系和查询步骤：单条参数查找、跨工件比较、全库列举、分类归纳和多跳追踪都用 graph_query 表达，不要等待程序提供专用工具。宽泛地询问“有哪些工艺/操作”时，选择定义为“工件经历的制造操作”的关系做 aggregate；描述操作先后顺序的关系只用于序列追踪。聚合结果带有值、出现次数、原文和该值作为主体时的出边关系；用这些信息判断它是工艺、工件、材料、刀具、阶段还是噪声。
+观察中如果已经有一篇原文和事实直接给出了问题所问的关系、客体或参数，先核对主体是否一致，然后直接 finish sufficient=true；不要因为还存在其他关系就扩大查询范围。只有缺少所问事实、存在冲突或问题要求全库列举时才追加查询。
 例如，问题只问全库有哪些具体制造工艺且没有指定实体时，应直接生成：{"action":"query","tool":"graph_query","arguments":{"query":{"kind":"aggregate","relation":"Operation","limit":100}}}。这里 Operation 是关系名，不是 entity；不要把关系名填入 entity，也不要把中文问题词放入 object_terms，除非它确实是图谱客体。
 若结果被截断，判断问题是否真的需要其余记录；问题要求“全部/有哪些”时应按 offset 分页，直到你认为覆盖完整。若证据不足、主体冲突或需要另一种视角，主动追加不同查询；同一查询不要重复。
 
@@ -851,6 +890,8 @@ def _agent_observation(question: str, retrieved: dict, trace: list[dict]) -> str
         lines.append(f"当前只展示 {len(documents)} / {candidate_count} 条候选记录；证据尚未覆盖全部记录。")
     if not documents:
         lines.append("（尚无命中的原文记录）")
+    elif facts:
+        lines.append("已有命中的原文和图谱事实；如果其中直接包含问题所问关系与参数，先核对主体后结束，不要扩大查询范围。")
     if catalogs:
         lines.append(f"当前目录包含 {len(catalogs)} / {candidate_values} 个聚合值：")
         for catalog in catalogs[:120]:
@@ -985,6 +1026,35 @@ class GraphAgent:
         return evidence
 
 
+def _call_generator(generator, messages: list[dict], *, stage: str,
+                    max_new_tokens: int | None = None) -> str:
+    """Call generators with stage accounting while keeping test integrations compatible."""
+    kwargs = {"stage": stage}
+    if max_new_tokens is not None:
+        kwargs["max_new_tokens"] = max_new_tokens
+    try:
+        return generator.generate(messages, **kwargs)
+    except TypeError:
+        # Small test/demonstration generators often implement only generate(messages).
+        kwargs.pop("stage", None)
+        try:
+            return generator.generate(messages, **kwargs)
+        except TypeError:
+            if max_new_tokens is not None:
+                return generator.generate(messages)
+            raise
+
+
+def _usage_snapshot(generator, start: int = 0) -> tuple[list[dict], dict[str, int], int | None]:
+    usage = list(getattr(generator, "token_usage", [])[start:])
+    totals = {
+        "input_tokens": sum(int(item.get("input_tokens", 0)) for item in usage),
+        "output_tokens": sum(int(item.get("output_tokens", 0)) for item in usage),
+        "total_tokens": sum(int(item.get("total_tokens", 0)) for item in usage),
+    }
+    return usage, totals, getattr(generator, "context_limit", None)
+
+
 class GraphRAG:
     def __init__(self, retriever: GraphRetriever, generator, *, max_agent_steps: int = 6):
         self.retriever = retriever
@@ -993,6 +1063,7 @@ class GraphRAG:
                       if hasattr(generator, "agent_step") else None)
 
     def ask(self, question: str, *, entity: str | None = None) -> dict:
+        usage_start = len(getattr(self.generator, "token_usage", []))
         retrieved = self.retriever.retrieve(question, entity=entity)
         translated_query = None
         needs_translation = (not retrieved["facts"] or
@@ -1020,10 +1091,18 @@ class GraphRAG:
             "evidence_truncated": retrieved.get("evidence_truncated", False),
             "candidate_values": retrieved.get("candidate_values", 0),
         }, "evidence": {"documents": retrieved["documents"], "facts": retrieved["facts"]}}
+        def attach_usage() -> None:
+            usage, totals, context_limit = _usage_snapshot(self.generator, usage_start)
+            public["retrieval"]["token_usage"] = usage
+            public["retrieval"]["token_totals"] = totals
+            public["retrieval"]["context_limit"] = context_limit
+
+        attach_usage()
         public["evidence"]["catalogs"] = retrieved.get("catalogs", [])
         if not retrieved["facts"] and not retrieved.get("catalogs"):
             public["answer"] = "当前图谱及关联原文中没有找到足以回答该问题的证据。请提供更具体的工件或工序名称。"
             public["evidence_explanation"] = ""
+            attach_usage()
             return public
         agent_status = retrieved.get("agent_status")
         if agent_status in {"insufficient", "step_limit"}:
@@ -1035,6 +1114,7 @@ class GraphRAG:
                     item["id"] for item in retrieved.get("catalogs", [])]))
             public["cited_evidence"] = ([document["id"] for document in retrieved["documents"]]
                                          + [item["id"] for item in retrieved.get("catalogs", [])])
+            attach_usage()
             return public
         answer_mode = retrieved.get("answer_mode", "single")
         if retrieved["ambiguous"] and answer_mode == "single":
@@ -1043,17 +1123,19 @@ class GraphRAG:
             candidates = retrieved["documents"]
             public["evidence_explanation"] = "候选出处：" + "、".join(
                 _document_citation(item) for item in candidates)
+            attach_usage()
             return public
         answer_messages = build_messages(question, retrieved)
         if retrieved.get("catalogs"):
             # Catalogue answers need more room than a single-parameter answer,
             # while the prompt still asks the model to summarize by category.
             try:
-                raw_answer = self.generator.generate(answer_messages, max_new_tokens=512)
+                raw_answer = _call_generator(self.generator, answer_messages,
+                                              max_new_tokens=512, stage="answer")
             except TypeError:
-                raw_answer = self.generator.generate(answer_messages)
+                raw_answer = _call_generator(self.generator, answer_messages, stage="answer")
         else:
-            raw_answer = self.generator.generate(answer_messages)
+            raw_answer = _call_generator(self.generator, answer_messages, stage="answer")
         valid = {item["id"] for item in retrieved["documents"]}
         valid.update(item["id"] for item in retrieved["facts"] if not item["type_warning"])
         valid.update(item["id"] for item in retrieved.get("catalogs", []))
@@ -1076,8 +1158,10 @@ class GraphRAG:
             )
             public["cited_evidence"] = sources
             public["grounding_warning"] = "category_quantity_conflict"
+            attach_usage()
             return public
         public["answer"] = answer
         public["evidence_explanation"] = evidence_explanation(retrieved, citations)
         public["cited_evidence"] = list(dict.fromkeys(citations))
+        attach_usage()
         return public
