@@ -12,7 +12,7 @@ def create_service(args):
     retriever = GraphRetriever(args.db, max_documents=args.max_documents)
     generator = QwenGenerator(model_name=args.model, offline=args.offline,
                               max_new_tokens=args.max_new_tokens)
-    return GraphRAG(retriever, generator)
+    return GraphRAG(retriever, generator, max_agent_steps=args.max_agent_steps)
 
 
 def handler_for(service):
@@ -69,6 +69,8 @@ def parser():
                              help="Use already cached Qwen model files")
         command.add_argument("--max-documents", type=int, default=3)
         command.add_argument("--max-new-tokens", type=int, default=320)
+        command.add_argument("--max-agent-steps", type=int, default=6,
+                             help="Maximum graph-tool decisions for the agent loop")
     ask = commands.choices["ask"]
     ask.add_argument("--question", required=True)
     ask.add_argument("--entity", help="Exact graph entity name, for disambiguation")
@@ -80,8 +82,9 @@ def parser():
 
 def main(argv=None):
     args = parser().parse_args(argv)
-    if args.max_documents < 1 or args.max_new_tokens < 32:
-        raise ValueError("--max-documents must be positive and --max-new-tokens at least 32")
+    if args.max_documents < 1 or args.max_new_tokens < 32 or args.max_agent_steps < 1:
+        raise ValueError("--max-documents and --max-agent-steps must be positive; "
+                         "--max-new-tokens must be at least 32")
     service = create_service(args)
     if args.command == "ask":
         result = service.ask(args.question, entity=args.entity)

@@ -9,7 +9,8 @@ from http.server import HTTPServer
 from pathlib import Path
 
 from build_graph import ingest, load_source
-from graph_rag import GraphRAG, GraphRetriever, build_messages, prose_answer, quantity_type_warning
+from graph_rag import (GraphRAG, GraphRetriever, build_messages, prose_answer,
+                        quantity_type_warning, _drop_mismatched_catalog_citations)
 from qa_backend import handler_for
 
 
@@ -27,7 +28,138 @@ class FakeGenerator:
         return "What spindle speed was used for Part A?" if "甲" in question else question
 
 
+class AgentGenerator(FakeGenerator):
+    def __init__(self, decisions):
+        super().__init__()
+        self.decisions = iter(decisions)
+        self.agent_calls = []
+
+    def agent_step(self, question, observation, relation_names, tools):
+        self.agent_calls.append((question, observation, relation_names, tools))
+        return next(self.decisions)
+
+
 class GraphRAGChecks(unittest.TestCase):
+    def test_model_agent_can_finish_from_complete_seed_evidence(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _ = self.make_service(Path(temporary))
+            generator = AgentGenerator([
+                {"action": "finish", "sufficient": True, "answer_mode": "single"},
+            ])
+            service = GraphRAG(service.retriever, generator, max_agent_steps=2)
+            result = service.ask("What spindle speed was used for Part A?")
+            self.assertEqual(result["retrieval"]["agent_status"], "sufficient")
+            self.assertEqual(result["retrieval"]["agent_rounds"], 1)
+            self.assertEqual(result["retrieval"]["agent_trace"], [])
+            self.assertEqual(result["evidence"]["facts"][1]["object"], "1200 rpm")
+
+    def test_model_agent_can_query_then_finish_multi_document_answer(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _ = self.make_service(Path(temporary))
+            generator = AgentGenerator([
+                {"action": "query", "tool": "filter_facts",
+                 "arguments": {"relation": "Spindle Speed", "limit": 2}},
+                {"action": "finish", "sufficient": True, "answer_mode": "list"},
+            ])
+            service = GraphRAG(service.retriever, generator, max_agent_steps=3)
+            result = service.ask("列出所有工件的主轴转速")
+            self.assertEqual(result["retrieval"]["agent_status"], "sufficient")
+            self.assertEqual(result["retrieval"]["agent_rounds"], 2)
+            self.assertEqual(result["retrieval"]["agent_trace"][0]["tool"], "filter_facts")
+            self.assertEqual(result["retrieval"]["candidate_documents"], 2)
+            self.assertIn("900 rpm", json.dumps(result))
+            self.assertEqual(len(generator.agent_calls), 2)
+
+    def test_model_agent_can_follow_a_two_hop_path(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _ = self.make_service(Path(temporary))
+            generator = AgentGenerator([
+                {"action": "query", "tool": "find_paths",
+                 "arguments": {"start_entity": "Part A",
+                                "relation_path": ["Operation", "Spindle Speed"]}},
+                {"action": "finish", "sufficient": True, "answer_mode": "single"},
+            ])
+            service = GraphRAG(service.retriever, generator, max_agent_steps=3)
+            result = service.ask("Part A 的工序对应的主轴转速是多少？")
+            self.assertEqual(result["retrieval"]["agent_status"], "sufficient")
+            self.assertEqual(result["evidence"]["facts"][1]["object"], "1200 rpm")
+            self.assertEqual(result["retrieval"]["agent_trace"][0]["tool"], "find_paths")
+
+    def test_model_agent_is_bounded_when_it_does_not_finish(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _ = self.make_service(Path(temporary))
+            generator = AgentGenerator([
+                {"action": "query", "tool": "search_text",
+                 "arguments": {"text_terms": ["turning"]}},
+                {"action": "query", "tool": "search_text",
+                 "arguments": {"text_terms": ["turning"]}},
+            ])
+            service = GraphRAG(service.retriever, generator, max_agent_steps=2)
+            result = service.ask("请查找车削记录")
+            self.assertEqual(result["retrieval"]["agent_status"], "step_limit")
+            self.assertEqual(result["retrieval"]["agent_rounds"], 2)
+            self.assertEqual(len(result["retrieval"]["agent_trace"]), 2)
+            self.assertIn("重复查询", result["retrieval"]["agent_trace"][1]["error"])
+
+    def test_agent_filter_tool_supports_bounded_pagination(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _ = self.make_service(Path(temporary))
+            first = service.retriever.execute_tool(
+                "filter_facts", {"relation": "Spindle Speed", "limit": 1})
+            second = service.retriever.execute_tool(
+                "filter_facts", {"relation": "Spindle Speed", "limit": 1, "offset": 1})
+            self.assertTrue(first["truncated"])
+            self.assertEqual(first["candidate_documents"], 2)
+            self.assertEqual(second["documents"][0]["source_line"], 2)
+
+    def test_graph_query_accepts_model_match_alias(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _ = self.make_service(Path(temporary))
+            result = service.retriever.execute_tool(
+                "graph_query", {"query": {"kind": "match/documents",
+                                             "relations": ["Spindle Speed"]}})
+            self.assertEqual(result["candidate_documents"], 2)
+            self.assertEqual(len(result["documents"]), 2)
+
+    def test_graph_query_agent_can_create_a_catalogue_without_document_anchor(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _ = self.make_service(Path(temporary))
+            generator = AgentGenerator([
+                {"action": "query", "tool": "graph_query",
+                 "arguments": {"query": {"kind": "aggregate",
+                                            "relation": "Operation",
+                                            "limit": 10}}},
+                {"action": "finish", "sufficient": True, "answer_mode": "list"},
+            ])
+            generator.generate = lambda messages: "工序包括 turning。[C1]"
+            service = GraphRAG(service.retriever, generator, max_agent_steps=3)
+            result = service.ask("现有记录中的工序有哪些？")
+            self.assertEqual(result["retrieval"]["agent_status"], "sufficient")
+            self.assertEqual(result["evidence"]["documents"], [])
+            self.assertEqual([item["value"] for item in result["evidence"]["catalogs"]],
+                             ["turning"])
+            self.assertIn("Spindle Speed",
+                          result["evidence"]["catalogs"][0]["outgoing_relations"])
+            self.assertIn("[C1]", result["evidence_explanation"])
+            self.assertEqual(result["retrieval"]["agent_trace"][0]["tool"], "graph_query")
+            self.assertEqual(generator.agent_calls[0][3], ("graph_query",))
+
+    def test_agent_owns_sufficiency_decision_for_truncated_evidence(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            service, _ = self.make_service(Path(temporary))
+            generator = AgentGenerator([
+                {"action": "query", "tool": "filter_facts",
+                 "arguments": {"relation": "Spindle Speed", "limit": 1}},
+                {"action": "finish", "sufficient": True, "answer_mode": "list"},
+            ])
+            service = GraphRAG(service.retriever, generator, max_agent_steps=3)
+            result = service.ask("列出所有工件的主轴转速")
+            # The backend exposes truncation to the model but does not replace
+            # the model's explicit verification decision with a hard-coded one.
+            self.assertEqual(result["retrieval"]["agent_status"], "sufficient")
+            self.assertTrue(result["retrieval"]["agent_assessment"]["sufficient"])
+            self.assertTrue(result["retrieval"]["evidence_truncated"])
+
     def test_quantity_is_not_used_as_category_name(self):
         self.assertTrue(quantity_type_warning("Coolant", "8 L/min"))
         self.assertFalse(quantity_type_warning("Spindle Speed", "1200 rpm"))
@@ -42,6 +174,17 @@ class GraphRAGChecks(unittest.TestCase):
         self.assertIn("1200 rpm", answer)
         self.assertIn("[E2]", answer)
         self.assertEqual(citations, ["E2"])
+
+    def test_catalogue_citation_must_match_value_in_its_sentence(self):
+        answer, citations = _drop_mismatched_catalog_citations(
+            "精密加工包括 precision grinding [C1]，另有 precision turning [C2]。",
+            ["C1", "C2"],
+            [{"id": "C1", "value": "precision grinding"},
+             {"id": "C2", "value": "hard turning"}],
+        )
+        self.assertIn("precision grinding [C1]", answer)
+        self.assertNotIn("[C2]", answer)
+        self.assertEqual(citations, ["C1"])
 
     def make_service(self, root):
         schema = root / "schema.csv"
