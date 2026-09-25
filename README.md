@@ -289,6 +289,285 @@ For the checked-in three-text example benchmark, `evaluate/benchmark_metrics.py`
 python evaluate/benchmark_metrics.py --result ./output/<run-directory>/iter0/result_at_each_stage.json
 ```
 
+## Knowledge Graph Q&A System Test
+```shell
+PS F:\MPKG> .venv\Scripts\python.exe -X utf8 qa_backend.py ask --db output\testprocess_graph_20260924.sqlite --question '面铣削先粗后精时，两道工序的切深、精加工进给和最终平面度分别是多少？' --offline
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 2/2 [00:05<00:00,  2.78s/it]
+`generation_config` default values have been modified to match model-specific defaults: {'do_sample': True, 'temperature': 0.6, 'top_k': 20, 'top_p': 0.95, 'bos_token_id': 151643}. If this is not desired, please set these values explicitly.
+{
+  "question": "面铣削先粗后精时，两道工序的切深、精加工进给和最终平面度分别是多少？",
+  "retrieval": {
+    "mode": "translated_exact_entity",
+    "anchor": "face milling",
+    "ambiguous": true,
+    "candidate_documents": 3,
+    "translated_query": "Face milling with rough and finish machining, the depth of cut, finish feed, and final flatness are respectively 4.0 mm, 0.01 mm, and 0.05 mm."
+  },
+  "evidence": {
+    "documents": [
+      {
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_index": 0,
+        "source_line": 1,
+        "input_text": "The face milling operation was performed at a cutting speed of 180 m/min with a feed rate of 0.2 mm/rev and cutting depth of 2.5 mm using a carbide tool.",
+        "status": "checked",
+        "flags": [
+          "canonicalization_abstained"
+        ],
+        "id": "D1"
+      },
+      {
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_index": 65,
+        "source_line": 66,
+        "input_text": "A precision face milling operation on aluminum housings employed a PCD cutter at 800 m/min, with high-pressure through-tool coolant at 80 bar and feed per tooth of 0.15 mm.",
+        "status": "checked",
+        "flags": [
+          "canonicalization_abstained"
+        ],
+        "id": "D2"
+      },
+      {
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_index": 117,
+        "source_line": 118,
+        "input_text": "Face milling of aluminum plates specified high-speed machining parameters with 0.15 mm tooth feed, implementing climb cutting for all passes.",
+        "status": "checked",
+        "flags": [
+          "canonicalization_abstained"
+        ],
+        "id": "D3"
+      }
+    ],
+    "facts": [
+      {
+        "triple_index": 0,
+        "subject": "face milling operation",
+        "relation": "Operation",
+        "object": "face milling",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E1",
+        "document_id": "D1",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 1
+      },
+      {
+        "triple_index": 1,
+        "subject": "face milling",
+        "relation": "Cutting Speed",
+        "object": "180 m/min",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E2",
+        "document_id": "D1",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 1
+      },
+      {
+        "triple_index": 2,
+        "subject": "face milling",
+        "relation": "Feed Rate",
+        "object": "0.2 mm/rev",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E3",
+        "document_id": "D1",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 1
+      },
+      {
+        "triple_index": 4,
+        "subject": "face milling",
+        "relation": "Tool",
+        "object": "carbide tool",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E4",
+        "document_id": "D1",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 1
+      },
+      {
+        "triple_index": 0,
+        "subject": "precision face milling operation",
+        "relation": "Operation",
+        "object": "face milling",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E5",
+        "document_id": "D2",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 66
+      },
+      {
+        "triple_index": 1,
+        "subject": "face milling",
+        "relation": "Tool",
+        "object": "PCD cutter",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E6",
+        "document_id": "D2",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 66
+      },
+      {
+        "triple_index": 3,
+        "subject": "face milling",
+        "relation": "Coolant",
+        "object": "high-pressure through-tool coolant",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E7",
+        "document_id": "D2",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 66
+      },
+      {
+        "triple_index": 4,
+        "subject": "face milling",
+        "relation": "Coolant Pressure",
+        "object": "80 bar",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E8",
+        "document_id": "D2",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 66
+      },
+      {
+        "triple_index": 0,
+        "subject": "face milling",
+        "relation": "Tool",
+        "object": "cutting",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E9",
+        "document_id": "D3",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 118
+      },
+      {
+        "triple_index": 1,
+        "subject": "face milling",
+        "relation": "Feed Rate",
+        "object": "0.15 mm",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E10",
+        "document_id": "D3",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 118
+      }
+    ]
+  },
+  "answer": "该名称对应多条加工记录，现有问题无法确定唯一工件及其参数。请补充工件全称、工序或原文行号。",
+  "evidence_explanation": "候选出处：[D1]：“The face milling operation was performed at a cutting speed of 180 m/min with a feed rate of 0.2 mm/rev and cutting depth of 2.5 mm using a carbide tool.”、[D2]：“A precision face milling operation on aluminum housings employed a PCD cutter at 800 m/min, with high-pressure through-tool coolant at 80 bar and feed per tooth of 0.15 mm.”、[D3]：“Face milling of aluminum plates specified high-speed machining parameters with 0.15 mm tooth feed, implementing climb cutting for all passes.”"
+}
+PS F:\MPKG> .venv\Scripts\python.exe -X utf8 qa_backend.py ask --db output\testprocess_graph_20260924.sqlite --question '通孔钻削按什么顺序使用中心钻、先导钻和最终尺寸钻？' --offline
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████| 2/2 [00:02<00:00,  1.44s/it]
+`generation_config` default values have been modified to match model-specific defaults: {'do_sample': True, 'temperature': 0.6, 'top_k': 20, 'top_p': 0.95, 'bos_token_id': 151643}. If this is not desired, please set these values explicitly.
+{
+  "question": "通孔钻削按什么顺序使用中心钻、先导钻和最终尺寸钻？",
+  "retrieval": {
+    "mode": "translated_exact_entity",
+    "anchor": "final size drill",
+    "ambiguous": false,
+    "candidate_documents": 1,
+    "translated_query": "Drilling holes in sequence using center drill, pilot drill, and final size drill."
+  },
+  "evidence": {
+    "documents": [
+      {
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_index": 73,
+        "source_line": 74,
+        "input_text": "A drilling operation for through holes required center drilling first, followed by pilot drilling at 0.3 times the final diameter, and then finishing with the final size drill.",
+        "status": "checked",
+        "flags": [
+          "canonicalization_abstained",
+          "entity_not_verbatim_in_source_review"
+        ],
+        "id": "D1"
+      }
+    ],
+    "facts": [
+      {
+        "triple_index": 3,
+        "subject": "drilling operation",
+        "relation": "Tool",
+        "object": "final size drill",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E1",
+        "document_id": "D1",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 74
+      },
+      {
+        "triple_index": 4,
+        "subject": "drilling operation",
+        "relation": "Tool",
+        "object": "final diameter drill",
+        "subject_verbatim": 1,
+        "object_verbatim": 0,
+        "type_warning": false,
+        "id": "E2",
+        "document_id": "D1",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 74
+      },
+      {
+        "triple_index": 5,
+        "subject": "drilling operation",
+        "relation": "Tool",
+        "object": "pilot drill",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E3",
+        "document_id": "D1",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 74
+      },
+      {
+        "triple_index": 6,
+        "subject": "drilling operation",
+        "relation": "Tool",
+        "object": "center drill",
+        "subject_verbatim": 1,
+        "object_verbatim": 1,
+        "type_warning": false,
+        "id": "E4",
+        "document_id": "D1",
+        "dataset_id": "source_005795735dd9f26011bb",
+        "source_line": 74
+      }
+    ]
+  },
+  "answer": "通孔钻削的顺序是先使用中心钻，接着使用先导钻，最后使用最终尺寸钻。[E1]、[E2]、[E3]、[E4] 的证据均支持这一顺序。中心钻用于初步定位，先导钻用于减少钻削力，最终尺寸钻用于精确钻孔。[E1]、[E2]、[E3]、[E4] 的证据均属于同一次记录。",
+  "evidence_explanation": "[E1] 记录“drilling operation—Tool—final size drill”，对应原文 [D1]：“A drilling operation for through holes required center drilling first, followed by pilot drilling at 0.3 times the final diameter, and then finishing with the final size drill.” [E2] 记录“drilling operation—Tool—final diameter drill”，对应原文 [D1]：“A drilling operation for through holes required center drilling first, followed by pilot drilling at 0.3 times the final diameter, and then finishing with the final size drill.” [E3] 记录“drilling operation—Tool—pilot drill”，对应原文 [D1]：“A drilling operation for through holes required center drilling first, followed by pilot drilling at 0.3 times the final diameter, and then finishing with the final size drill.” [E4] 记录“drilling operation—Tool—center drill”，对应原文 [D1]：“A drilling operation for through holes required center drilling first, followed by pilot drilling at 0.3 times the final diameter, and then finishing with the final size drill.”",
+  "cited_evidence": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+  ]
+}
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
