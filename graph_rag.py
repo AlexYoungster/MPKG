@@ -497,7 +497,6 @@ class GraphRetriever:
             )]
         for fact in facts:
             fact["type_warning"] = quantity_type_warning(fact["relation"], fact["object"])
-        import json
         result = dict(document)
         result["flags"] = json.loads(result.pop("flags_json"))
         return result, facts
